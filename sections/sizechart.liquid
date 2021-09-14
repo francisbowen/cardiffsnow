@@ -1,0 +1,48 @@
+{% for block in section.blocks %}
+    {%- assign product_handles = block.settings.product_handles | replace: ', ', ',' | replace: ',  ', ',' | replace: ' ,', ',' | replace: '  ,', ',' | split: ',' -%}
+    {% if product_handles contains product.handle %}
+        <div class="spec-chart modal-hidden">
+            <div class="modal-header">
+            <h4>Spec Chart</h4>
+            </div>
+            <div class="modal-content t-center">
+            <div class="specs-table">
+                {{ block.settings.content }}
+            </div>
+            </div>
+        </div>
+        {% endif %}    
+    
+
+{% endfor %}
+    
+  
+      
+
+{% schema %}
+{
+    "name": "Size Chart",
+    "settings": [
+        
+    ],
+    "blocks":[
+        {
+            "type": "specs_chart",
+            "name": "Spec Chart",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "product_handles",
+                    "label": "Product Handle",
+                    "info": "Handles separated with a comma"
+                },
+                {
+                    "type": "textarea",
+                    "id": "content",
+                    "label": "label"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

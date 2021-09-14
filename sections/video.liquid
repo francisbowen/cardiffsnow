@@ -1,0 +1,84 @@
+<section class="video video-homepage">
+  <div class="container">
+    <div class="video-wrapper">
+      <!-- {{ section.settings.video }} -->
+
+      {% if section.settings.video.type == 'youtube' %}
+        <iframe id="video" src="//www.youtube.com/embed/{{ section.settings.video.id }}?&mute=1&rel=0&playlist={{ section.settings.video.id }}&loop=1&showinfo=0" frameborder="0" allowfullscreen=""></iframe>
+        {% else %}        
+        <iframe id="video" src="https://player.vimeo.com/video/{{ section.settings.video.id }}?&muted=1&loop=1&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>      
+      {% endif %}
+
+      <div class="video-placeholder-img" style="background-image: url('{{section.settings.image | img_url: 'master'}}');">
+          <div class="video-content">
+            <div class="play-icon" id="play-video">
+              <img src="https://cdn.shopify.com/s/files/1/0044/2145/1850/files/play_2.png?v=1623326896" alt="image" />
+            </div>
+            <h3 data-aos="fade-up">{{section.settings.title}}</h3>
+          </div>
+      </div>
+    
+    </div>
+  </div>
+</section>    
+
+<style>
+  .video-homepage .video-wrapper{
+    margin-right: 100px;
+    padding-bottom: 52.25%;
+  }
+  .video-homepage .video-content{
+    right: -115px;
+  }
+  @media only screen and (max-width: 1440px) {
+    .video-homepage .video-content{
+      right: -90px!important;
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    .video-homepage .video-wrapper{
+      margin-right: 50px;
+    }
+    .video-homepage .video-content{
+      right: -40px!important;
+    }
+  }
+</style>
+
+<script>
+  $(document).ready(function() {
+    $('#play-video').on('click', function(ev) {
+  
+      $("#video")[0].src += "&autoplay=1";
+      ev.preventDefault();
+
+      $('#video').show();
+      $('.video-placeholder-img').hide();
+
+    });
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Video",
+    "settings": [
+      {
+        "type": "video_url",
+        "id": "video",
+        "label": "Video",
+        "accept": ["youtube", "vimeo"]
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      }
+    ]
+  }
+{% endschema %}

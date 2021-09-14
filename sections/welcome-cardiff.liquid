@@ -1,0 +1,57 @@
+<section class="welcome-to-cardiff">
+    {% if section.settings.welcome_pic != blank %}
+        <div class="welcome-to-cardiff-img" style="background-image: url({{ section.settings.welcome_pic | img_url: 'master' }})"></div>
+    {% endif %}
+    <div class="welcome-to-cardiff-wrap">
+        {% if section.settings.title != blank %}
+            <h1 class="welcome-to-cardiff-title" data-aos="fade-up">{{ section.settings.title }}<h1>
+        {% endif %}
+        <div class="col-xxs-12 col-sm-12">
+          <div class="welcome-to-cardiff-body-text" data-aos="fade-up">
+              {% if section.settings.welcome_text != blank %}
+                <p>{{ section.settings.welcome_text }}</p>
+              {% endif %}
+          {% if section.settings.cta_text != blank %}
+            <a class="welcome-to-cardiff-btn" data-aos="fade-up" href="{{ section.settings.cta_link }}">{{ section.settings.cta_text }}{% include 'arrow' %}</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    
+  </section>
+
+
+
+
+  {% schema %}
+  {
+      "name": "welcome-cardiff",
+      "settings": [
+          {
+              "type": "image_picker",
+              "id": "welcome_pic",
+              "label": "Image"
+          },
+          {
+              "type": "text",
+              "id": "title",
+              "label": "Title"
+          },
+          {
+              "type": "textarea",
+              "id": "welcome_text",
+              "label": "Text"
+          },
+          {
+              "type": "text",
+              "id": "cta_text",
+              "label": "CTA Text"
+          },
+          {
+              "type": "url",
+              "id": "cta_link",
+              "label": "CTA Link"
+          }
+      ]
+  }
+  {% endschema %}

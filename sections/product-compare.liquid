@@ -1,0 +1,328 @@
+{% for block in section.blocks %}
+{% if product.tags contains block.settings.tag %}
+    <div class="container-fluid">
+      <div class="abs-heading">
+        <h4 class="h1">{{ section.settings.title }}</h4>
+      </div>
+      <div class="row row-no-gutters">
+        {%- assign col_div = section.settings.compare_num | plus: 1 -%}
+        <div class="col-md-{{ 12 | divided_by: 3 }} compare-grid-col">
+          <div class="board-option change-board-pdp">
+              <div class="product-icons">
+                {% assign handle = product.handle | remove: 'the-' %}
+                {% assign icon = 'icon-' | append: handle %}
+                <div class="product-icon active">
+                  {% include icon %}
+                </div>
+              </div>
+                <h1 class="product-title">{{ product.title }}</h1>
+             </div>
+          <a href="{{ product.url }}" class="product-img">
+            {{ product.featured_image.src | img_url: '600x600' | img_tag }}
+          </a>
+          {% for tag in product.tags %}
+            {% if tag contains 'style||' %}
+              {%- assign tag_style = tag | remove_first: 'style||' -%}
+            {% endif %}
+            {% if tag contains 'flex||' %}
+              {%- assign tag_flex = tag | remove_first: 'flex||' -%}
+            {% endif %}
+            {% if tag contains 'sidecut||' %}
+              {%- assign tag_sidecut = tag | remove_first: 'sidecut||' -%}
+            {% endif %}
+            {% if tag contains 'float||' %}
+              {%- assign tag_float = tag | remove_first: 'float||' -%}
+            {% endif %}
+          {% endfor %}
+          <div class="margin-top">
+
+            {% for tag in product.tags %}
+              {% if tag contains '||' %}
+              {%- assign prod_style = tag | split: '||' -%}
+              <div class="addon-holder" data-type="style">
+                <h4>{{ prod_style[1] }}</h4>
+                <p>{{ prod_style[0] }}</p>
+              </div>
+              {% endif %}
+            {% endfor %}
+
+            {% for option in product.options_with_values %}
+              {% if option.name contains 'size' or option.name contains 'Size' %}
+              <div class="addon-holder" data-type="style">
+                <h4>SIZING</h4>
+                <p>{% for  value in option.values %}<span>{{ value }}{% unless forloop.last %},{% endunless %}</span>{%endfor %}</p>
+              </div>   
+              {% endif %}
+            {% endfor %}
+
+            <p class="abs-text">
+              {%- assign com_descript = product.description | split: '</p>' -%}
+                {{ com_descript[0] | strip_html }}
+            </p>
+          </div>
+        </div>
+        {%- assign base_product = product -%}
+          {%- assign compare_collection = collections[block.settings.collection] -%}
+          {% for i in (1..2) %}
+          {% if i == 0 %}
+          {% for product in compare_collection.products %}
+          {% if base_product.handle == product.handle %}
+          {%- assign nextProdutIndex = forloop.index -%}
+          {% endif %}
+          {% endfor %}
+          {% if nextProdutIndex == compare_collection.products.size %}
+            {%- assign nextProdutIndex = 0 -%}
+          {% endif %}
+          {%- assign compare_next = compare_collection.products[nextProdutIndex] -%}
+          {% for tag in compare_next.tags %}
+            {% if tag contains 'style||' %}
+              {%- assign ctag_style = tag | remove_first: 'style||' -%}
+            {% endif %}
+            {% if tag contains 'flex||' %}
+              {%- assign ctag_flex = tag | remove_first: 'flex||' -%}
+            {% endif %}
+            {% if tag contains 'sidecut||' %}
+              {%- assign ctag_sidecut = tag | remove_first: 'sidecut||' -%}
+            {% endif %}
+            {% if tag contains 'float||' %}
+              {%- assign ctag_float = tag | remove_first: 'float||' -%}
+            {% endif %}
+          {% endfor %}
+          <div class="col-md-{{ 12 | divided_by: 3 }} compare-grid-col">
+            <div class="change-board-pdp">
+                <select name="compare-{{ i }}" id="compare-{{ i }}">
+                  <option value="">Pick Board to Compare</option>
+                  {% for product in compare_collection.products %}
+                  <option value="{{ product.handle }}">{{ product.title }}</option>
+                  {% endfor %}
+                </select>
+                <div class="product-icons">
+                  {% for product in compare_collection.products %}
+                  {% assign handle = product.handle | remove: 'the-' %}
+                {% assign icon = 'icon-' | append: handle %}
+                <div class="product-icon {% if compare_next.handle == product.handle %}active{% endif %}" data-handle="{{ product.handle }}">
+                  {% include icon %}
+                </div>
+                {% endfor %}
+                  </div>
+                  <h1 class="product-title">
+                    {{ compare_next.title }}
+                  </h1>
+                  <p class="sub-title">Change Board</p>
+               </div>
+            <div class="product-img">
+                {{ compare_next.featured_image.src | img_url: '600x600' | img_tag }}
+            </div>
+            <div class="margin-top">
+              <div class="addon-holder agc" data-type="style">
+                <h4>{{ ctag_style }}</h4>
+                <p>Style</p>
+              </div>
+              <div class="addon-holder" data-type="flex">
+                <h4>{{ ctag_flex }}</h4>
+                <p>Flex</p>
+              </div>
+              <div class="addon-holder" data-type="sidecut">
+                <h4>{{ ctag_sidecut }}</h4>
+                <p>Sidecut</p>
+              </div>
+              <div class="addon-holder" data-type="float">
+                <h4>{{ ctag_float }}</h4>
+                <p>Float</p>
+              </div>
+              
+              {%- assign next_desc = compare_next.description | split: '</p>' -%}
+              <p class="abs-text">
+                {{ next_desc[0] | strip_html }}
+              </p>
+            </div>
+          </div>
+          {% else %}
+          <div class="col-md-{{ 12 | divided_by: 3 }} compare-grid-col">
+            <div class="board-option change-board-pdp">
+                <select name="compare-{{ i }}" id="compare-{{ i }}">
+                  <option value="">Pick Board to Compare</option>
+                  {% for product in compare_collection.products %}
+                  <option value="{{ product.handle }}">{{ product.title }}</option>
+                  {% endfor %}
+                </select>
+                <div class="product-icons">
+                  {% for product in compare_collection.products %}
+                  {% assign handle = product.handle | remove: 'the-' %}
+                {% assign icon = 'icon-' | append: handle %}
+                <div class="product-icon" data-handle="{{ product.handle }}">
+                  {% include icon %}
+                </div>
+                {% endfor %}    
+                </div>
+                  <h1 class="product-title">
+                    
+                  </h1>
+                  <p class="sub-title">Change Board</p>
+               </div>
+            <a href="#" class="product-img">
+                {{ 'deult-img.jpg' | asset_url | img_tag: '600x600'}}
+            </a>
+            <div class="margin-top">
+              <div class="addon-holder agc1" data-type="terrain">
+                <h4>TERRAIN</h4>
+                <p></p>
+              </div>
+              <div class="addon-holder" data-type="shape">
+                <h4>SHAPE</h4>
+                <p></p>
+              </div>
+              <div class="addon-holder" data-type="purpose">
+                <h4>PURPOSE</h4>
+                <p></p>
+              </div>
+              <div class="addon-holder" data-type="size">
+                <h4>SIZING</h4>
+                <p></p>
+              </div>
+              <p class="abs-text">
+              </p>
+            </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+      </div>
+      {% unless section.settings.btn_text == blank and section.settings.btn_link == blank %}
+      <div class="int-xxs-v-0 int-md-v-4">
+        <a class="link t-xxs-white" href="{{ section.settings.btn_link }}">{{ section.settings.btn_text }} {% include 'arrow' %}</a>
+      </div>
+      {% endunless %}
+    </div>
+    {% endif %}
+{% endfor %}
+<script>
+    $(document).ready(function(){
+        $('.change-board-pdp select').on('change',function(){
+            var  product_handle = $.trim($(this).val());
+            var product_grid = $(this).closest('.compare-grid-col');
+            $(this).closest('.board-option').find('.product-icon').removeClass('active');
+            $(this).closest('.board-option').find('.product-icon[data-handle="'+product_handle+'"]').addClass('active');
+            $.getJSON('/products/'+product_handle+'.js', function(product) {
+                console.log(product)
+                var product_description = product.description.split('</p>');
+                product_grid.find('.product-title').html(product.title);
+                product_grid.find('.product-img').attr('href',product.url);
+                product_grid.find('.product-img img').attr('src',Shopify.resizeImage(product.featured_image,'600x600'));
+                //product_grid.find('.addon-holder h4').text('');
+                product_grid.find('.abs-text').text(product_description[0].replace(/(<([^>]+)>)/ig,""));
+                $.each(product.tags,function(i,t){
+                    if(t.indexOf('||')>-1) {
+                        console.log("tag = " , t);
+                        var tag_split = t.split('||');
+                        console.log("tag split = ", tag_split);
+                        console.log("tag_split[0] = ", tag_split[0].toLowerCase());
+                        product_grid.find('.addon-holder[data-type="'+tag_split[1].toLowerCase()+'"] p').text(tag_split[0]);
+                    }
+                })
+                var size_values = '';
+                $.each(product.options, function(i, t) {
+                  if (t.name == 'size' || t.name == "Size") {
+                    console.log('t.name = ', t.name);
+                    $.each(t.values, function(j, option_value) {
+                      console.log('option_value = ', option_value);
+                      if (size_values == '') 
+                        size_values = option_value;
+                      else 
+                        size_values = size_values + "," + option_value;
+                    })
+                  }
+                })
+                if (size_values !== '') {
+                  product_grid.find('.addon-holder[data-type="size"] p').text(size_values);
+                }
+            });
+            $(this).hide();
+            $(this).closest('.change-board-pdp').removeClass('board-option');
+        })
+        $('.change-board-pdp .sub-title').click(function(){
+            $(this).closest('.change-board-pdp').addClass('board-option').find('select').show();
+        })
+    })
+</script>
+
+<style>
+  .suit-wrapper .board-option .product-icons,.suit-wrapper .change-board-pdp .product-icons {
+    display:block;
+  }
+  .suit-wrapper .board-option .product-icons .product-icon, .suit-wrapper .change-board-pdp .product-icons .product-icon{
+    display: none;
+  }
+  .suit-wrapper .board-option .product-icons .product-icon.active, .suit-wrapper .change-board-pdp .product-icons  .product-icon.active {
+    display: block;
+  }
+
+  .change-board-pdp.board-option select {
+    display:block !important;
+  }
+
+  .change-board-pdp.board-option .sub-title {
+    display:none !important;
+  }
+
+  .change-board-pdp select {
+    display:none !important;
+  }
+
+  .change-board-pdp .sub-title {
+    display:block !important;
+    cursor: pointer;
+  }
+
+</style>
+ {% schema %}
+ {
+     "name":"Product Compare",
+     "class":"suit-wrapper",
+     "settings":[
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "find what suit you"
+        },
+        {
+            "type": "text",
+            "id": "btn_text",
+            "label": "Button Text",
+            "default": "SHOP"
+        },
+        {
+            "type": "url",
+            "id": "btn_link",
+            "label": "Button Link"
+        },
+        {
+            "type": "range",
+            "id": "compare_num",
+            "label": "Compare X Products",
+            "min": 2,
+            "max": 4,
+            "step": 1,
+            "default": 3
+        }
+     ],
+     "blocks":[
+        {
+            "type":"Collection",
+            "name":"Compare Collection",
+            "settings":[
+                {
+                    "type": "text",
+                    "id": "tag",
+                    "label": "Product Tag"
+                },
+                {
+                    "type": "collection",
+                    "id": "collection",
+                    "label": "Collection"
+                }
+            ]
+        }
+     ]
+ }
+ {% endschema %}

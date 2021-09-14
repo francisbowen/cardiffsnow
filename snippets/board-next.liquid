@@ -1,0 +1,53 @@
+{% for nextProduct in collections['boards'].products %}
+  {% if nextProduct.handle == product.handle %}
+    {% if forloop.last %}
+      {% assign next = 1 %}
+    {% else %}
+      {% assign next = forloop.index | plus: 1 %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% for product in collections['boards'].products %}
+  {% if forloop.index == next %}
+    {% assign handle = product.handle | remove: 'the-' %}
+    {% assign icon = 'icon-' | append: handle %}
+    {% assign watermark = handle | append: '-watermark.png' %}
+    <div class="section int-xxs-v-4 int-sm-v-10 overflow-hide">
+      <div class="container">
+        <div class="row center-xxs middle-xxs between-sm">
+          <div class="col-sm-2">
+            <p class="t-xxs-center">Next Board:</p>
+          </div>
+          <div class="col-xxs-7 col-sm-3 relative" data-aos="fade-up">
+            <div class="ext-xxs-v-2 ext-sm-v-0">
+              <div class="next-watermark">
+                <img src="{{ watermark | asset_url }}" alt="{{ product.title }} Watermark"/>
+              </div>
+              <img src="{{ 'the-crane-action.jpg' | asset_url }}" alt="{{ product.title }}" />
+              <div class="abs-middle">
+                <h4 class="h1">{{ product.title }}</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-2" style="position: relative; z-index: 2;">
+            <a href="{{ product.url }}">
+              <div class="row middle-xxs center-xxs">
+                <div class="col-xxs-2 col-sm-4">
+                  <div class="product-icon">
+                    {% include icon %}
+                  </div>
+                </div>
+                <div class="col-xxs-4 col-xxs-offset-1 col-sm-7">
+                  <div class="t-gold">
+                    {% include 'arrow' %}
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endfor %}

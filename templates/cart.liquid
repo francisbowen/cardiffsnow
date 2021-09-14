@@ -1,0 +1,149 @@
+<div id="wrap">
+  <div class="container int-xxs-t-4 int-xxs-b-8">
+    <div class="row center-xxs">
+      <div class="col-lg-10">
+        {% if cart.item_count > 0 %}
+          <div class="row">
+            <div class="col-xxs-12">
+              <div class="int-xxs-b-2">
+                <h1 class="h4">{{ 'cart.general.title' | t }}</h1>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+          <div class="col-xxs-12">
+            <form action="/cart" method="post">
+              <div class="cart-header">
+                <div class="cart-product">{{ 'cart.label.product' | t }}</div>
+                <div class="cart-quantity">{{ 'cart.label.quantity' | t }}</div>
+                <div class="cart-total">{{ 'cart.label.price' | t }}</div>
+                <div class="cart-action"></div>
+              </div>
+
+              {% for item in cart.items %}
+              {%- assign preorder = false -%}
+              {%- assign preorder_date = false -%}
+              {% for tag in item.product.tags %}
+                {% if tag contains 'preorder' %}
+                    {%- assign preorder = true -%}
+                  {%- assign preorder_date = tag | remove: 'preorder--' -%}
+                {% endif %}
+              {% endfor %}
+                <div class="cart-item">
+                  <div class="cart-product">
+                    <div class="cart-image">
+                      <a href="{{ item.url | within: collections.all }}">
+                        {{ item | img_url: '240x240' | img_tag: item.title }}
+                      </a>
+                    </div>
+                    <div class="cart-right">
+                      <div class="cart-title">
+                        <a href="{{ item.url }}" class="h4">{{ item.product.title }}</a>
+                        {% if preorder %} 
+                        <p class="preorder-text">
+                          shipping by <strong>{{ preorder_date }}</strong>
+                        </p>
+                        {% endif %}
+                      </div>
+                      <div class="cart-price">{{ item.line_price | money }}</div>
+                      <div class="cart-variant">
+                        {% if item.variant.option1 %}
+                          {{ item.variant.option1 }}
+                        {% endif %}
+                        {% if item.variant.option2 %}
+                          / {{ item.variant.option2 }}
+                        {% endif %}
+                        {% if item.variant.option3 %}
+                          / {{ item.variant.option3 }}
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cart-quantity">
+                    <div class="cart-label">Quantity</div>
+                    <div class="product-quantity">
+                      <div class="btn-minus">
+                        {% include 'icon-minus' %}
+                      </div>
+                      <input type="number"
+                        value="{{ item.quantity }}"
+                        name="updates[{{item.variant.id}}]"
+                        id="updates_{{ item.key }}"
+                        data-id="{{ item.variant.id }}"/>
+                      <div class="btn-plus">
+                        {% include 'icon-plus' %}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cart-total">
+                    <div class="product-price">
+                      {{ item.line_price | money }}
+                    </div>
+                  </div>
+                  <div class="cart-action">
+                    <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">
+                      {{ 'cart.general.remove' | t }}
+                    </a>
+                  </div>
+                </div>
+              {% endfor %}
+
+              <div class="cart-footer">
+                <div class="cart-product">
+                  <div>
+                  <a href="/products" class="btn">Continue Shopping</a>
+                  {% if settings.shipping_text != blank %}
+                    {{ settings.shipping_text }}
+                  {% endif %}
+                  <!-- <p>2020-21 Boards are shipping October. For more information or questions please email <a href="mailto:info@cardiffsnow.com">info@cardiffsnow.com</a></p> -->
+                  </div>
+                </div>
+                <div class="cart-quantity">
+                  <p>{{ 'cart.general.subtotal' | t }}:</p>
+                  <p>Shipping:</p>
+                  <p>Estimated Tax:</p>
+                  <p class="cart-bold">Total:</p>
+                </div>
+                <div class="cart-total">
+                  <p>{{ cart.total_price | money }}</p>
+                  <p>{{ 'cart.general.shipping_at_checkout' | t }}</p>
+                  <p>{{ 'cart.general.shipping_at_checkout' | t }}</p>
+                  <p class="cart-bold">{{ cart.total_price | money }}</p>
+                  {% if cart.total_discounts > 0 %}
+                    <p>{{ 'cart.general.savings' | t }} {{ cart.total_discounts | money }}</p>
+                  {% endif %}
+                  <p class="affirm-as-low-as" data-page-type="cart" data-amount="{{cart.total_price}}"></p>
+                  <div class="agree-wrap">
+                    <p>
+                      <input type="checkbox" name="termsAgree" id="termsAgree" />
+                      <label for="termsAgree">I agree to the <a href="/pages/terms-and-conditions">Terms and Conditions</a></label>
+                    </p>
+                    
+                  </div>
+                  <div class="product-add-btn">
+                    <button type="submit" name="checkout" disabled>
+                      <span data-submit-button-text>{{ 'cart.general.checkout' | t }}</span>
+                      {% include 'arrow' %}
+                    </button>
+                  </div>
+                </div>
+                <div class="cart-action"></div>
+              </div>
+            </form>
+          </div>
+        {% else %}
+          <div class="row">
+            <div class="col-xxs-12">
+              <h1 class="h4">{{ 'cart.general.title' | t }}</h1>
+              <div class="supports-cookies">
+                <p>{{ 'cart.general.empty' | t }}</p>
+                <p class="agc">{{ 'cart.general.continue_browsing_html' | t }}</p>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

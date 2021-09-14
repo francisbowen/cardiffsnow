@@ -1,0 +1,65 @@
+{% comment %}
+  This page represents the /collections and /products pages.
+{% endcomment %}
+
+{% section 'collection-template' %}
+
+{%- comment -%}
+Old Collection Page
+<div id="wrap">
+  <div class="bg-img bg-img-top int-xxs-t-10 int-sm-t-8 int-md-t-10" style="background-image: url({{ 'shop-hero.jpg' | asset_url }})">
+    {% for link in linklists.all-collections.links %}
+      {% assign collection = link.object %}
+
+      {% if collection.handle == 'boards' %}
+        <div class="container ext-xxs-neg-t-8 ext-sm-neg-t-0">
+          <div class="row">
+            <div class="col-xxs-12">
+              <div class="board-grid">
+                <ul class="products">
+                  {% for product in collection.products %}
+                    {% include 'product-board' %}
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if collection.handle == 'accessories' %}
+        <div class="row end-xxs hide-sm">
+          <div class="col-xxs-6">
+            <div class="ext-xxs-neg-t-2 ext-sm-neg-l-1 ext-md-neg-l-2 ext-lg-neg-t-4 ext-lg-neg-l-3 image-load">
+              <img src="{{ 'accessories-header.jpg' | asset_url }}" data-aos="zoom-out" alt="Cardiff Split Boards on the Mountain" />
+            </div>
+          </div>
+        </div>
+
+        <div class="container int-xxs-t-4 int-xxs-b-6 int-sm-t-8 int-md-t-16 int-md-b-8">
+          <div class="row">
+            <div class="col-xxs-10 col-xxs-offset-1 relative">
+              <div class="vert move-up vert-persist">
+                <h3 class="h2 small">Accessories</h3>
+              </div>
+            </div>
+          </div>
+          <div class="row center-xxs">
+            <div class="col-xxs-8 col-sm-7">
+              <div class="product-grid">
+                <ul class="products">
+                  {% for product in collection.products %}
+                    {% include 'product' %}
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+{%- endcomment -%}
+
+{% section 'instagram' %}

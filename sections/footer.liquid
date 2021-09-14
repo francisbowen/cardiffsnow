@@ -1,0 +1,134 @@
+<footer id="footer" class="bg-black int-xxs-v-2 int-sm-v-6">
+  <div class="container">
+    <div class="row">
+      <div class="col-xxs-12 col-sm-3 col-md-2">
+        <div id="footer-logo">
+          <div class="logo-mark">{% include 'logo-mark' %}</div>
+          <div class="logo-type">{% include 'logo-type-stacked' %}</div>
+          <div class="logo-title">{{ shop.name }}</div>
+        </div>
+      </div>
+      <div class="col-xxs-5 col-xxs-offset-1 col-sm-2 col-sm-offset-0 col-md-offset-2">
+        <ul class="footer-nav">
+          {% for link in linklists['products'].links %}
+            {% if link.links != blank %}
+              <li>
+                <a href="{{ link.url }}">
+                  {{ link.title }}
+                  {% include 'icon-arrow-down' %}
+                </a>
+                <ul>
+                  {% for childlink in link.links %}
+                    <li>
+                      <a href="{{ childlink.url }}">
+                        {{ childlink.title }}
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </li>
+            {% else %}
+              <li>
+                <a href="{{ link.url }}">
+                  {{ link.title }}
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="col-xxs-5 col-sm-2">
+        <ul class="footer-nav">
+          {% for link in linklists['footer'].links %}
+            {% if link.links != blank %}
+              <li>
+                <a href="{{ link.url }}">
+                  {{ link.title }}
+                  {% include 'icon-arrow-down' %}
+                </a>
+                <ul>
+                  {% for childlink in link.links %}
+                    <li>
+                      <a href="{{ childlink.url }}">
+                        {{ childlink.title }}
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </li>
+            {% else %}
+              <li>
+                <a href="{{ link.url }}">
+                  {{ link.title }}
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="col-xxs-12 col-sm-5 col-sm-offset-0 col-md-3 col-md-offset-1">
+        <p class="int-xxs-t-2 int-sm-t-0"><strong>Stokemail:</strong> Sign up to be the first to know what's going on and receive special promotions.</p>
+        <!-- Begin Mailchimp Signup Form -->
+        <div id="mc_embed_signup">
+          <form action="https://cardiffsnow.us18.list-manage.com/subscribe/post?u=0b63b7923d43be4bf5dea2c58&amp;id=037e6954fb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <div class="input">
+              <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" />
+              <input type="submit" value="Send" name="subscribe" id="mc-embedded-subscribe" class="arrow-btn" />
+            </div>
+            <div id="mce-responses">
+              <div class="response" id="mce-error-response" style="display:none"></div>
+              <div class="response" id="mce-success-response" style="display:none"></div>
+            </div>
+            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+              <input type="text" name="b_0b63b7923d43be4bf5dea2c58_037e6954fb" tabindex="-1" value="">
+            </div>
+          </form>
+        </div>
+        <p class="small">We respect your privacy.</p>
+        <div class="row middle-xxs int-xxs-t-1 int-sm-t-2">
+          <div class="col-xxs-12 col-sm-6">
+            <div class="social">
+              <ul>
+                <li><a href="https://www.instagram.com/cardiffsnowcraft/" target="_blank">{% include 'icon-instagram' %}</a></li>
+                <li><a href="https://vimeo.com/user67427043" target="_blank">{% include 'icon-vimeo' %}</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xxs-12 col-sm-6">
+            <p class="copyright">&copy;{{ shop.name }} {{ 'now' | date: "%Y" }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+  {
+    "name": "Footer",
+    "max_blocks": 2,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Footer Titles",
+        "default": "Footer"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "menu",
+        "name": "Menu",
+        "settings": [
+          {
+            "type": "link_list",
+            "id": "menu",
+            "label": "Footer menu",
+            "default": "footer"
+          }
+        ]
+      }
+    ]
+
+  }
+{% endschema %}

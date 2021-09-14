@@ -1,0 +1,152 @@
+<div class="int-xxs-v-2 int-sm-v-8 bg-img bg-img-stretch" 
+  {% if section.settings.section_background != blank %}
+  style="background-image: url({{ section.settings.section_background | img_url: 'master' }});"
+  {% endif %}>
+    <div class="container">
+      <div class="row">
+        <div class="col-xxs-12">
+          <div class="show-xs">
+            <h3 class="ext-xxs-t-2 ext-xxs-b-2 spectrum-center"><span>Board</span> <span>Spectrum</span></h3>
+          </div>
+        </div>
+        <div class="col-xxs-12">
+          <div class="board-spectrum">
+            <h3 data-aos="fade-up"><span>Board</span> <span>Spectrum</span></h3>
+
+            {% if section.settings.board_image_overlay != blank %}
+            <img src="{{ section.settings.board_image_overlay | img_url: 'master' }}" class="spectrum-diagrams" />
+            {% endif %}
+
+            <div class="spectrum-hovers">
+              <svg viewBox="0 0 1412 731" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                <defs>
+                  <clipPath id="swell-split-clip">
+                    <path d="M-0.19141 730.581L0.982228 625.066L478.805 637.5L478.805 730.581L-0.19141 730.581Z"/>
+                  </clipPath>
+                  <clipPath id="swell-solid-clip">
+                    <path d="M22.5 482.443L59.5652 385.82L508.785 565.5L473.285 647.5L22.5 482.443Z"/>
+                  </clipPath>
+                  <clipPath id="powgoda-split-clip">
+                    <path d="M133 269.532L203.932 187L564 507L499 574L133 269.532Z"/>
+                  </clipPath>
+                  <clipPath id="powgoda-solid-clip">
+                    <path d="M310 102.66L399.792 50.9995L634 475L558 513.5L310 102.66Z"/>
+                  </clipPath>
+                  <clipPath id="crane-split-clip">
+                    <path d="M534 0.499999L636 0.5L713.5 464L623.5 479L534 0.499999Z"/>
+                  </clipPath>
+                  <clipPath id="crane-solid-clip">
+                    <path d="M782.997 0.000310349L891.499 0.000268274L792.499 484.001L700.999 466.501L782.997 0.000310349Z"/>
+                  </clipPath>
+                  <clipPath id="goat-split-clip">
+                    <path d="M1016.05 52L1106.14 103.886L857 519L781 478L1016.05 52Z"/>
+                  </clipPath>
+                  <clipPath id="goat-solid-clip">
+                    <path d="M1212.55 193L1279.88 272.216L911 572L850 515L1212.55 193Z"/>
+                  </clipPath>
+                  <clipPath id="bonsai-split-clip">
+                    <path d="M1353.57 389L1390.54 486.624L936.5 650L909.5 564L1353.57 389Z"/>
+                  </clipPath>
+                  <clipPath id="bonsai-solid-clip">
+                    <path d="M1411.5 634.042L1411.5 733.901L936 733.901L938 644.5L1411.5 634.042Z"/>
+                  </clipPath>
+                </defs>
+
+                <image height="100%" width="100%" 
+                  {% if section.settings.board_image != blank %}
+                  xlink:href="{{ section.settings.board_image | img_url: 'master' }}"
+                  {% endif %} 
+                  clip-path="url(#swell-split-clip)" class="clip-hover" data-url="/products/the-swell" />
+
+                <image height="100%" width="100%" 
+                  {% if section.settings.board_image != blank %}
+                  xlink:href="{{ section.settings.board_image | img_url: 'master' }}"
+                  {% endif %} 
+                  clip-path="url(#swell-solid-clip)" class="clip-hover" data-url="/products/the-swell" />
+
+                <image height="100%" width="100%" 
+                  {% if section.settings.board_image != blank %}
+                  xlink:href="{{ section.settings.board_image | img_url: 'master' }}"
+                  {% endif %} 
+                  clip-path="url(#powgoda-split-clip)" class="clip-hover" data-url="/products/the-powgoda" />
+
+                <image height="100%" width="100%" 
+                  {% if section.settings.board_image != blank %}
+                  xlink:href="{{ section.settings.board_image | img_url: 'master' }}"
+                  {% endif %} 
+                  clip-path="url(#powgoda-solid-clip)" class="clip-hover" data-url="/products/the-powgoda" />
+
+                <image height="100%" width="100%" 
+                  {% if section.settings.board_image != blank %}
+                  xlink:href="{{ section.settings.board_image | img_url: 'master' }}"
+                  {% endif %} 
+                  clip-path="url(#crane-split-clip)" class="clip-hover" data-url="/products/the-crane" />
+
+                <image height="100%" width="100%" 
+                  {% if section.settings.board_image != blank %}
+                  xlink:href="{{ section.settings.board_image | img_url: 'master' }}"
+                  {% endif %} 
+                  clip-path="url(#crane-solid-clip)" class="clip-hover" data-url="/products/the-crane" />
+
+                <image height="100%" width="100%" 
+                  {% if section.settings.board_image != blank %}
+                  xlink:href="{{ section.settings.board_image | img_url: 'master' }}"
+                  {% endif %} 
+                  clip-path="url(#goat-split-clip)" class="clip-hover" data-url="/products/the-goat" />
+
+                <image height="100%" width="100%" 
+                  {% if section.settings.board_image != blank %}
+                  xlink:href="{{ section.settings.board_image | img_url: 'master' }}"
+                  {% endif %} 
+                  clip-path="url(#goat-solid-clip)" class="clip-hover" data-url="/products/the-goat" />
+
+                <image height="100%" width="100%" 
+                  {% if section.settings.board_image != blank %}
+                  xlink:href="{{ section.settings.board_image | img_url: 'master' }}"
+                  {% endif %} 
+                  clip-path="url(#bonsai-split-clip)" class="clip-hover" data-url="/products/the-bonsai" />
+
+                <image height="100%" width="100%" 
+                  {% if section.settings.board_image != blank %}
+                  xlink:href="{{ section.settings.board_image | img_url: 'master' }}"
+                  {% endif %} 
+                  clip-path="url(#bonsai-solid-clip)" class="clip-hover" data-url="/products/the-bonsai" />
+              </svg>
+            </div>
+            {% if section.settings.icons_image != blank %}
+            <img class="spectrum-titles" src="{{ section.settings.icons_image | img_url: 'master' }});" />
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+{% schema %}
+{
+  "name": "Board Spectrum",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "section_background",
+      "label": "Section background image"
+    },
+    {
+      "type": "image_picker",
+      "id": "board_image",
+      "label": "Board image"
+    },
+    {
+      "type": "image_picker",
+      "id": "board_image_overlay",
+      "label": "Board overlay image"
+    },
+    {
+      "type": "image_picker",
+      "id": "icons_image",
+      "label": "Icons image"
+    }
+	]
+}
+{% endschema %}

@@ -1,0 +1,192 @@
+<div class="products swiper-container">
+    <div class="product swiper-wrapper">
+      {% for block in section.blocks %}
+        <div class="swiper-slide">
+          <div class="container">
+            <div class="row middle-xxs">
+              <div class="col-xxs-12 col-md-3 col-md-offset-2">
+                <div class="product-img">
+                  {% if block.settings.water_marks_img != blank %}
+                  <div class="watermark">
+                    <img src="{{ block.settings.water_marks_img | img_url: 'master' }}" />
+                  </div>
+                  {% endif %}
+                  {% if block.settings.product_img != blank %}
+                  <div class="main">
+                    <img src="{{ block.settings.product_img | img_url: 'master' }}}"/>
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="col-xxs-12 col-md-7">
+                <div class="details">
+                  {% if block.settings.tag != blank %}
+                  <div class="product-description">{{ block.settings.tag }}</div>
+                  {% endif %}
+                  {% if block.settings.title != blank %}
+                    
+                  {% endif %}
+                  <div class="product-title" data-aos="fade-up">
+                    {% assign title = block.settings.title | truncatewords: 1, '' %}
+                    {% if title contains 'The' %}
+                      <span>The</span>                      
+                    {% endif %}
+                    {{ block.settings.title | remove: 'The ' }}
+                  </div>
+                  {% if block.settings.discription != blank %}
+                    <div class="editor" data-aos="fade-up"> 
+                      {{ block.settings.discription }}
+                    </div>
+                  {% endif %}  
+                  <div class="hp-addon">
+                    <div class="row">
+                      {% for i in (1..4) %}
+                        
+                     {%- capture heading -%}label{{i}}_heading{%- endcapture -%}
+                     {%- capture text -%}label{{i}}_text{%- endcapture -%}
+                     <div class="col-xxs-6 col-sm-6">
+                      <div class="addon-holder" data-aos="fade-up">
+                        {% if block.settings[heading] != blank %}
+                        <h4>{{ block.settings[heading] }}</h4>
+                        {% endif %}
+                        {% if block.settings[text] != blank %}
+                        <p>{{ block.settings[text] }}</p>
+                        {% endif %}
+                      </div>
+                    </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                  {% if block.settings.cta_btn != blank %}
+                  <a class="product-view" data-aos="fade-up" href="{{ block.settings.cta_link }}">{{ block.settings.cta_btn }} {% include 'arrow' %}</a>  
+                  {% endif %}
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+</div>
+
+<style>
+  .product-slider-wrap .product .product-title{
+    padding: 10rem 0 2rem;
+  }
+  @media only screen and (max-width: 767px){
+    .product-slider-wrap .product .product-title {
+      padding: 1.5rem 0 2rem;
+    }
+  }
+</style>
+
+<script>
+    var swiper = new Swiper('.swiper-container', {
+      autoHeight: true,
+      setWrapperSize:true,
+    });
+  
+</script>
+<script>
+  $('.icon-nav-wrap .swiper-slide').click(function(){
+    var clideindex = $(this).index();
+    swiper.slideTo(clideindex,1000,false);
+    //new Swiper('.product.swiper-wrapper').slideTo(clideindex,1000,false)
+  })
+</script>
+<script>
+  /*$('.icon-nav-wrap .swiper-slide').click(function(){
+    var clideindex = $(this).index();
+    //swiper.slideTo(clideindex,1000,false)
+    new Swiper('.product.swiper-wrapper').slideTo(clideindex,1000,false)
+  })
+</script>
+{% schema %}
+{
+  "name": "board collection",
+  "blocks": [
+    {
+      "name": "Products",
+      "type": "boards_product",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "product_img",
+          "label": "Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "water_marks_img",
+            "label": "Watermarks Image"
+        },
+        {
+            "type": "text",
+            "id": "tag",
+            "label": "Tag"
+        },
+        {
+            "type": "text",
+            "id":"title",
+            "label": "Title"
+        },
+        {
+            "type": "textarea",
+            "id": "discription",
+            "label": "Text"
+        },
+        {
+            "type": "text",
+            "id": "label1_heading",
+            "label": "Label 1 heading"
+        },
+        {
+            "type": "text",
+            "id": "label1_text",
+            "label": "Label 1 Text"
+        },
+        {
+            "type": "text",
+            "id": "label2_heading",
+            "label": "Label 2 heading"
+        },
+        {
+            "type": "text",
+            "id": "label2_text",
+            "label": "Label 2 Text"
+        },
+        {
+            "type": "text",
+            "id": "label3_heading",
+            "label": "Label 3 heading"
+        },
+        {
+            "type": "text",
+            "id": "label3_text",
+            "label": "Label 3 Text"
+        },
+        {
+            "type": "text",
+            "id": "label4_heading",
+            "label": "Label 4 heading"
+        },
+        {
+            "type": "text",
+            "id": "label4_text",
+            "label": "Label 4 txet"
+        },
+        {
+            "type": "text",
+            "id": "cta_btn",
+            "label": "CTA BUTTON Text"
+        },
+        {
+            "type": "url",
+            "id": "cta_link",
+            "label": "CTA LINK"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

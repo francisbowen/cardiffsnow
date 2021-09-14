@@ -1,0 +1,109 @@
+<div class="acclaim-section block-gold pdp-block-gold">
+    <div class="container">
+      <div class="row end-xxs start-md">
+        <div class="col-sm-12 col-md-3">
+          <div class="column int-sm-l-1 int-md-l-0">
+            <div class="col">
+              <div class="relative">
+                <h2 class="vert t-xxs-white int-xxs-t-4  int-md-r-2 int-md-t-0 int-lg-r-4">{{ section.settings.title }}</h3>
+              </div>
+            </div>
+            {%- comment -%}
+            <div class="col">
+              <div class="int-xxs-v-0 int-md-v-4">
+                <a class="link t-xxs-white" href="/pages/tech">Learn More {% include 'arrow' %}</a>
+              </div>
+            </div>
+            {%- endcomment -%}
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-9 contents">
+          <div class="row tech">
+            {% for block in section.blocks %} 
+            
+            {% for i in (1..4) %}
+                     {%- capture title -%}title{{i}}{%- endcapture -%}
+                     {%- capture text -%}text{{i}}{%- endcapture -%}
+                     {% if block.settings[title] != blank %}
+                     <div class="col-md-6">
+                      <div class="tech-item" data-aos="fade-up">
+                        <div class="spec">
+                          <h5>{{ block.settings[title] }}</h5>
+                          <p>{{ block.settings[text] }}</p>
+                        </div>
+                      </div>
+                    </div>
+                     {% endif %}
+             {% endfor %}
+            
+            {% endfor %}            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% schema %}
+  {
+      "name": "Acclaim Section",
+      "settings": [
+          {
+              "type": "text",
+              "id": "title",
+              "label": "Title"
+          }
+      ],
+      "blocks": [
+          {
+            "type": "block",
+            "name": "block",
+            "settings": [
+              {
+                "type": "text",
+                "id": "tag",
+                "label": "Tag"
+              },
+              {
+                "type": "text",
+                "id": "title1",
+                "label": "Title1"
+              },
+              {
+                "type": "textarea",
+                "id": "text1",
+                "label": "Text1"
+              },
+              {
+                "type": "text",
+                "id": "title2",
+                "label": "Title2"
+              },
+              {
+                "type": "textarea",
+                "id": "text2",
+                "label": "Text2"
+              },
+              {
+                "type": "text",
+                "id": "title3",
+                "label": "Title3"
+              },
+              {
+                "type": "textarea",
+                "id": "text3",
+                "label": "Text3"
+              },
+              {
+                "type": "text",
+                "id": "title4",
+                "label": "Title4"
+              },
+              {
+                "type": "textarea",
+                "id": "text4",
+                "label": "Text4"
+              }
+            ]
+          }
+      ]
+  }
+  {% endschema %}

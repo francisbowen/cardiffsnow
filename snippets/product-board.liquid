@@ -1,0 +1,63 @@
+<li data-aos="fade-up" data-aos-delay="{{ forloop.index0 | times: 2 }}00">
+  <div class="card">
+    <div class="product">
+      <div class="row">
+        <div class="col-xxs-12 col-lg-8">
+          <div class="product-inner">
+            <div class="product-details">
+              <div class="product-icon">
+                {% assign handle = product.handle | remove: 'the-' %}
+                {% assign icon = 'icon-' | append: handle %}
+                {% include icon %}
+              </div>
+              <h4 class="product-title"><a href="{{ product.url }}">{{ product.title }}</a></h4>
+              <div class="product-price">
+                {% assign priceDiff = product.price_max | minus: product.price_min %}
+                {% if priceDiff == 0 %}
+                  {{ product.price | money | remove: '.00' }}
+                {% else %}
+                  {{ product.price_min | money | remove: '.00' }} - {{ product.price_max | money | remove: '.00' }}
+                {% endif %}
+              </div>
+              <div class="style-size">
+                <div class="style-wrap">
+                  <div class="style">
+                    <h3 class="heading">Freeride</h3>
+                    <p>Style</p>
+                  </div>
+                  <div class="style">
+                    <h3 class="heading">Massive</h3>
+                    <p>Float</p>
+                  </div>
+                </div>
+                {% for option in product.options_with_values %}
+                <div class="size-wrap">
+                  <div class="size-numbers"> {% for  value in option.values %}<span>{{ value }}{% unless forloop.last %},{% endunless %}</span>{%endfor %} </div>
+                  <p>{{ option.name }}</p>
+                </div>   
+                {% endfor %}
+                
+              </div>
+              <p class="product-description-short">
+                {% if product.metafields.global.description_tag %}
+                  {{ product.metafields.global.description_tag }}
+                {% else %}
+                  {{ product.description }}
+                {% endif %}
+              </p>
+              {% comment %} <a href="{{ product.url }}" class="btn-outline large product-view">Learn More</a> {% endcomment %}
+            </div>
+          </div>
+        </div>
+        <div class="col-xxs-8 col-xxs-offset-2 col-lg-4 col-lg-offset-0 relative">
+          <div class="bg-grey-2 card-color"></div>
+          <div class="product-img">
+            <a href="{{ product.url }}">
+            <img src="{{ product.featured_image | img_url: 'x558' }}" alt="{{ product.title | escape }}"/>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</li>

@@ -1,0 +1,27 @@
+{% assign handle = product.handle | remove: 'the-' %}
+{% assign story = 'story-' | append: handle %}
+
+story = {{ story }},
+
+<div class="section">
+  <div class="container-fluid">
+    <div class="row relative">
+      <div class="col-md-10 col-md-offset-2 col-lg-5 col-lg-offset-2 col-xl-5 col-xl-offset-2">
+        <div class="int-xxs-v-2 int-xxs-h-2 int-lg-h-0 int-lg-v-10">
+          <h2 class="vert vert-left small">
+            <div class="int-sm-v-2">Story</div>
+          </h2>
+          <div class="row center-xxs start-sm">
+            <div class="col-sm-9" data-aos="fade-up" data-aos-delay="400">
+              {% include story %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5 col-xl-5">
+        <div class="expand-height break-pad" style="background-image: url({{ 'board-story.jpg' | asset_url }});">
+      </div>
+    </div>
+  </div>
+  </div>
+</div>

@@ -1,0 +1,81 @@
+{% if section.settings.toggle == true %}
+<section class="video hp-video">
+    <div class="container-fluid p-0">
+      <div class="video-wrapper">
+        <!-- {{ section.settings.video }} -->
+        <iframe id="video-banner" src="//www.youtube.com/embed/{{ section.settings.video_banner.id }}?&playsinline=1&mute=1&loop=1"
+        frameborder="0" allowfullscreen></iframe>
+  
+        <div class="video-placeholder-img" style="background-image: url('{{section.settings.image_poster | img_url: 'master'}}');">
+            <div class="video-content">
+              <div class="play-icon" id="play-video-banner">
+                <img src="https://cdn.shopify.com/s/files/1/0044/2145/1850/files/play_2.png?v=1623326896" alt="image" />
+              </div>
+              <h3>{{section.settings.title_poster}}</h3>
+            </div>
+        </div>
+  
+      </div>
+    </div>
+</section>
+{% endif %}
+
+  <style>
+      .hp-video{
+          margin-top: 0;
+      }
+      .hp-video .video-wrapper{
+          margin-right: 0;
+      }
+      .hp-video .video-content{
+          right: 50px;
+      }
+      @media only screen and (max-width: 767px){
+        .hp-video .video-content{
+            right: 15px;
+        }
+      }
+  </style>
+  
+  <script>
+    $(document).ready(function() {
+      $('#play-video-banner').on('click', function(ev) {
+    
+        $("#video-banner")[0].src += "&autoplay=1";
+        ev.preventDefault();
+        $('#video-banner').show();
+        $('.video-placeholder-img').hide();
+  
+      });
+    });
+  </script>
+  
+  {% schema %}
+    {
+      "name": "Video",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "toggle",
+          "label": "Show/Hide",
+          "default": true
+        },
+        {
+          "type": "video_url",
+          "id": "video_banner",
+          "label": "Video",
+          "accept": ["youtube"]
+        },
+        {
+          "type": "image_picker",
+          "id": "image_poster",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title_poster",
+          "label": "Title"
+        }
+      ]
+    }
+  {% endschema %}

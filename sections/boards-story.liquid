@@ -1,0 +1,76 @@
+{% assign showhide = false %}
+{% for block in section.blocks %}
+    {% if product.tags contains block.settings.tag %}
+        {% assign showhide = true %}
+        {% capture text %}
+        {{ block.settings.text }}
+        {% endcapture %}
+        {% capture image %}
+        {{ block.settings.image | img_url: '1200x' }}
+        {% endcapture %}
+    {% endif %}
+{% endfor %}
+{% if showhide == true %}
+<div class="section">
+    <div class="container-fluid">
+      <div class="row relative">
+        <div class="col-md-10 col-md-offset-2 col-lg-5 col-lg-offset-2 col-xl-5 col-xl-offset-2">
+          <div class="int-xxs-v-2 int-xxs-h-2 int-lg-h-0 int-lg-v-10">
+            <h2 class="vert vert-left small">
+                {% if section.settings.title != blank %}
+              <div class="int-sm-v-2">{{ section.settings.title }}</div>
+              {% endif %}
+            </h2>
+            <div class="row center-xxs start-sm">
+              <div class="col-sm-9" data-aos="fade-up" data-aos-delay="400">
+                {{ text }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 col-xl-5">
+            {% if image != blank %}
+                <div class="expand-height break-pad" style="background-image: url({{ image }});">
+            {% endif %}
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  {% endif %}
+
+  {% schema %}
+  {
+      "name": "Story a",
+      "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        }        
+      ],
+      "blocks": [
+        {
+            "type": "sotry",
+            "name": "Story",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "tag",
+                    "label": "Tag"
+                },
+                {
+                    "type": "richtext",
+                    "id": "text",
+                    "label": "text"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                }
+            ]   
+        }
+      ]
+  }
+  {% endschema %}

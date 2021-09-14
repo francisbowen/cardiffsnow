@@ -1,0 +1,56 @@
+<div class="int-xxs-v-4 int-md-v-5 block-image"> 
+    <div class="container">
+      <div class="row middle-xxs">
+        <div class="col-xxs-12 col-sm-6">
+          <div class="ext-xxs-neg-l-4 ext-xxs-neg-r-10 ext-sm-neg-l-2 ext-sm-neg-r-5">
+            {% if section.settings.image != blank %}
+            <img src="{{ section.settings.image | img_url: '830x' }}" alt="{{ section.settings.title }}">
+            {% endif %}
+          </div>
+        </div>
+        <div class="col-xxs-12 col-sm-5 col-sm-offset-1 first-xxs initial-order-sm">
+          <div class="int-xxs-b-2 int-sm-b-0">
+            {% if section.settings.title != blank %}
+            <h3 data-aos="fade-up">{{ section.settings.title }}</h3>
+            {% endif %}
+            <a href="{{ section.settings.cta_link }}" class="link" data-aos="fade-up" data-aos-delay="100">{{ section.settings.cta_text }} {% include 'arrow' %}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% schema %}
+  {
+    "name": "Different By Design",
+    "settings": [
+		  {
+        "type": "text",
+        "id": "title",
+        "label": "Title?"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "image"
+      },
+      {
+        "type": "text",
+        "id": "cta_text",
+        "label": "CTA Text",
+        "default": "Shop Collection"
+      },
+      {
+        "type": "url",
+        "id": "cta_link",
+        "label": "CTA link"
+      }
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

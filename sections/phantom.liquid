@@ -1,0 +1,62 @@
+<div class="phantom-wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+            {% if section.settings.phantom_img != blank %}
+                <div class="phantom-img" style="background-image: url({{ section.settings.phantom_img | img_url: 'master' }});"></div>
+            {% endif %}
+        </div>
+        <div class="col-md-6">
+          <div class="waxless-section" data-aos="fade-up">
+              {% if section.settings.phantom_title != blank %}
+                <div class="phantom-title">{{ section.settings.phantom_title }}</div>
+              {% endif %}
+              {% if section.settings.phantom_text != blank %}
+              <div class="phantom-text">
+                  {{ section.settings.phantom_text }}
+              </div>
+              {% endif %}
+              {% if section.settings.phantom_cta != blank %}
+                <div class="phentom-cta">
+                    <a href="{{ section.settings.phantom_cta_link }}" class="btn-outline">{{ section.settings.phantom_cta }}</a>
+                </div>
+              {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  {% schema %}
+  {
+      "name": "phantom-section",
+      "settings": [
+          {
+              "type": "image_picker",
+              "id": "phantom_img",
+              "label": "Image"
+          },
+          {
+              "type": "text",
+              "id": "phantom_title",
+              "label": "Title"
+          },
+          {
+              "type": "textarea",
+              "id": "phantom_text",
+              "label": "Text"
+          },
+          {
+              "type": "text",
+              "id": "phantom_cta",
+              "label": "CTA Text"
+          },
+          {
+              "type": "url",
+              "id": "phantom_cta_link",
+              "label": "CTA Link"
+          }
+      ]
+  }
+  {% endschema %}

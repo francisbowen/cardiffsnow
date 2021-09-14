@@ -1,0 +1,781 @@
+{% if product.type == 'board' %}
+  {% assign handle = product.handle | remove: 'the-' %}
+  {% assign icon = 'icon-' | append: handle %}
+  {% assign photoWatermark = handle | append: '-photos-watermark.png' %}
+  {% assign specs = 'specs-' | append: handle %}
+{% endif %}
+{% for tag in product.tags %}
+	{% if tag contains 'preorder' %}
+      {%- assign preorder = true -%}
+    {%- assign preorder_date = tag | remove: 'preorder--' -%}
+  {% endif %}
+{% endfor %}
+<div id="wrap">
+  <section data-section-id="{{ section.id }}" data-section-type="product" class="product product-full">
+    <div class="container-fluid">
+      <div class="row between-sm">
+        <div class="col-xxs-12 col-md-6 col-lg-7 bg-grey relative overflow-hide">
+          {% if product.type == 'board' %}
+            <div class="image-watermark">
+              <img src="{{ photoWatermark | asset_url }}" alt="{{ product.title }} Watermark" />
+            </div>
+          {% endif %}
+          <div class="product-images-slider gallery-top">
+            <div class="product-images pdp-gallery">
+              {% for image in product.images %}
+                {%- capture responsive_image_counter %}{% increment responsive_image_counter %}{% endcapture -%}
+                {%- assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                <div id="ImageWrapper-{{ image.id }}-{{ responsive_image_counter }}" data-image-id="{{ image.id }}" class="responsive-image__wrapper product-image swiper-slide">
+                  <img id="Image-{{ image.id }}-{{ responsive_image_counter }}"
+                    src="{{ image | img_url: 'x701' }}"
+                    data-src="{{ img_url }}"
+                    alt="{{ image.alt | escape }}"
+                  >
+                  {% for variant in image.variants %}
+                    {% assign option1 = variant.option1 %}
+                    {% assign option2 = variant.option2 %}
+                    {% assign option3 = variant.option3 %}
+                  {% endfor %}
+
+                  {% if image.attached_to_variant? %}
+                    <div class="product-image-title">
+                      {{ option1 }}
+                      {% if option2 %} / {{ option2 }}{% endif %}
+                      {% if option3 %} /
+                      {% for variant in image.variants %}
+                      {{ variant.option3 }}{% unless forloop.last %}, {% endunless %}
+                      {% endfor %}
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+          {% if product.images.size > 1 %}
+              <div class="gallery-slider">
+                <div class="product-thumbs pdp-gallery-nav">
+                  {% for image in product.images %}
+                    <div class="swiper-slide product-thumb" data-thumbnail-id="{{ image.id }}">
+                      <img class="product-single__thumbnail-image" src="{{ image.src | img_url: '160x160', crop: 'center' }}" alt="{{ image.alt | escape }}">
+                      {% assign option1 = '' %}
+                      {% assign option2 = '' %}
+                      {% assign option3 = '' %}
+                      {% for variant in image.variants %}
+                        {% assign option1 = variant.option1 %}
+                        {% assign option2 = variant.option2 %}
+                        {% assign option3 = variant.option3 %}
+                      {% endfor %}
+
+                      {% if image.attached_to_variant? %}
+                        <div class="product-image-title">
+                          <div class="align-vertical">
+                            {{ option1 }}
+                            {% if option2 %} {{ option2 }}{% endif %}
+                            {% if option3 %}
+                            {% for variant in image.variants %}
+                            {{ variant.option3 }}{% unless forloop.last %}, {% endunless %}
+                            {% endfor %}
+                            {% endif %}
+                          </div>
+                        </div>
+                      {% endif %}
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+          {% endif %}
+
+              <script>
+                $('.pdp-gallery').slick({
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                  arrows: true,
+                  dots: false,
+                  asNavFor: '.pdp-gallery-nav',
+                });
+                $('.pdp-gallery-nav').slick({
+                  slidesToShow: 6,
+                  slidesToScroll: 1,
+                  arrows: true,
+                  dots: false,
+                  asNavFor: '.pdp-gallery',
+                  vertical: true,
+                  verticalSwiping: true,
+                  focusOnSelect: true
+                });
+              </script>
+
+
+          <!-- <div class="swiper-scrollbar"></div> -->
+        </div>
+        <div class="col-xxs-12 col-md-6 col-lg-5 relative">
+          <div class="product-details">
+            <div class="row middle-xxs" data-aos="fade-up">
+              <div class="col-xxs-{% if product.type == 'board' %}8{% else %}12{% endif %}">
+                <h1 class="product-title">{{ product.title }}</h1>
+
+                <div class="product-price">
+                  {% assign priceDiff = product.price_max | minus: product.price_min %}
+                  {% if priceDiff == 0 %}
+                    {{ product.price | money | remove: '.00' }}
+                  {% else %}
+                    {{ product.price_min | money | remove: '.00' }} - {{ product.price_max | money | remove: '.00' }}
+                  {% endif %}
+                  
+                </div>
+              </div>
+              {% if product.type == 'board' %}
+                <div class="col-xxs-4 first-xxs initial-order-sm">
+                  <div class="product-icon">
+                    {% include icon %}
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+
+            <div class="rte product-description" data-aos="fade-up">
+              <p>{{ product.description }}</p>
+            </div>
+
+            {% form 'product', product, data-product-form: '', data-product-handle: product.handle, data-enable-history-state: 'true' %}
+
+              <div class="product-variants optsel" data-aos="fade-up">
+                {% unless product.has_only_default_variant %}
+                  {% assign notboard = false %}
+                  {% for option in product.options_with_values %}
+                    
+                    {% if forloop.length == 1 %}
+                      {% assign notboard = true %}
+                    {% endif %}
+                    <div class="product-variant js" loop-option="{{ notboard }}">
+                      <label class="product-variant-title" for="Option{{ option.position }}">
+                        {{ option.name }}
+                        {% if product.type == 'board' %}
+                          {% if option.name == 'Material' %}<a class="option-more modal-btn-material">Learn More</a>{% endif %}
+                          {% if option.name == 'Size' %}<a class="option-more modal-btn-spec">Spec Chart</a>{% endif %}
+                          {% if option.name contains 'Phantom' %}<a class="option-more">Why Phantom Wax?</a>{% endif %}
+                        {% endif %}
+                      </label>
+                      <div class="product-options options-{{ option.name | handleize }}">
+                        {% for value in option.values %}
+                          
+                          <div class="product-option">
+                            <input type="radio" id="Option{{ option.position }}-{{ value }}" name="options[{{ option.name }}]" value="{{ value }}" data-product-option data-product-option-position="{{ option.position}}" {% if notboard %}checked{% endif %}>
+                            <label for="Option{{ option.position }}-{{ value }}">{{ value }}</label>
+                          </div>
+                        {% endfor %}
+                      </div>
+                    </div>
+                  {% endfor %}
+                {% endunless %}
+              </div>
+              <div class="product-variants phantom-container" data-aos="fade-up">
+              {% for tag in product.tags %}
+              {% if tag contains 'ap--' %}
+                {%- assign ap_handle = tag | remove_first: 'ap--' -%}
+                {%- assign ap_product = all_products[ap_handle] -%}
+                <div class="addon-product-variant">
+                  <label class="product-variant-title" for="Option-phantomwax">
+                    <div> Add {{ ap_product.title  }}(+ {{ ap_product.price | money }})</div>
+                    <a href="#shopify-section-phantom" class="option-more">Why Phantom Wax?</a>
+                  </label>
+                  <div class="product-options options-{{ option.name | handleize }}">
+                    
+                      <div class="product-option">
+                        <input type="radio" id="pahntomwas-yes" data-price="{{ ap_product.price }}" name="addonpro" value="{{ ap_product.first_available_variant.id  }}" >
+                        <label for="pahntomwas-yes">Yes</label>
+                      </div>
+                      <div class="product-option">
+                        <input type="radio" id="pahntomwas-no" name="addonpro" value="" checked>
+                        <label for="pahntomwas-no">No</label>
+                      </div>
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+            </div>
+            
+                <select name="id" class="hide">
+                  {% for variant in product.variants %}
+                    <option
+                      {% if variant == current_variant %}selected="selected"{% endif %}
+                      {% unless variant.available %}disabled="disabled"{% endunless %}
+                      value="{{ variant.id }}">
+                        {{ variant.title }}
+                    </option>
+                  {% endfor %}
+                </select>
+            
+
+              {% unless product.type == 'board' %}
+                <div class="product-variants">
+                  <label for="Quantity" class="product-variant-title">{{ 'products.product.quantity' | t }}</label>
+                  <div class="product-quantity">
+                    <div class="btn-minus">
+                      {% include 'icon-minus' %}
+                    </div>
+                    <input type="number" id="Quantity" name="quantity" value="1" min="1">
+                    <div class="btn-plus">
+                      {% include 'icon-plus' %}
+                    </div>
+                  </div>
+                </div>
+              {% endunless %}
+
+              {% if settings.shipping_text != blank %}
+              <div class="pdp-shipping">
+                <b>Shipping Info</b>
+                    {{ settings.shipping_text }}
+                  </div>
+                  <style>
+                    .pdp-shipping b {
+                      font-size: 16px;
+                      font-weight: 700;
+                      color:#232121;
+                      margin-bottom: 5px;
+                      display: block;
+                    }
+                  </style>
+                    {% endif %}
+            
+              <p class="affirm-as-low-as" data-aos="fade-up" data-page-type="product" data-amount="{{product.price_min}}"></p>
+              <div class="row product-add middle-xxs">
+                <div data-price-wrapper class="product-price">
+                  <span data-product-price data-original-price="{{ current_variant.price }}">
+                    {{ current_variant.price | money | remove: '.00' }}
+                  </span>
+                  {% if product.compare_at_price_max > product.price %}
+                    <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
+                    {% comment %} <s data-compare-price> {% endcomment %}
+                      {% if current_variant.compare_at_price > current_variant.price %}
+                        {{ current_variant.compare_at_price | money }}
+                      {% endif %}
+                    </s>
+                  {% endif %}
+                </div>
+
+
+
+                <div class="product-btn product-add-btn">
+                  <button
+                    type="submit"
+                    name="add"
+                    data-submit-button
+                    {% unless current_variant.available or preorder %}disabled="disabled"{% endunless %}>
+                      <span data-submit-button-text>
+                        {% if preorder %}
+                        Preorder
+                          {% else %}  
+                          {% if current_variant.available %}
+                            {{ 'products.product.add_to_cart' | t }}
+                          {% else %}
+                            {{ 'products.product.sold_out' | t }}
+                          {% endif %}
+                        {% endif %}
+                      </span>
+                      {% include 'arrow' %}
+                  </button>
+                  <div class="added-overlay">
+                    Added to Cart
+                  </div>
+                    <div class="select-overlay">
+                      Select Options
+                    </div>
+                </div>
+              </div>
+            {% endform %}
+            {% if preorder %}
+              <p class="preorder-text"> 
+                shipping by <strong>{{ preorder_date }}</strong>
+              </p>
+            {% endif %}	
+          </div>
+          {%- comment -%}
+          <div class="row center-sm">
+            <div class="col-sm-9 col-md-9 col-md-offset-1 col-lg-8 col-lg-offset-2">
+              
+            </div>
+          </div>
+          {%- endcomment -%}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    {% if section.settings.slide_left_arrow_img != blank %}
+    #shopify-section-{{ section.id }} .pdp-logos-slider::before,
+    #shopify-section-{{ section.id }} .pdp-logos-slider .slick-arrow.slick-prev {
+      background-image: url("{{ section.settings.slide_left_arrow_img  | img_url: 'master' }}");
+    }
+    {% endif %}
+    {% if section.settings.slide_right_arrow_img != blank %}
+    #shopify-section-{{ section.id }} .pdp-logos-slider::after,
+    #shopify-section-{{ section.id }} .pdp-logos-slider .slick-arrow.slick-next {
+      background-image: url("{{ section.settings.slide_right_arrow_img  | img_url: 'master' }}");
+    }
+    {% endif %}
+  </style>
+
+  <div class="clearfix">
+    <div class="container">
+      <div class="pdp-logos-slider" data-aos="fade-up"> 
+
+        {% for block in section.blocks %}
+          {% if block.type == 'awards_slide' %}
+            {% if product.handle == block.settings.product and block.settings.slide_image != blank %}
+            <div class="pdp-logo-slide">
+              <img src="{{ block.settings.slide_image | img_url: 'master' }}" alt="">
+            </div>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+
+  
+  {% if product.type == 'board' %}
+
+    <div class="materials-chart modal-hidden">
+      <div class="modal-header">
+        <h4>Materials</h4>
+      </div>
+      <div class="modal-content">
+        {% include 'materials-chart' %}
+      </div>
+    </div>
+  {% endif %}
+
+</div>
+
+  <style>
+    .pdp-logos-slider {
+      position: relative;
+    }
+    .pdp-logos-slider:before {
+      content: '';
+      background-color: transparent;
+      cursor: pointer;
+      background-image: url(//cdn.shopify.com/s/files/1/0044/2145/1850/t/5/assets/slider-btn.jpg?v=7078968909754796846);
+      background-repeat: no-repeat;
+      background-position: center;
+      transform: none;
+      top: 0;
+      position: absolute;
+      left: -30px;
+      width: 85px;
+      border: 0;
+      font-size: 0;
+      height: 100%;
+      z-index: -1;
+    }
+    .pdp-logos-slider:after {
+      content: '';
+      background-color: transparent;
+      cursor: pointer;
+      right: -30px;
+      background-image: url("//cdn.shopify.com/s/files/1/0044/2145/1850/files/slider-right.jpg?v=1629146623");
+      background-repeat: no-repeat;
+      background-position: center;
+      transform: none;
+      top: 0;
+      position: absolute;
+      width: 85px;
+      border: 0;
+      font-size: 0;
+      height: 100%;
+      z-index: -1;
+    }
+    @media only screen and (max-width: 991px) {
+      .pdp-logos-slider:before{
+        left: -15px;
+      }
+      .pdp-logos-slider:after{
+        right: -15px;
+      }
+    }
+  </style>
+
+  <script>
+  
+    $('.pdp-logos-slider').slick({
+      dots: false,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
+    });
+    </script>
+
+
+<div class="sticky-bar-pdp">
+  <div class="container-fluid">
+    {% form 'product', product, data-product-form: '', data-product-handle: product.handle, data-enable-history-state: 'true' %}
+    <div class="row">
+      <div class="col-md-2">
+        <div class="stick-bar-title">
+          <h1 class="product-title">{{ product.title }}</h1>
+          <div class="product-price">
+            {% assign priceDiff = product.price_max | minus: product.price_min %}
+            {% if priceDiff == 0 %}
+              {{ product.price | money | remove: '.00' }}
+            {% else %}
+              {{ product.price_min | money | remove: '.00' }} - {{ product.price_max | money | remove: '.00' }}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="product-variants" style="display: flex;">
+          {% for option in product.options_with_values %}
+          <div class="product-variant js" loop-option="false">
+            <label class="product-variant-title" for="Option{{ forloop.index }}">
+              {{ option.name}}
+            </label>
+            <div class="product-options options-{{ option.name | handleize }}">
+                <select class="sticky-option-selector"  data-option="option{{ forloop.index}}"  {% if forloop.index > 1 %}disabled="disabled"{% endif %}>
+                  <option value="" selected disabled>Select</option>
+                  {% for value in option.values %}
+                  <option value="{{ value }}">{{ value }}</option>
+                  {% endfor %}
+                </select>
+            </div>
+          </div>
+          {% endfor %}
+          {% for tag in product.tags %}
+              {% if tag contains 'ap--' %}
+                {%- assign ap_handle = tag | remove_first: 'ap--' -%}
+                {%- assign ap_product = all_products[ap_handle] -%}
+                <div class="product-variant js">
+                  <label class="product-variant-title" for="addon-{{ ap_product.title | handleize }}">
+                    {{ ap_product.title  }}
+                    <!-- (+ {{ ap_product.price | money }}) -->
+                  </label>
+                  <div class="product-options options-{{ option.name | handleize }}">
+                      <select class="sticky-addon-selector" name="id[]"  id="addon-{{ ap_product.title | handleize }}"}>
+                        <option data-price="0" value="" selected>No</option>
+                        <option data-price="{{ ap_product.first_available_variant.price }}" value="{{ ap_product.first_available_variant.id }}">Yes</option>
+                      </select>
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+        </div>
+      </div>
+      <div class="col-md-4 position-relative">
+        <div class="row product-add middle-xxs">
+          <div data-price-wrapper class="product-price">
+            <span data-product-price data-original-price="{{ current_variant.price }}">
+              {{ current_variant.price | money | remove: '.00' }}
+            </span>
+
+            {% if product.compare_at_price_max > product.price %}
+              <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
+              {% comment %} <s data-compare-price> {% endcomment %}
+                {% if current_variant.compare_at_price > current_variant.price %}
+                  {{ current_variant.compare_at_price | money }}
+                {% endif %}
+              </s>
+            {% endif %}
+          </div>
+          <select class="sticky-variant-selector hide" name="id[]">
+            {% for variant in product.variants %}
+              <option
+                {% if variant == current_variant %}selected="selected"{% endif %}
+                {% unless variant.available %}disabled="disabled"{% endunless %}
+                value="{{ variant.id }}">
+                  {{ variant.title }}
+              </option>
+            {% endfor %}
+          </select>
+          <div class="product-btn product-add-btn">
+            <button
+              type="submit"
+              name="add"
+              data-submit-button
+              {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+                <span data-submit-button-text>
+                  {% if preorder %}
+                        Preorder
+                          {% else %}
+                  {% if current_variant.available %}
+                    {{ 'products.product.add_to_cart' | t }}
+                  {% else %}
+                    {{ 'products.product.sold_out' | t }}
+                  {% endif %}
+                  {% endif %}
+                </span>
+                {% include 'arrow' %}
+            </button>
+            <div class="added-overlay">
+              Added to Cart
+            </div>
+              <div class="select-overlay">
+                Select Options
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endform %}
+  </div>
+</div>
+
+<script>
+  $(window).scroll(function(){
+    var sticky = $('.sticky-bar-pdp'),
+        scroll = $(window).scrollTop();
+
+    if (scroll >= 1100) sticky.addClass('fixed');
+    else sticky.removeClass('fixed');
+  });
+  $(document).ready(function(){
+    $('.sticky-option-selector').on('change',function(){
+      console.log('sticky-option-selector ');
+      var productJson = JSON.parse($('#product-json-{{ product.id }}').html());
+      var productVarants = productJson.variants;
+      var stickybar_price = $(this).closest('.sticky-bar-pdp').find('.product-price span[data-product-price]');
+      var stickyVariantSelector = $(this).closest('.sticky-bar-pdp').find('.sticky-variant-selector');
+      if(productJson.options.length==2) {
+        if($(this).data('option')=="option1") {
+          $('.sticky-option-selector[data-option="option2"]').removeAttr('disabled');
+          if($('.sticky-option-selector[data-option="option2"]').val() != '') {
+            var filter_variatns = productVarants.filter(function(v){
+              return (v.option1==$('.sticky-option-selector[data-option="option1"]').val() && v.available)
+            })
+            $('.sticky-option-selector[data-option="option2"]').html('<option value="" selected  disabled>Select</option>');
+            $.each(filter_variatns,function(i,v){
+              $('.sticky-option-selector[data-option="option2"]').append('<option value="'+v.option2+'">'+v.option2+'</option>');
+            })
+          }
+          $(this).closest('.sticky-bar-pdp').find('.select-overlay').removeClass('inactive');
+        } else {
+          var single_var_info = productVarants.filter(function(v){
+            return (v.option1==$('.sticky-option-selector[data-option="option1"]').val() && v.option2==$('.sticky-option-selector[data-option="option2"]').val() && v.option3==$('.sticky-option-selector[data-option="option3"]').val() && v.available)
+          })
+          stickybar_price.text(Shopify.formatMoney(single_var_info[0].price));
+          stickyVariantSelector.val(single_var_info[0].id).trigger('change')
+          $(this).closest('.sticky-bar-pdp').find('.select-overlay').addClass('inactive');
+        }
+      }  else if(productJson.options.length==3) {
+
+        if($(this).data('option')=="option1") {
+          $('.sticky-option-selector[data-option="option2"]').removeAttr('disabled');
+          if($('.sticky-option-selector[data-option="option2"]').val() != '') {
+            var filter_variatns = productVarants.filter(function(v){
+              return (v.option1==$('.sticky-option-selector[data-option="option1"]').val() && v.option2==$('.sticky-option-selector[data-option="option2"]').val() && v.available)
+            })
+            $('.sticky-option-selector[data-option="option3"]').html('<option value="" selected  disabled>Select</option>');
+            $.each(filter_variatns,function(i,v){
+              $('.sticky-option-selector[data-option="option3"]').append('<option value="'+v.option3+'">'+v.option3+'</option>');
+            })
+
+            setAddonSelector (filter_variatns);   
+          }
+        } else if($(this).data('option')=="option2" && + $(this).val() != '') {
+          $('.sticky-option-selector[data-option="option3"]').removeAttr('disabled');
+          var filter_variatns = productVarants.filter(function(v){
+              return (v.option1==$('.sticky-option-selector[data-option="option1"]').val() && v.option2==$('.sticky-option-selector[data-option="option2"]').val() && v.available)
+          })
+          $('.sticky-option-selector[data-option="option3"]').html('<option value="" selected  disabled>Select</option>');
+          $.each(filter_variatns,function(i,v){
+            $('.sticky-option-selector[data-option="option3"]').append('<option value="'+v.option3+'">'+v.option3+'</option>');
+          })
+          $(this).closest('.sticky-bar-pdp').find('.select-overlay').removeClass('inactive');
+
+          setAddonSelector (filter_variatns); 
+
+        } else {
+          var single_var_info = productVarants.filter(function(v){
+            return (v.option1==$('.sticky-option-selector[data-option="option1"]').val() && v.option2==$('.sticky-option-selector[data-option="option2"]').val() && v.option3==$('.sticky-option-selector[data-option="option3"]').val() && v.available)
+          })
+
+          $('.sticky-bar-pdp .product-price span').attr('data-original-price', single_var_info[0].price);
+
+          var addPrice = setPahntomwasPrice_Sticky();
+          var totalPrice = single_var_info[0].price + addPrice;
+
+          stickybar_price.text(Shopify.formatMoney(totalPrice));
+          stickyVariantSelector.val(single_var_info[0].id).trigger('change')
+          $(this).closest('.sticky-bar-pdp').find('.select-overlay').addClass('inactive');
+        }
+      } else if (productJson.options.length==1) {
+        console.log('was single')
+        $(this).closest('.sticky-bar-pdp').find('.select-overlay').removeClass('inactive');
+      }
+    })
+
+    function setPahntomwasPrice_Sticky() {
+      if (!$('.sticky-addon-selector').is(':disabled')) {
+        var price = 0;
+        $( ".sticky-addon-selector option:selected" ).each(function() {
+          console.log('this = ',$(this));
+          price = parseInt($(this).attr('data-price'));
+        });
+        console.log('price = ', price);
+        return price;
+      } else {
+        return 0;
+      }
+    }
+
+    $('.sticky-addon-selector').on('change',function(){
+      var price = 0;
+      $( ".sticky-addon-selector option:selected" ).each(function() {
+        price = parseInt($(this).attr('data-price'));
+      });
+      console.log('value = ', price);
+
+      var original_price = parseInt($('.sticky-bar-pdp .product-price span').attr('data-original-price'));
+      console.log('original_price = ', original_price);
+
+      var total_price = original_price + price;
+
+      $('.sticky-bar-pdp .product-price span').text(Shopify.formatMoney(total_price));
+
+    });
+
+    function setAddonSelector(filter_variatns) {
+
+      if (filter_variatns.length > 0) {
+              
+        console.log('filter_variatns 1 = ', filter_variatns);
+
+        var addonDisabledFlag = false;
+        for (var i = 0; i<filter_variatns.length; i++ ) {
+          if (filter_variatns[i].options.includes("Split") && filter_variatns[i].options.includes("Pro Carbon")) {
+            addonDisabledFlag = true;
+            console.log('need to disable');
+          }
+        }
+
+        $('.sticky-addon-selector').prop('disabled', addonDisabledFlag);
+      }
+    }
+
+    $('.sticky-bar-pdp form').on('submit', function(e){
+      e.preventDefault();
+      var btn_overlay = $(this).find('.added-overlay')
+      var data = $(this).serialize();
+      $.ajax({
+        url:'/cart/add.js',
+        method:'POST',
+        data:data,
+        dataType:'json',
+        success:function(cartData){
+          btn_overlay.addClass('adding')
+          $.ajax({
+            url:'/cart.js',
+            method:'GET',
+            dataType:'json',
+            success: function(ss){
+              $('#cart-total').text(ss.item_count);
+            }
+          })
+          
+          console.log(cartData)
+          setTimeout(function(){
+            btn_overlay.removeClass('adding')
+          },3000)
+        },
+        error: function(err){
+          console.log(err)
+        }
+      })
+    })
+    $('.product-add-btn button[data-submit-button]').not('[disabled]').on('click',function(){
+      console.log('buton clicked');
+      return;
+      if($('input[name="addonpro"]:checked').val() != '') {
+        var adonval = $('input[name="addonpro"]:checked').val();
+        console.log('adonval = ', adonval);
+        $.ajax({
+        url:'/cart/add.js',
+        method:'POST',
+        data:{'id':adonval,'quantity':1},
+        dataType:'json',
+        success:function(cartData){
+          $.ajax({
+            url:'/cart.js',
+            method:'GET',
+            dataType:'json',
+            success: function(ss){
+              $('#cart-total').text(ss.item_count);
+            }
+          })
+        },
+        error: function(err){
+          console.log(err)
+        }
+      })
+      }
+    })
+    $('.product-variants.optsel .product-variant:last-child .product-option').click(function(){
+    	$(this).closest('.shopify-product-form').find('.select-overlay').addClass('inactive');
+    })
+    //product-selector-{{ product.id }}
+  })
+</script>
+<script type="application/json" id="product-json-{{ product.id }}">
+{{ product | json }}
+</script>
+<script>
+  $(document).ready(function(){
+    $('.product-option label').click(function(){
+      setTimeout(function(){
+        var  opts = [];
+
+        $('.optsel .product-options').each(function(index,e){
+          var value = '';
+          if ($(this).find('input:radio:checked').length > 0) {
+            value = $(this).find('input:radio:checked').val();
+          } else {
+            value = $(this).find('input:radio').first().val();
+          }
+          opts.push(value);
+        });
+
+        var productjson = JSON.parse($('#product-json-{{ product.id }}').html());
+        var variants = productjson.variants;
+        var selectedVariant_item = variants.filter(function(v,i){
+          return (v.option1==opts[0] && v.option2==opts[1] && v.option3==opts[2]);
+        })
+        console.log('selectedVariant = ', selectedVariant_item)
+        var pos = selectedVariant_item[0].featured_image.position - 2;
+        console.log('pos = ', pos)
+        // $('.product-images').slick('slickGoTo',pos)
+      },500)
+    })
+  })
+</script>

@@ -1,0 +1,66 @@
+<div class="bg-img bg-img-top" style="background-image: url({{ 'bg-boarder.jpg' | asset_url }})">
+    <div class="container">
+      <div class="row center-sm">
+        <div class="col-xxs-12">
+          <h3 class="t-center t-black int-xxs-t-4 int-xxs-b-4 int-md-t-8 int-md-b-6"><span data-scroll data-splitting="lines">Shape and Camber</span></h3>
+        </div>
+      </div>
+      <div class="row center-sm">
+        <div class="col-sm-10">
+          <div class="int-sm-b-4 int-md-b-10">
+            <div class="shape-definitions">
+              <div class="shape-def-1">
+                <p><span>FLOATilla</span> shorter length but more float</p>
+              </div>
+              <img src="{{ 'shape-definitions-diagram.png' | asset_url }}" alt="Board Diagram" class="ext-xxs-b-2 ext-sm-b-0"/>
+              <div class="shape-def-2">
+                <p><span>RADIcAL SIDECUT</span> - Long & stable blend of radial & progressive</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 col-md-3">
+          <div class="int-xxs-t-4 int-sm-t-0 int-sm-l-1" data-aos="fade-up">
+            <h5>HALFcamber</h5>
+            <p>The patent-pending Cardiff HALFcamber places camber wher it is absolutely necessary and gradual rocker everywhere else. The result is maximum glide, maneuverability and edge control.</p>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-3">
+          <div class="int-xxs-t-4 int-sm-t-0 int-sm-l-1" data-aos="fade-up" data-aos-delay="200">
+            <h5>PERFECTpivot</h5>
+            <p>PIVOT 2.0 is two points of base contact. One under or in front of your front foot and on behind the back foot. The location of that contact relative to your foot position makes the board nimble and stable.
+            <p>PIVOT 3.0 is three points of base contact. The first and second are the same as 2.0 but the third is between the feet. It goes relatively unnoticed until you are in softer snow and it creates a central pivot between your legs. It makes it easier for a longer effective edge to be more nimble. </p>
+          </div>
+        </div>
+        
+        {% if section.settings.image != blank %}
+        <div class="col-sm-4 col-md-6">
+          <div class="int-xxs-t-3 ext-sm-neg-t-3 int-sm-l-6 int-sm-t-0 ">
+            <div class="full-height-image">
+              <img src="{{ section.settings.image | img_url: 'master' }}" alt="Goat Solid Board"/>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+
+
+{% schema %}
+{
+    "name": "Bg",
+    "blocks": [
+    ],
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        }
+    ]
+}
+{% endschema %}

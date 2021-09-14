@@ -1,0 +1,43 @@
+<li data-aos="fade-up" data-aos-delay="{{ forloop.index0 | times: 2 }}00">
+  <div class="card">
+    <div class="product">
+      <div class="row">
+      <div class="col-xxs-8 col-xxs-offset-2 col-xs-6 col-xs-offset-3 relative">
+
+          {% if product.tags contains 'new' %}
+            <div class="tag-vertical">New</div>  
+          {% endif %}
+
+          <div class="product-img">
+            <a href="{{ product.url }}">
+            <img src="{{ product.featured_image | img_url: 'x558' }}" alt="{{ product.title | escape }}"/>
+            </a> 
+          </div>
+        </div>
+        <div class="col-xxs-12 col-lg-12">
+          <div class="product-inner">
+            <div class="product-details">
+              <h4 class="product-title"><a href="{{ product.url }}">{{ product.title }}</a></h4>
+              <div class="product-price">
+                {% assign priceDiff = product.price_max | minus: product.price_min %}
+                {% if priceDiff == 0 %}
+                  {{ product.price | money | remove: '.00' }}
+                {% else %}
+                  {{ product.price_min | money | remove: '.00' }} - {{ product.price_max | money | remove: '.00' }}
+                {% endif %}
+              </div>
+              <p class="product-description-short">
+                {% if product.metafields.global.description_tag %}
+                  {{ product.metafields.global.description_tag }}
+                {% else %}
+                  {{ product.description }}
+                {% endif %}
+              </p>
+              {% comment %} <a href="{{ product.url }}" class="btn-outline large product-view">Learn More</a> {% endcomment %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</li> 

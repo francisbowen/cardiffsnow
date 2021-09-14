@@ -1,0 +1,53 @@
+<div id="account">
+<div id="wrap">
+  <div class="int-xxs-v-3 int-sm-v-6">
+    <div class="container">
+      <div class="row center-xxs">
+        <div class="col-xxs-12 col-md-8">
+          <h1>{{ 'customer.register.title' | t }}</h1>
+
+          <div class="rte">
+            <div class="row center-xxs">
+              <div class="col-xxs-12 col-sm-5">
+              <div class="customer__account-form text-center">
+
+                <div class="form-vertical">
+                  {% form 'create_customer' %}
+                    {{ form.errors | default_errors }}
+
+                    <label for="FirstName" class="label--hidden">{{ 'customer.register.first_name' | t }}</label>
+                    <div class="input">
+                      <input type="text" name="customer[first_name]" id="FirstName" class="input-full" placeholder="{{ 'customer.register.first_name' | t }}" {% if form.first_name %}value="{{ form.first_name }}"{% endif %} autocapitalize="words" autofocus>
+                    </div>
+
+                    <label for="LastName" class="label--hidden">{{ 'customer.register.last_name' | t }}</label>
+                    <div class="input">
+                      <input type="text" name="customer[last_name]" id="LastName" class="input-full" placeholder="{{ 'customer.register.last_name' | t }}" {% if form.last_name %}value="{{ form.last_name }}"{% endif %} autocapitalize="words">
+                    </div>
+
+                    <label for="Email" class="label--hidden">{{ 'customer.register.email' | t }}</label>
+                    <div class="input">
+                      <input type="email" name="customer[email]" id="Email" class="input-full {% if form.errors contains 'email' %} input--error{% endif %}" placeholder="{{ 'customer.register.email' | t }}" {% if form.email %} value="{{ form.email }}"{% endif %} autocorrect="off" autocapitalize="off">
+                    </div>
+
+                    <label for="CreatePassword" class="label--hidden">{{ 'customer.register.password' | t }}</label>
+                    <div class="input">
+                      <input type="password" name="customer[password]" id="CreatePassword" class="input-full {% if form.errors contains 'password' %} input--error{% endif %}" placeholder="{{ 'customer.register.password' | t }}">
+                    </div>
+
+                    <p>
+                      <input type="submit" value="{{ 'customer.register.submit' | t }}" class="btn">
+                    </p>
+                    <a href="{{ shop.url }}">{{ 'customer.register.cancel' | t }}</a>
+
+                  {% endform %}
+                </div>
+
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

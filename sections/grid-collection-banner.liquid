@@ -1,0 +1,46 @@
+<div class="row end-xxs hide-smx bottom-banner-section">
+    <div class="col-xxs-12 col-sm-5">
+      <div class="bg-black left-side-text">
+        <div class="text-wrap">
+          <h3 class="heading">Built Different by Design</h3>
+        <p>
+          Our boards do what you want,
+          when you want it. They skin
+          well, have excellent grip when
+          traversing, and can shared in
+          pretty much all conditions.
+          Look no further for your next
+          adventure board.
+        </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxs-12 col-sm-7">
+      <div class="ext-xxs-neg-t-2x ext-sm-neg-l-1 ext-md-neg-l-2x ext-lg-neg-t-4x ext-lg-neg-l-3x image-load">
+        <img src="{{ 'accessories-header.jpg' | asset_url }}" data-aos="zoom-out" alt="Cardiff Split Boards on the Mountain" />
+      </div>
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Grid Collection Banner",
+    "settings": [
+      {
+        "id": "title",
+        "type": "text",
+        "label": "Title"
+      },
+      {
+        "id": "text",
+        "type": "textarea",
+        "label": "Text"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      }
+    ] 
+  }
+{% endschema %}

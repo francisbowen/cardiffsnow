@@ -1,0 +1,59 @@
+<div class="section int-sm-t-4 about-collection">
+    <div class="container">
+      <div class="row middle-sm">
+        <div class="col-sm-4 t-gold">
+          <h3 data-aos="fade-up"> {{ section.settings.title }} </h3>
+          <div class="row">
+            <div class="col-xl-7">
+              <p data-aos="fade-up"> {{ section.settings.content }} </p>
+              <div class="p" data-aos="fade-up">
+                <a class="link" href="{{ section.settings.cta_link }}"> {{ section.settings.cta_text }} {% include 'arrow' %}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-7 col-sm-offset-1">
+          <div class="extend-right large">
+            <img src="{{ section.settings.image | img_url: 'master' }}" alt="Boards" />
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<style>
+    /* .about-collection p{word-break: break-all;} */
+</style>
+
+{% schema %}
+  {
+    "name": "About Collection",
+    "settings": [
+	  {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+	  {
+        "type": "richtext",
+        "id": "content",
+        "label": "Content"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "image"
+      },
+      {
+        "type": "text",
+        "id": "cta_text",
+        "label": "CTA Text"
+      },
+      {
+        "type": "url",
+        "id": "cta_link",
+        "label": "CTA link"
+      }
+	]
+  }
+{% endschema %}

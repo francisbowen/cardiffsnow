@@ -1,0 +1,107 @@
+<section class="bottom-sec bg-black ambassadors-sec-home">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="photo-graphy position-relative">
+              {% if section.settings.vertical_text != blank %}
+                <div class="vertical-text" data-aos="fade-up">{{ section.settings.vertical_text }}</div>
+              {% endif %}
+            <div class="img-wrap">
+                {% if section.settings.profile_picture != blank %}
+                    <div class="img-bg" style="background-image: url({{ section.settings.profile_picture | img_url: 'master' }});"></div>
+                {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="profile-wrap">
+            <div class="profile-info">
+                {% if section.settings.amabsador_title != blank %}
+                    <h3 class="title" data-aos="fade-up"> {{ section.settings.amabsador_title }}</h3> 
+                {% endif %} 
+                {% if section.settings.amabsador_subtitle != blank %}
+                    <div class="yellow-text" data-aos="fade-up" data-aos-delay="100">{{ section.settings.amabsador_subtitle }}</div>
+                {% endif %}
+                {% if section.settings.amabsador_text != blank %}
+                    <p class="about-info" data-aos="fade-up" data-aos-delay="200">{{ section.settings.amabsador_text }}</p>
+                {% endif %}
+                {% if section.settings.amabsador_cta != blank %}
+                    <a href="{{ section.settings.amabsador_cta_link }}" class="link" data-aos="fade-up" data-aos-delay="300">{{ section.settings.amabsador_cta }} {% include 'arrow' %}</a>
+                {% endif %}
+              </div>
+            <div class="profile-img">
+                {% if section.settings.amabsador_picture != blank %}
+                    <div class="img-bg" style="background-image: url({{ section.settings.amabsador_picture | img_url: 'master' }});"></div>
+                {% endif %}
+              <div class="ambassadors-cta">
+              <div class="int-xxs-b-4 int-xxs-r-4 int-lg-t-3 int-md-b-6 btn-more-bjorn">
+                  {% if section.settings.amabsador_cta2 != blank %}
+                    <a href="{{ section.settings.amabsador_cta2_link }}" class="btn-outline full-width">{{ section.settings.amabsador_cta2 }}</a>
+                  {% endif %}
+              </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+{% schema %}
+{
+    "name": "Home ambassadors",
+    "settings": [
+      {
+          "type": "text",
+          "id": "vertical_text",
+          "label": "Vertical Txet"
+      },
+      {
+        "type": "image_picker",
+        "id": "profile_picture",
+        "label": "Profile Picture"
+      },
+      {
+          "type": "text",
+          "id": "amabsador_title",
+          "label": "Title"
+      },
+      {
+          "type": "text",
+          "id": "amabsador_subtitle",
+          "label": "Subtitle"
+      },
+      {
+          "type": "textarea",
+          "id": "amabsador_text",
+          "label": "Text"
+      },
+      {
+        "type": "text",
+        "id": "amabsador_cta",
+        "label": "CTA Text"
+      },
+      {
+        "type": "url",
+        "id": "amabsador_cta_link",
+        "label": "CTA Link"
+      },
+      {
+          "type": "image_picker",
+          "id": "amabsador_picture",
+          "label": "Amabsador Picture"
+      },
+      {
+        "type": "text",
+        "id": "amabsador_cta2",
+        "label": "Amabsador CTA"
+      },
+      {
+        "type": "url",
+        "id": "amabsador_cta2_link",
+        "label": "Amabsador Link"
+      }
+    ]
+}
+{% endschema %}

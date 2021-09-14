@@ -1,0 +1,30 @@
+<form action="/search" method="get" role="search">
+  <label for="Search-{{ section.id }}" class="label-hidden">
+    {{ 'general.search.placeholder' | t }}
+  </label>
+
+  <input type="search"
+    name="q"
+    id="Search-{{ section.id }}"
+    value="{{ search.terms | escape }}"
+    placeholder="{{ 'general.search.placeholder' | t }}">
+
+  <button type="submit" class="button">
+    {% include 'icon-search' %}
+    <span class="icon-fallback-text">{{ 'general.search.submit' | t }}</span>
+  </button>
+</form>
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "{{ shop.name }}",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "{{ shop.url }}/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "url": "{{ shop.url }}{{ page.url }}"
+  }
+</script>

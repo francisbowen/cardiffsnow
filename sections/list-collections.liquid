@@ -1,0 +1,421 @@
+<div id="wrap">
+    <div class="bg-img bg-img-top int-xxs-t-10 int-sm-t-8 int-md-t-10" style="background-image: url({{ 'shop-hero.jpg' | asset_url }})">
+      {% for link in linklists.all-collections.links %}
+        {% assign collection = link.object %}
+        {% if collection.handle == 'boards' %}
+        <div class="plp-newsec-wrapper">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-10">
+                <div class="list-prod-slider">
+                {% for product in collection.products %}
+                <div class="container newprod-list {% if forloop.first == true %}active{% endif %}" id="block--{{ product.id }}">
+                  <div class="collection-board-prod-wrapper">
+                      <div class="row">
+                        <div class="col-xxs-12 col-lg-8" data-aos="fade-up" data-aos-delay="{{ forloop.index0 | times: 2 }}00">
+                            <div class="prod-details-wrap">
+                                <div class="product-title">
+                                  {%- assign product_title = product.title | split: ' ' -%}
+                                  {% for single_word in product_title %}
+                                    {% if forloop.index == 1 %}
+                                    <span>{{ single_word }}</span>
+                                      {% else %}
+                                        {{ single_word }}
+                                    {% endif %}
+                                  {% endfor %}
+                                </div>
+                                <div class="price">
+                                  {% if product.price_varies %}
+                                    {{ product.price_min | money }} - {{ product.price_max | money }}
+                                    {% else %}
+                                    {{ product.price | money }}  
+                                  {% endif %}
+                                </div>
+                                {%- assign short_desc = product.description | split: '</p>' -%}
+                              {{ short_desc[0] | truncate: 100, '...' }}
+                                <div class="divider"></div>
+                                <div class="style-size">
+                                  <div class="style-wrap">
+                                    {% for tag in product.tags %}
+                                      {% if tag contains '||' %}
+                                      {%- assign prod_style = tag | split: '||' -%}
+                                      <div class="style">
+                                        <h3 class="heading">{{ prod_style[1] }}</h3>
+                                        <p>{{ prod_style[0] }}</p>
+                                      </div>
+                                      {% endif %}
+                                    {% endfor %}
+                                    {% for option in product.options_with_values %}
+                                  {% if option.name contains 'size' or option.name contains 'Size' %}
+                                  <div class="style">
+                                    <h3 class="heading"> {{ option.name }}</h3>
+                                    <p>{% for  value in option.values %}<span>{{ value }}{% unless forloop.last %},{% endunless %}</span>{%endfor %}</p>
+                                  </div>   
+                                  {% endif %}
+                                  {% endfor %}
+                                  </div>
+                                  
+                                </div>
+                            </div>
+                            <a class="product-view" href="{{ product.url }}">Shop {% include 'arrow' %}</a> 
+                            <!-- <div class="arrow-wrap"> 
+                                <div class="arrow-inner">
+                                  <a href="{{ product.url }}"><span>Shop</span> {% include 'arrow' %}</a>
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="col-xxs-12 col-lg-4 pl-0" data-aos="fade-up" data-aos-delay="{{ forloop.index0 | times: 2 }}00">
+                          <div class="collection-board-img">
+                            {%- comment -%}{%- endcomment -%}
+                            {% if forloop.first == true %}
+                              <img src="//cdn.shopify.com/s/files/1/0044/2145/1850/files/The_Goat.png?v=1623934792">
+                              {% elsif forloop.index == 2 %}
+                              <img src="//cdn.shopify.com/s/files/1/0044/2145/1850/files/The_Crane_178b9a09-948f-405a-852b-0de920ec7d7e.png?v=1623934810">
+                              {% elsif forloop.index == 3 %}
+                              <img src="//cdn.shopify.com/s/files/1/0044/2145/1850/files/The_Powgoda_c75f905f-8371-405f-9efc-897dc5adf93e.png?v=1623934829">
+                              {% elsif forloop.index == 4 %}
+                              <img src="//cdn.shopify.com/s/files/1/0044/2145/1850/files/The_Swell_eb8cb53d-ad17-45aa-b12a-d1956f17ac70.png?v=1623934842">
+                              {% elsif forloop.index == 5 %}
+                              <img src="//cdn.shopify.com/s/files/1/0044/2145/1850/files/bonsai-solid-v-top_x800_4a46ef19-ecfe-4ed4-b77e-0c48947895e4.png?v=1623909204">
+                              {% else %}
+                              <img src="{{ product.featured_image.src | img_url: '800x' }}" alt="">    
+                            {% endif %}                            
+                          </div>
+                        </div>
+                        {%- comment -%}
+                        <div class="slider-nav-right-wrap">
+                          <div class="product-slider-wrap"> 
+                            <div class="slider-nav-right">
+                              <div class="slider-icon-nav">
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col-xxs-12">
+                                      <div class="icon-nav swiper-container">
+                                        <ul class="icon-nav-wrap swiper-wrapper">
+                                          {% for product in collections['boards'].products %}
+                                            {% assign handle = product.handle | remove: 'the-' %}
+                                            {% assign icon = 'icon-' | append: handle %}
+                                            <li class="swiper-slide{% if forloop.first == true %} active{% endif %}">
+                                              {% include icon %}
+                                              <div class="title">{{ product.title | remove: 'The ' }}</div>
+                                            </li>
+                                          {% endfor %}
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        {%- endcomment -%}
+                      </div>
+                  </div>
+                </div>
+                {% endfor %}
+                </div>
+              </div>
+              <div class="col-lg-2">
+                <div class="right-side-icons product-slider-wrap">
+                  <div class="icon-nav">
+                    <ul class="icon-nav-wrap">
+                      {% for product in collection.products %}
+                        {% assign handle = product.handle | remove: 'the-' %}
+                        {% assign icon = 'icon-' | append: handle %}
+                        <li class="swiper-slide{% if forloop.first == true %} swiper-slide-thumb-active{% endif %}">
+                         <a href="#block--{{ product.id }}">
+                          {% include icon %}
+                          <div class="title">{{ product.title }}</div>
+                        </a>
+                        </li>
+                      {% endfor %}
+                      <li class="swiper-slide"></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+          <div class="plp-old-grid container-fluid ext-xxs-neg-t-8 ext-sm-neg-t-0 pl-pr">
+            <div class="row">
+              <div class="col-xxs-12">
+                <div class="board-grid">
+                  <ul class="products">
+                    {% for product in collection.products %}
+                      {% include 'product-board' %}
+                    {% endfor %}
+                    {% comment %}
+                     <div class="products-small-baner">
+                        <div class="img-bg" style="background-image: url('{{ section.settings.pro_image | img_url: 'master' }}');">
+                          <h3 class="heading">{{ section.settings.pro_title }}</h3>
+                          <!-- <div class="explore-arrow"><span>Explore</span> <img src="https://cdn.shopify.com/s/files/1/0044/2145/1850/files/arrow-right.png?v=1623828860" /></div> -->
+                          <div class="explore-arrow">
+                            <a href="{{ section.settings.pro_url }}"><span>Explore</span> {% include 'arrow' %}</a>
+                          </div>
+                          <div class="vertical-text">{{ section.settings.pro_text }}</div>
+                        </div>
+                    </div> 
+                    {% endcomment %}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+  
+      {% endfor %}
+    </div>
+    <div class="positionup">
+      {% for link in linklists.all-collections.links %}
+        {% assign collection = link.object %}
+        {% if collection.handle == 'accessories' %}
+        <div class="row end-xxs hide-smx bottom-banner-section plp-accessories-wrapper">
+          <div class="col-xxs-12 col-md-4">
+            <div class="bg-black left-side-text">
+              <div class="text-wrap">
+                  <h3 class="heading">{{ section.settings.title }}</h3>
+                  <p>{{ section.settings.text }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xxs-12 col-md-8">
+            <div class="ext-xxs-neg-t-2x ext-sm-neg-l-1 ext-md-neg-l-2x ext-lg-neg-t-4x ext-lg-neg-l-3x image-load">
+              <img src="{{ section.settings.image | img_url: 'master' }}" data-aos="zoom-out" alt="Cardiff Split Boards on the Mountain" />
+            </div>
+          </div>
+        </div>
+      {% endif %}
+      {% endfor %}
+      <div class="collection-ambassadors">
+        <section class="bottom-sec bg-black">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-5">
+                <div class="photo-graphy position-relative">
+                  <div class="img-wrap">
+                    {% if section.settings.profile_picture != blank %}
+                    <div class="img-bg" style="background-image: url({{ section.settings.profile_picture | img_url: '400x' }});"></div>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-7">
+                <div class="profile-wrap">
+                  <div class="profile-info">
+                    {% if section.settings.amabsador_title != blank %}
+                    <h3 class="title">{{ section.settings.amabsador_title }}</h3> 
+                    {% endif %}
+                    {% if section.settings.amabsador_subtitle != blank %}
+                    <div class="yellow-text">{{ section.settings.amabsador_subtitle }}</div>
+                    {% endif %}
+                    {% if section.settings.amabsador_text != blank %}
+                    <p class="about-info">{{ section.settings.amabsador_text }}</p>
+                    {% endif %}
+                    {% if section.settings.amabsador_cta %}
+                      <a class="product-view" href="{{ section.settings.amabsador_cta_link }}">{{ section.settings.amabsador_cta }} {% include 'arrow' %}</a> 
+                    {% endif %}
+                  </div>
+                  
+                  <div class="profile-img">
+                      {% if section.settings.amabsador_picture != blank %}
+                        <div class="img-bg" style="background-image: url({{ section.settings.amabsador_picture  | img_url: '400x' }});"></div>
+                      {% endif %}
+                    <div class="ambassadors-cta">
+                      {% if section.settings.amabsador_cta2 != blank %}
+                      <a href="{{ section.settings.amabsador_cta2_link }}" class="btn-outline">{{ section.settings.amabsador_cta2 }}</a>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {%- comment -%}
+            <div class="collection-section container-fluid">
+              <div class="row collection-wrap">
+                <div class="col-md-12 p-0">
+                  <div class="collection-items-wrap position-relative">
+                    <div class="collection-title-btm">{{ block.settings.collection_title }}</div>
+                    <div class="row">
+                    {% for product in collections[block.settings.collection].products limit: 2 %}
+                      <div class="col-md-5">
+                      <div class="collection-item position-relative">
+                        <div class="product-details">
+                          <h4 class="product-title">{{ product.title }}</h4>
+                          <div class="product-icon">
+                            <img src="https://cdn.shopify.com/s/files/1/0044/2145/1850/files/svgexport-1.svg?v=1623328266" alt="">
+                          </div>
+                        </div>
+                        <div class="product-img">
+                          <a href="{{ product.url }}" class="img-bg" style="background-image: url('{{ product.featured_image | img_url: '800x' }}');"></a>
+                        </div>
+                      </div>
+                    </div>
+                  {% endfor %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {%- endcomment -%}
+        </section>
+      </div>
+
+      <div class="clearfix clear"></div>
+    </div>
+</div>
+
+<script>
+var direction = 0; // a variable to keep track of scrolled position;
+$(window).on('scroll', function() {
+  // check if window is scrolling up or down;
+  if ($(window).scrollTop() > direction) { // if true, window scrolling scrolling down;
+    $('.plp-newsec-wrapper').find('.newprod-list').removeClass('active'); // remove active class from all anchors
+    $('.plp-newsec-wrapper').find('.newprod-list').eq(
+      // .eq() selector helps to find elements with index number, and here we pass a filter to find the content that is within the viewport;
+      $('.plp-newsec-wrapper').find('.newprod-list').filter(function(index) {
+        return this.getBoundingClientRect().y <= (window.innerHeight / 2) && this.getBoundingClientRect().y + this.getBoundingClientRect().height > window.innerHeight / 2;
+      }).index()
+    ).addClass('active');
+
+    
+    $('.right-side-icons').find('.swiper-slide').removeClass('swiper-slide-thumb-active'); // remove active class from all anchors
+    $('.right-side-icons').find('.swiper-slide').eq(
+      // .eq() selector helps to find elements with index number, and here we pass a filter to find the content that is within the viewport;
+      $('.plp-newsec-wrapper').find('.newprod-list').filter(function(index) {
+        return this.getBoundingClientRect().y <= (window.innerHeight / 2) && this.getBoundingClientRect().y + this.getBoundingClientRect().height > window.innerHeight / 2;
+      }).index()
+    ).addClass('swiper-slide-thumb-active');
+    // update the current scroll position now;
+    direction = $(window).scrollTop();
+
+  } else { // if false, window scrolling scrolling up;
+
+    $('.plp-newsec-wrapper').find('.newprod-list').removeClass('active'); // remove active class from all anchors
+    $('.plp-newsec-wrapper').find('.newprod-list').eq(
+      // .eq() selector helps to find elements with index number, and here we pass a filter to find the content that is within the viewport;
+      $('.plp-newsec-wrapper').find('.newprod-list').filter(function(index) {
+        return this.getBoundingClientRect().y <= (window.innerHeight / 2) && this.getBoundingClientRect().y + this.getBoundingClientRect().height > window.innerHeight / 2;
+      }).index()
+    ).addClass('active');
+
+
+    $('.right-side-icons').find('.swiper-slide').removeClass('swiper-slide-thumb-active'); // remove active class from all anchors
+    $('.right-side-icons').find('.swiper-slide').eq(
+      $('.plp-newsec-wrapper').find('.newprod-list').filter(function(index) {
+        return this.getBoundingClientRect().y < (window.innerHeight / 2) && this.getBoundingClientRect().y + this.getBoundingClientRect().height > window.innerHeight / 2;
+      }).index()
+    ).addClass('swiper-slide-thumb-active');
+    // update the current scroll position now;
+    direction = $(window).scrollTop();
+  }
+});
+
+</script>
+  {% schema %}
+  {
+    "name": "Grid Collection",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Shop Product Banner"
+      },
+      {
+        "type": "image_picker",
+        "id": "pro_image",
+        "label": "Pro Image"
+      },
+      {
+        "id": "pro_title",
+        "type": "text",
+        "label": "Pro Title"
+      },
+      {
+        "id": "pro_text",
+        "type": "text",
+        "label": "Pro Text"
+      },
+      {
+        "id": "pro_url",
+        "type": "url",
+        "label": "Pro URL"
+      },
+      {
+        "type": "header",
+        "content": "Body"
+      },
+      {
+        "id": "title",
+        "type": "text",
+        "label": "Title"
+      },
+      {
+        "id": "text",
+        "type": "textarea",
+        "label": "Text"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "header",
+        "content": "AMBASSADOR SECTION"
+      },
+      {
+        "type": "image_picker",
+        "id": "profile_picture",
+        "label": "Profile Picture"
+      },
+      {
+          "type": "text",
+          "id": "amabsador_title",
+          "label": "Title"
+      },
+      {
+          "type": "text",
+          "id": "amabsador_subtitle",
+          "label": "Subtitle"
+      },
+      {
+          "type": "textarea",
+          "id": "amabsador_text",
+          "label": "Text"
+      },
+      {
+        "type": "text",
+        "id": "amabsador_cta",
+        "label": "CTA Text"
+      },
+      {
+        "type": "url",
+        "id": "amabsador_cta_link",
+        "label": "CTA Link"
+      },
+      {
+          "type": "image_picker",
+          "id": "amabsador_picture",
+          "label": "Amabsador Picture"
+      },
+      {
+        "type": "text",
+        "id": "amabsador_cta2",
+        "label": "Amabsador CTA"
+      },
+      {
+        "type": "url",
+        "id": "amabsador_cta2_link",
+        "label": "Amabsador Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "stories",
+        "label": "Stories"
+      }
+    ]
+  }
+{% endschema %}

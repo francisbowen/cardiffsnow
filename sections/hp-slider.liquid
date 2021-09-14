@@ -1,0 +1,237 @@
+<div class="hp-slider">
+    {% for block in section.blocks %}
+    {% if block.type == "image" %}
+    <div id="hero">
+      <div class="container hero-content">
+        <div class="row">
+          <div class="col-xxs-12">
+            {% if block.settings.heading != blank %}
+            <h1 class="delay" data-splitting="lines" data-scroll>{{ block.settings.heading }}</h1>
+            {% endif %}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xxs-10 col-sm-5 col-md-4 col-xl-3">
+            <div class="int-md-r-5">
+              {% if block.settings.content_text != blank %}
+              <p data-aos="fade-up" data-aos-delay="1500">{{ block.settings.content_text }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-side image-load">
+        {% if block.settings.image != blank %}
+        <img src="{{ block.settings.image | img_url: 'master' }}" alt="Snowboarder on mountain" class="hero-bg"  data-aos="zoom-out" data-aos-delay="300"/>
+        {% endif %}
+        {% if block.settings.demo_url != blank %}
+        <a href="{{ block.settings.demo_url }}">{{ block.settings.demo_text }} {% include 'arrow' %}</a>
+        {% endif %}
+        {% if block.settings.tagline != blank %}
+        <div class="tagline">{{ block.settings.tagline }}</div>
+        {% endif %}
+      </div>
+    </div>
+    
+    <!-- <div class="row">
+        <div class="col-md-6">
+            <div class="image-wrapper">
+                <div class="image-holder">
+                    {% if block.settings.image != blank %}
+                        <img src="{{ block.settings.image | img_url: 'master' }}" alt="image" />
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="content-wrapper">
+                <div class="content-holder">
+                    {% if block.settings.heading != blank %}
+                        <h1 class="delay" data-splitting="lines" data-scroll>{{ block.settings.heading }}</h1>            
+                    {% endif %}
+                    {% if block.settings.content_text != blank %}
+                        <h3>{{ block.settings.content_text }}</h3>
+                    {% endif %}
+                </div>
+                {% if block.settings.demo_url != blank %}
+                <a href="{{ block.settings.demo_url }}">
+                {{ block.settings.demo_text }} 
+                <div class="arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 52">
+                    <path class="arrow-circle" d="M56 51c-13.8 0-25-11.2-25-25S42.2 1 56 1s25 11.2 25 25-11.2 25-25 25zm0-49C42.8 2 32 12.8 32 26s10.8 24 24 24 24-10.8 24-24S69.2 2 56 2z"></path>
+                    <path class="arrow-line" d="M1 25h55v1H1z"></path>
+                    <path class="arrow-point" d="M54 20l6 5.5-6 5.5V20z"></path>
+                    </svg>
+                </div>
+                </a>                    
+                {% endif %}
+            </div>
+        </div>
+    </div>    -->
+    
+    {% elsif block.type == "video" %}
+    <div class="video hp-video">
+        <div class="container-fluid p-0">
+          <div class="video-wrapper">
+          <!-- {{ section.settings.video }} -->
+
+          <!-- {% if block.settings.video_banner.type == 'youtube' %}
+            <iframe id="video-banner" src="//www.youtube.com/embed/{{ block.settings.video_banner.id }}?&mute=1&rel=0&autoplay=1&playlist={{ block.settings.video_banner.id }}&loop=1&showinfo=0" frameborder="0" allowfullscreen=""></iframe>
+            {% else %}        
+            <iframe id="video-banner" src="https://player.vimeo.com/video/{{ block.settings.video_banner.id }}?&muted=1&autoplay=1&loop=1&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>      
+          {% endif %} -->
+
+            {% if block.settings.video_banner.type == 'youtube' %}
+              <iframe id="video-banner" src="//www.youtube.com/embed/{{ block.settings.video_banner.id }}?&mute=1&rel=0&playlist={{ block.settings.video_banner.id }}&loop=1&showinfo=0" frameborder="0" allowfullscreen=""></iframe>
+              {% else %}        
+              <iframe id="video-banner" src="https://player.vimeo.com/video/{{ block.settings.video_banner.id }}?&muted=1&loop=1&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>      
+            {% endif %}
+
+            <div class="video-placeholder-img" style="background-image: url('{{ block.settings.image_poster | img_url: 'master'}}');">
+              <div class="video-content">
+                <div class="play-icon" id="play-video-banner">
+                  <img src="https://cdn.shopify.com/s/files/1/0044/2145/1850/files/play_2.png?v=1623326896" alt="image" />
+                </div>
+                <h3>{{ block.settings.title_poster}}</h3>
+              </div>
+            </div>
+      
+          </div>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+
+<style>
+  @media only screen and (min-width: 768px) {
+    #shopify-section-{{ section.id }} h1 {
+      font-size: 5rem;
+    }
+  }
+  .hp-slider,
+  .hp-video .video-wrapper{
+    height: 100vh;
+  }
+  .video.hp-video .video-placeholder-img{
+    top: -80px;
+    height: 100vh;
+  }
+  .video.hp-video iframe{
+    top: -80px;
+    height: 100vh;
+  }
+  .hp-slider .hp-video .video-content{
+    right: 100px;
+  }   
+  @media only screen and (max-width: 767px) {
+    .hp-slider .hp-video .video-content{
+      right: 20px;
+    }
+    /* {% for block in section.blocks %}
+    .hp-slider .hp-video .video-placeholder-img{
+      background-image: url('{{ block.settings.image_poster | img_url: 'master'}}');
+    }
+    {% endfor %}
+    */
+  }
+</style>
+
+<script>
+    $(document).ready(function() {
+      $('#play-video-banner').on('click', function(ev) {
+    
+        $("#video-banner")[0].src += "&autoplay=1";
+        ev.preventDefault();
+        $('#video-banner').show();
+        $('.video-placeholder-img').hide();
+  
+      });
+      // $('.hp-slider').slick();
+      $('.hp-slider').slick({
+        dots: false,
+        arrows: true,
+        infinite: true,
+        adaptiveHeight: true,
+        fade: true             
+      });
+    });
+  </script>
+{% schema %}
+    {
+        "name": "Slider",
+        "class": "hp-slider-cardiff",
+        "blocks": [
+            {
+                "type":"image",
+                "name":"Image",
+                "settings":[
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                  },
+                  {
+                    "type": "text",
+                    "id": "heading",
+                    "label": "Heading"
+                  },
+                  {
+                    "type": "color",
+                    "id": "heading_color",
+                    "label": "Color",
+                    "default": "#fff"
+                  },
+                  {
+                    "type": "text",
+                    "id": "content_text",
+                    "label": "Text"
+                  },
+                  {
+                    "type": "text",
+                    "id": "tagline",
+                    "label": "Tagline"
+                  },
+                  {
+                    "type": "text",
+                    "id": "demo_text",
+                    "label": "Demo Text"
+                  },
+                  {
+                    "type": "url",
+                    "id": "demo_url",
+                    "label": "Demo Url"
+                  }
+                ]
+            },
+            {
+                "type":"video",
+                "name":"Video",
+                "settings":[
+                    {
+                        "type": "video_url",
+                        "id": "video_banner",
+                        "label": "Video",
+                        "accept": ["youtube", "vimeo"]
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "image_poster",
+                        "label": "Image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "title_poster",
+                        "label": "Title"
+                    }
+                ]
+            }
+        ],
+        "presets":[
+            {
+                "name": "Slider",
+                "category":"Slider"
+            }
+        ]
+    }
+{% endschema %}

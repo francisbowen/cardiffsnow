@@ -1,0 +1,88 @@
+{% assign explore = false %}
+{% for block in section.blocks %}
+{%- assign product_tag = block.settings.product_tag | replace: ', ', ',' | replace: ',  ', ',' | replace: ' ,', ',' | replace: '  ,', ',' | split: ',' -%}
+
+{% for single_tag in product_tag %}
+    {% if product.tags contains single_tag %}
+    {% assign explore = true %}
+    {% endif %}
+{% endfor %}
+
+{% endfor %}
+
+{% for block in section.blocks %}
+{% if explore == true %}    
+<div class="int-xxs-v-4 int-md-v-10 block-image pdp-explore">
+    <div class="container-fluid">
+      <div class="row middle-xxs">
+        <div class="col-xxs-12 col-sm-7">
+          <div class="ext-xxs-neg-l-4 ext-xxs-neg-r-10 ext-sm-neg-l-2 ext-sm-neg-r-5 bindings-products">
+
+             {% assign collection_handle = collections[block.settings.collection] %}   
+            {% for product in collection_handle.products limit: 2 %}
+            <div class="product-binding">
+              <div class="product-binding-img" style="background-image: url({{ product.featured_image | product_img_url: 'master' }});"><a href="{{ product.url }}"></a></div>
+              <div class="product-binding-detail">
+                <div class="title">{{ product.title }}</div>
+                <div class="price">{{ product.price | money }}</div>
+              </div>
+                {% for tag in product.tags %}
+                {% if tag contains 'customization--' or tag contains 'weight--' %}
+                    <p>
+                        {% if tag contains 'customization--' %}
+                        customization from {{ tag | remove: 'customization--' }}        
+                        {% endif %}
+                     <br>
+                     {% if tag contains 'weight--' %}
+                     <strong>weight:</strong>{{ tag | remove: 'customization--' }}     
+                        {% endif %}
+                    </p>
+                    {% endif %}
+                {% endfor %}
+              {% if product.tags contains 'new' %}
+                <span>NEW</span>                  
+              {% endif %}
+            </div>
+            {% endfor %}
+        
+        </div>
+        </div>
+        <div class="col-xxs-12 col-sm-5 first-xxs initial-order-sm">
+          <div class="int-xxs-b-2 int-sm-b-0 explore-heading-wrapper">
+            <h3 data-aos="fade-up">EXPLORE MORE</h3>
+            <a href="{{ block.settings.collection.url }}" class="link" data-aos="fade-up" data-aos-delay="100">SHOP  {% include 'arrow' %}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}  
+{% endfor %}    
+
+
+
+
+{% schema %}
+{
+    "name": "explore more",
+    "blocks": [
+        {
+            "name":"collection",
+            "type":"collection",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "product_tag",
+                    "label": "Product Tag",
+                    "info": "Tag separated with a comma"
+                },
+                {
+                    "type": "collection",
+                    "id": "collection",
+                    "label": "Select collection"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,153 @@
+{% comment %}
+{{ content_for_index }}
+{% endcomment %}
+
+<div id="wrap">
+ {% section 'hp-slider' %}
+ {% section 'hp-hero' %}
+
+ <!-- {% section 'hp-video' %} -->
+ 
+  <div class="product-slider-wrap"> 
+    <div class="slider-icon-nav">
+      <div class="container">
+        <div class="row">
+          <div class="col-xxs-12">
+            <div class="icon-nav swiper-container">
+              <ul class="icon-nav-wrap swiper-wrapper">
+                {% for product in collections['boards'].products %}
+                  {% assign handle = product.handle | remove: 'the-' %}
+                  {% assign icon = 'icon-' | append: handle %}
+                  <li class="swiper-slide{% if forloop.first == true %} active{% endif %}">
+                    {% include icon %} 
+                    <div class="title">{{ product.title | remove: 'The ' }}</div>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% section 'boards-product' %}
+
+    {%- comment -%}
+    <div class="products swiper-container">
+      <div class="product swiper-wrapper">
+        {% for product in collections['boards'].products %}
+          {% assign handle = product.handle | remove: 'the-' %}
+          {% assign icon = 'icon-' | append: handle %}
+          {% assign feat = handle | append: '-solid-v-top.png' %}
+          {% assign watermark = handle | append: '-watermark.png' %}
+          <div class="swiper-slide">
+            <div class="container">
+              <div class="row middle-xxs">
+                <div class="col-xxs-12 col-md-3 col-md-offset-2">
+                  <div class="product-img">
+                    <div class="watermark">
+                      <img src="{{ watermark | asset_url }}" alt="{{ product.title }} Watermark" />
+                    </div>
+                    <div class="main">
+                      <img src="{{ feat | asset_img_url: 'x800' }}" alt="{{ product.title | escape }}"/>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xxs-12 col-md-7">
+                  <div class="details">
+                    <div class="product-description">{{ product.tags }}</div>
+                    <div class="product-title">
+                      <span>The </span>
+                      {{ product.title | remove: 'The ' }}
+                    </div>  
+                    <div class="editor"> 
+                      <h2>backcountry</h2>
+                      <p><strong>2020 editors choice award</strong></p>
+                      <p>*All three boards that Cradiff submitted to the test earned slots in
+                        the Gear Guide this year, but the Goat was a standout: tester found
+                        the split both capable for the charging hard and popping lazy,
+                        playfull spins on the same lap. We knew they were good..... now,
+                        everyone else does too*</p>
+                    </div>
+                    <div class="hp-addon">
+                      <div class="row">
+                        <div class="col-xxs-6 col-sm-6">
+                          <div class="addon-holder">
+                            <h4>Freeride</h4>
+                            <p>Style</p>
+                          </div>
+                        </div>
+                        <div class="col-xxs-6 col-sm-6">
+                          <div class="addon-holder">
+                            <h4>Balanced</h4>
+                            <p>Sidecut</p>
+                          </div>
+                        </div>
+                        <div class="col-xxs-6 col-sm-6">
+                          <div class="addon-holder">
+                            <h4>81/100</h4>
+                            <p>Flex</p>
+                          </div>
+                        </div>
+                        <div class="col-xxs-6 col-sm-6">
+                          <div class="addon-holder">
+                            <h4>Massive</h4>
+                            <p>Float</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <a class="product-view" href="{{ product.url }}">Shop {% include 'arrow' %}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    {%- endcomment -%}
+
+    <ul class="slider-nav">
+      <li>
+        <div class="swiper-button-prev">{% include 'arrow-nav-left' %}</div>
+      </li>
+      <li>
+        <div class="swiper-button-next">{% include 'arrow-nav-right' %}</div>
+      </li>
+    </ul>
+  </div>
+
+  {% section 'home-ambassadors' %}
+
+  {% section 'welcome-cardiff'%}
+
+  {% section 'video' %} 
+  {% section 'different-by-design' %} 
+
+</div>
+
+{% section 'instagram' %}
+
+<style>
+  .template-index #logo{
+    margin-top: 0;
+  }
+  .swiper-button-prev, .swiper-container-rtl .swiper-button-next{
+    padding: 27px;
+    margin-left: -50px;
+  }
+  .swiper-button-next, .swiper-container-rtl .swiper-button-prev{
+    padding: 27px;
+  }
+  .swiper-button-next:after, .swiper-button-prev:after{
+    font-size: 22px;
+  }
+  .product-slider-wrap .slider-nav{
+    top: 35%!important;
+  }
+  @media only screen and (max-width: 767px) {
+    .swiper-button-prev, .swiper-container-rtl .swiper-button-next{
+      margin-left: 0;
+    }
+  }
+</style>

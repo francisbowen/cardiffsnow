@@ -1,0 +1,52 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+{%- if layout == 'password' or layout == 'theme' -%}
+<script type="text/javascript" src="{{ 'layout.password@layout.theme.js' | asset_url }}" defer="defer"></script>
+{%- else -%}
+<link rel="prefetch" href="{{ 'layout.password@layout.theme.js' | asset_url }}" as="script">
+{%- endif -%} {%- if layout == 'password' -%}
+<script type="text/javascript" src="{{ 'layout.password.js' | asset_url }}" defer="defer"></script>
+{%- else -%}
+<link rel="prefetch" href="{{ 'layout.password.js' | asset_url }}" as="script">
+{%- endif -%} {%- if layout == 'theme' -%}
+<script type="text/javascript" src="{{ 'vendors@layout.theme.js' | asset_url }}" defer="defer"></script>
+{%- else -%}
+<link rel="prefetch" href="{{ 'vendors@layout.theme.js' | asset_url }}" as="script">
+{%- endif -%} {%- if layout == 'theme' -%}
+<script type="text/javascript" src="{{ 'layout.theme.js' | asset_url }}" defer="defer"></script>
+{%- else -%}
+<link rel="prefetch" href="{{ 'layout.theme.js' | asset_url }}" as="script">
+{%- endif -%} {%- if template == 'gift_card' -%}
+<script type="text/javascript" src="{{ 'vendors@template.gift_card.js' | asset_url }}" defer="defer"></script>
+{%- else -%}
+<link rel="prefetch" href="{{ 'vendors@template.gift_card.js' | asset_url }}" as="script">
+{%- endif -%} {%- if template == 'gift_card' -%}
+<script type="text/javascript" src="{{ 'template.gift_card.js' | asset_url }}" defer="defer"></script>
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.gift_card.js' | asset_url }}" as="script">
+{%- endif -%} {%- if template == 'index' or template == 'product' -%}
+<script type="text/javascript" src="{{ 'vendors@template.index@template.product.js' | asset_url }}" defer="defer"></script>
+{%- else -%}
+<link rel="prefetch" href="{{ 'vendors@template.index@template.product.js' | asset_url }}" as="script">
+{%- endif -%} {%- if template == 'index' -%}
+<script type="text/javascript" src="{{ 'template.index.js' | asset_url }}" defer="defer"></script>
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.index.js' | asset_url }}" as="script">
+{%- endif -%} {%- if template == 'page.tech' -%}
+<script type="text/javascript" src="{{ 'template.page.tech.js' | asset_url }}" defer="defer"></script>
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.page.tech.js' | asset_url }}" as="script">
+{%- endif -%} {%- if template == 'product' -%}
+<script type="text/javascript" src="{{ 'template.product.js' | asset_url }}" defer="defer"></script>
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.product.js' | asset_url }}" as="script">
+{%- endif -%} {%- if template == 'customers/addresses' -%}
+<script type="text/javascript" src="{{ 'template.addresses.js' | asset_url }}" defer="defer"></script>
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.addresses.js' | asset_url }}" as="script">
+{%- endif -%} {%- if template == 'customers/login' -%}
+<script type="text/javascript" src="{{ 'template.login.js' | asset_url }}" defer="defer"></script>
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.login.js' | asset_url }}" as="script">
+{%- endif -%}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.7.1/swiper-bundle.min.js"></script>

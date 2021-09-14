@@ -1,0 +1,86 @@
+<div id="wrap">
+    <div class="bg-img bg-img-top int-xxs-t-10 int-sm-t-8 int-md-t-10" style="background-image: url({{ 'shop-hero.jpg' | asset_url }})">
+
+      <div class="container-fluid ext-xxs-neg-t-8 ext-sm-neg-t-0 pl-pr">
+                <div class="row">
+                <div class="col-xxs-12">
+                    <div class="board-grid grid-view">
+                    <ul class="products">
+                        {% for product in collection.products %}
+                        {% include 'product-board-grid' %}
+                        {% endfor %}
+                    </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+      {% comment %}
+        {% for link in linklists.all-collections.links %}
+            {% assign collection = link.object %}
+    
+            {% if collection.handle == 'boards' %}
+            <div class="container-fluid ext-xxs-neg-t-8 ext-sm-neg-t-0 pl-pr">
+                <div class="row">
+                <div class="col-xxs-12">
+                    <div class="board-grid grid-view">
+                    <ul class="products">
+                        {% for product in collection.products %}
+                        {% include 'product-board-grid' %}
+                        {% endfor %}
+                    </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+            {% endif %}
+
+        {% endfor %}
+{% endcomment %}
+        <div class="row end-xxs hide-smx bottom-banner-section">
+            <div class="col-xxs-12 col-sm-5">
+              <div class="bg-black left-side-text">
+                <div class="text-wrap">
+                  <h3 class="heading">{{ section.settings.title }}</h3>
+                  <p>{{ section.settings.text }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xxs-12 col-sm-7">
+              <div class="ext-xxs-neg-t-2x ext-sm-neg-l-1 ext-md-neg-l-2x ext-lg-neg-t-4x ext-lg-neg-l-3x image-load">
+                <img src="{{ section.settings.image | img_url: 'master' }}" data-aos="zoom-out" alt="Cardiff Split Boards on the Mountain" />
+              </div>
+            </div>
+        </div>
+  
+        {% comment %}
+        {% if collection.handle == 'accessories' %}
+          
+        {% endif %}
+        {% endcomment %}
+   
+    </div>
+    
+  </div>
+
+  {% schema %}
+  {
+    "name": "Grid Collection",
+    "settings": [
+      {
+        "id": "title",
+        "type": "text",
+        "label": "Title"
+      },
+      {
+        "id": "text",
+        "type": "textarea",
+        "label": "Text"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      }
+    ] 
+  }
+{% endschema %}

@@ -1,0 +1,58 @@
+<div class="int-xxs-v-3 int-md-v-6 bg-white relative">
+    <div class="container">
+      <div class="row end-xxs">
+        {% if section.settings.image != blank %}
+        <div class="col-md-3 col-lg-4">
+          <div class="position-to-side">
+            <img src="{{ section.settings.image | img_url: 'master' }}" alt="Goat Solid Board" />
+          </div>
+        </div>
+        {% endif %}
+
+        <div class="col-xxs-9 col-md-9 col-md-offset-0 col-lg-6 col-lg-offset-1">
+          <div class="row ">
+            <div class="col-md-12">
+              <h3 class="t-black int-md-b-4" data-scroll data-splitting="lines">Materials</h3>
+            </div>
+            <div class="col-md-6" data-aos="fade-up">
+              <h4>Enduro</h4>
+              <h6 class="int-md-r-6">For those that require durability and dependibility</h6>
+              <p>The Enduro build is for those that require the most durable, reliable and high performance equipment. This build features our CARBONcore and triaxial fiberglass construction which creates a torsionally rigid ride and adds strength to the board for increased durability.</p>
+              <ul class="ext-xxs-b-4 ext-md-b-0">
+                <li>CARBONcore</li>
+                <li>UNIwall</li>
+                <li>TRIAXglass</li>
+                <li>LAUNCHpads</li>
+              </ul>
+            </div>
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <h4>Pro Carbon</h4>
+              <h6 class="int-md-r-6">For those that demand cutting edge ultralight gear</h6>
+              <p>This is a true 100% carbon fiber construction build. The core is a lightweight poplar + paulownia mix with vertically laid aluminum strips which balances the carbon to give it a more damp ride. in our splitboard models we added reinforcements under the toe piece and the ENDUROcap. On the solid version we use our urethane SHOWtopper finish, which allows for quick and easy snow shedding.</p>
+              <ul>
+                <li>TITANcore</li>
+                <li>SLIDEwall</li>
+                <li>CARBONfiber100</li>
+                <li>FULLplank</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% schema %}
+{
+    "name": "Materials",
+    "blocks": [
+    ],
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        }
+    ]
+}
+{% endschema %}

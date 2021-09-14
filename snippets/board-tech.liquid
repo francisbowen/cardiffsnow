@@ -1,0 +1,26 @@
+{% assign handle = product.handle | remove: 'the-' %}
+{% assign v = handle | append: '-solid-v.png' %}
+{% assign h = handle | append: '-split-h.png' %}
+{% assign camber = handle | append: '-camber.png'  %}
+{% assign tech = 'tech-' | append: handle %}
+
+<div class="section shop-tech bg-black t-gold int-xxs-t-8">
+  <div class="container">
+    <div class="row end-sm">
+      <div class="col-sm-7">
+        <div class="int-sm-r-2">
+          <img src="{{ h | asset_url }}" alt="{{ product.title }} Split Diagram" />
+          <img src="{{ camber | asset_url }}" alt="{{ product.title }} Camber Dimensions" />
+        </div>
+      </div>
+    </div>
+    <div class="row center-xxs" data-aos="fade-up">
+      <div class="col-xl-2 last-xxs initial-order-xl">
+        <div class="clip-half">
+          <img src="{{ v | asset_url }}" alt="{{ product.title }} Solid Diagram" />
+        </div>
+      </div>
+      {% include tech %}
+    </div>
+  </div>
+</div>

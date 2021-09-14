@@ -1,0 +1,1109 @@
+{
+  "current": {
+    "color_accent": "#c4cdd5",
+    "color_body_text": "#161d25",
+    "color_main_bg": "#fff",
+    "font_heading": "helvetica_n4",
+    "font_body": "helvetica_n4",
+    "share_image": "",
+    "social_sharing_blog": true,
+    "share_facebook": true,
+    "share_twitter": true,
+    "share_pinterest": true,
+    "social_twitter_link": "",
+    "social_facebook_link": "",
+    "social_pinterest_link": "",
+    "social_instagram_link": "",
+    "social_snapchat_link": "",
+    "social_tumblr_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
+    "social_linkedin_link": "",
+    "cart_notes_enable": true,
+    "favicon": "shopify:\/\/shop_images\/favicon.png",
+    "shipping_text": "<p>21\/22 Boards Shipping September 2021. For more information or questions please email <a href=\"mailto:info@cardiffsnow.com\" title=\"mailto:info@cardiffsnow.com\">info@cardiffsnow.com<\/a><\/p>",
+    "checkout_header_image": "shopify:\/\/shop_images\/Goat_-_Horizontal_0f05639d-22d7-4685-b882-553b98b5e408.png",
+    "checkout_logo_image": "shopify:\/\/shop_images\/favicon.png",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "large",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#eeeeee",
+    "checkout_heading_font": "Open Sans",
+    "checkout_body_font": "Open Sans",
+    "checkout_accent_color": "#ac8b33",
+    "checkout_button_color": "#49536a",
+    "checkout_error_color": "#e32c2b",
+    "sections": {
+      "collection-list": {
+        "type": "collection-list",
+        "blocks": {
+          "collection-list-0": {
+            "type": "collection",
+            "settings": {
+              "collection": ""
+            }
+          },
+          "collection-list-1": {
+            "type": "collection",
+            "settings": {
+              "collection": ""
+            }
+          },
+          "collection-list-2": {
+            "type": "collection",
+            "settings": {
+              "collection": ""
+            }
+          }
+        },
+        "block_order": [
+          "collection-list-0",
+          "collection-list-1",
+          "collection-list-2"
+        ],
+        "settings": {
+          "title": "Collection list"
+        }
+      },
+      "featured-collection": {
+        "type": "featured-collection",
+        "settings": {
+          "title": "Featured collection",
+          "collection": ""
+        }
+      },
+      "featured-product": {
+        "type": "featured-product",
+        "settings": {
+          "product": "",
+          "show_share_buttons": false
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "announcement_bar_enabled": false,
+          "announcement_bar_home_page_only": false,
+          "announcement_bar_text": "",
+          "announcement_bar_link": "",
+          "logo_max_width": 260,
+          "menu": "latest-main-menu"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "title": "Footer"
+        }
+      },
+      "product": {
+        "type": "product",
+        "blocks": {
+          "14a4d53b-4e70-4aec-83b1-b7cbcb9e59a8": {
+            "type": "awards_slide",
+            "settings": {
+              "product": "the-goat",
+              "slide_image": "shopify:\/\/shop_images\/BCM_EdChoice_Logo_FIN_fa0c70c6-44ad-4c9b-b729-0f82ab3037f8.png"
+            }
+          },
+          "cdd2053f-a988-46bc-9fc1-30cd7513920a": {
+            "type": "awards_slide",
+            "settings": {
+              "product": "the-crane",
+              "slide_image": "shopify:\/\/shop_images\/BCM_EdSelect_Logo_darkBG.png"
+            }
+          },
+          "8390dea0-cd48-4bf3-890c-01c107f402c0": {
+            "type": "awards_slide",
+            "settings": {
+              "product": "the-powgoda",
+              "slide_image": "shopify:\/\/shop_images\/BCM_EdSelect_Logo_darkBG.png"
+            }
+          },
+          "16fc9650-bf4e-483f-9287-48eb705845ee": {
+            "type": "awards_slide",
+            "settings": {
+              "product": "the-bonsai"
+            }
+          },
+          "179fe8d3-1e30-4df8-8f54-22ac118d699f": {
+            "type": "awards_slide",
+            "settings": {
+              "product": "the-swell"
+            }
+          }
+        },
+        "block_order": [
+          "14a4d53b-4e70-4aec-83b1-b7cbcb9e59a8",
+          "cdd2053f-a988-46bc-9fc1-30cd7513920a",
+          "8390dea0-cd48-4bf3-890c-01c107f402c0",
+          "16fc9650-bf4e-483f-9287-48eb705845ee",
+          "179fe8d3-1e30-4df8-8f54-22ac118d699f"
+        ],
+        "settings": {
+          "slide_left_arrow_img": "shopify:\/\/shop_images\/slider-left.jpg",
+          "slide_right_arrow_img": "shopify:\/\/shop_images\/slider-right.jpg"
+        }
+      },
+      "video": {
+        "type": "video",
+        "settings": {
+          "video": "https:\/\/youtu.be\/oT1h3VkOylA",
+          "image": "shopify:\/\/shop_images\/video-bg-img.jpg",
+          "title": "Ride Different"
+        }
+      },
+      "ambassadors": {
+        "type": "ambassadors",
+        "blocks": {
+          "56e4f7d7-021a-478c-8f6f-cc052c4f863f": {
+            "type": "ambassador",
+            "settings": {
+              "profile_picture": "shopify:\/\/shop_images\/IMG_2529.jpg",
+              "profile_caption": "",
+              "amabsador_picture": "shopify:\/\/shop_images\/bjorn-life-img-right.jpg",
+              "title": "Bjorn Leines",
+              "subtitle": "@bjornleines",
+              "text": "Bjorn Leines is a self-proclaimed LIFER and student of the mountains in the snow community, which has shaped most all aspects of his life. Bjorn has inspired riders for over two decades obtaining a list of accolades a mile long.  None of those compares to the experience of growing up in a time where snowboarding as a “sport” went from a bunch of rebels to mainstream acceptance and awareness.  He is grateful to be on this journey learning and growing alongside and within the snow industry as not only an athlete, but also a designer, manager, and entrepreneur.  His intentions are to push his abilities to reach his potential and also to mentor the Cardiff Crew along the way so we can all “Stand In High Places” together.",
+              "collection_title": "Bjorn's Setup",
+              "collection": "bjorns-setup",
+              "facebook": "",
+              "insta": "https:\/\/www.instagram.com\/bjornleines\/",
+              "twitter": "",
+              "popup_text": "",
+              "popup_video": "https:\/\/youtu.be\/cv5TnIGWsRQ",
+              "popup_video_heading": "TAKE A LOOK",
+              "popup_video_text": "CHECK OUT SOME OF OUR FAVORITE BJORN MOMENTS FROM LAST SEASON",
+              "popup_image1": "shopify:\/\/shop_images\/17_Bjorn_Line_Selets-_Cardiff_Camp_2021_Sean_Kerrick_Sullivan_1.jpg",
+              "popup_text_heading1": "WHY CARDIFF",
+              "popup_text1": "First it was the product.  Having such well-designed and purpose driven product combined with a very refined and elevated aesthetic made them super attractive… after riding a Cardiff for the first time I instantly wanted to understand more about the construction and geometry because they rode better than any other board I had been on prior.",
+              "popup_image2": "shopify:\/\/shop_images\/CardiffSnowcraft-2022_0096_Goat-Carbon-162-Split_Detail_KO.png",
+              "popup_text_heading2": "LINE UP FAVORITES",
+              "popup_text2": "Goat Split Pro carbon 166, Goat Soild Pro carbon 166, Crane Split Pro Carbon 162, Crane Solid Pro Carbon 162.\n\nThe Goat has the float and a is insanely stable at high speeds.   It’s my go to when the snow is over a foot deep, whether its at the resort or in the backcountry. I’m also lucky to have the Crane. This is my preference for most resort riding and I love it in the backcountry, especially when the terrain is complex.   It turns on a dime and has such a snappy response because of the combination of the sidecut and camber profile.   I like the reactiveness and energy that the carbon cores give me.",
+              "popup_image3": "shopify:\/\/shop_images\/Bjorn_DIck_s_Ditch_stale_fish_Shappers_summit_Photo_by_Kegan_Rice_2020.jpg",
+              "popup_text_heading3": "FAVORITE SPOT",
+              "popup_text3": "Alaska is my fav place to ride…  Ak has a way of making you feel small because everything is on such a bigger scale.   The terrain is some of the best in the world and always seems to push my imagination and ability.  It’s a humbling feeling being in Alaska and the wild environment is incredible."
+            }
+          },
+          "8ae83854-5df9-48a6-a035-4705921f5bb1": {
+            "type": "ambassador",
+            "settings": {
+              "profile_picture": "shopify:\/\/shop_images\/2019_JAPAN-80.jpg",
+              "profile_caption": "",
+              "amabsador_picture": "shopify:\/\/shop_images\/neil-provo.jpg",
+              "title": "Neil Provo",
+              "subtitle": "@neilprovo",
+              "text": "Snowboarding has taken Neil all over the globe in search of the perfect line, the perfect snow, and the good times that come with the search. From Alaska all the way back east to the small ski hill Neil grew up on in Connecticut, it has been his vessel for creativity and what drives him in life! For the past 20 years he's gotten to work with some of the best athletes and film crews in the snow world to bring visions to reality.",
+              "collection_title": "Neil's Setup",
+              "collection": "neils-setup",
+              "facebook": "",
+              "insta": "https:\/\/www.instagram.com\/neilprovo\/",
+              "twitter": "",
+              "popup_text": "",
+              "popup_video": "https:\/\/youtu.be\/qiZTQx9RDGQ",
+              "popup_video_heading": "TAKE A LOOK",
+              "popup_video_text": "CHECK OUT SOME OF OUR FAVORITE NEIL MOMENTS FROM LAST SEASON",
+              "popup_image1": "shopify:\/\/shop_images\/NeilProvo-2021-69.jpg",
+              "popup_text_heading1": "WHY CARDIFF",
+              "popup_text1": "It was really the outstanding performance of the boards that really led me to fall in love with Cardiff. Every attention to detail was addressed and it keeps on evolving. It’s the best combination of  performance, lightweight materials and durability that I have come across.",
+              "popup_image2": "shopify:\/\/shop_images\/CardiffSnowcraft-2022_0078_Crane-Enduro-162_Detail_KO.png",
+              "popup_text_heading2": "LINE UP FAVORITES",
+              "popup_text2": "My Go to rides are the carbon Powgoda split and Crane Split. The Powgoda for the deep, and the crane for the steeps! I enjoy the nimble nature of the tighter side cuts and the benefit of the lightweight carbon construction.  For bindings I use Spark R&D… Preferably none at all if the snow allows for it! Surfs up!",
+              "popup_image3": "shopify:\/\/shop_images\/1-ProvoPhotos-68.jpg",
+              "popup_text_heading3": "FAVORITE SPOT",
+              "popup_text3": "Alaska for the massive and unique terrain, British Columbia for the pillows, and back home in Utah for the consistently good powder snow. Each have such a variety of terrain and challenges!"
+            }
+          },
+          "eb46c16e-da78-401c-b442-60a0827a8b15": {
+            "type": "ambassador",
+            "settings": {
+              "profile_picture": "shopify:\/\/shop_images\/Rafa_action_image_1.jpg",
+              "profile_caption": "",
+              "amabsador_picture": "shopify:\/\/shop_images\/RAFA_LIFESTYLE_Stein_Corcovado_2019-73_2_1_1.jpg",
+              "title": "Rafael Pease",
+              "subtitle": "@rafaelpease",
+              "text": "Rafael grew up all over the place. He has always been active in the outdoors but didn’t\nbegin snowboarding until he was 17. Now 27, he spends nearly every month in the\nmountains. Rafael splits his home between Chile and the United States. He combines\nhis education in environmental sciences with his career in the mountains to make\nforward-thinking film projects with his company - Connections Movement.",
+              "collection_title": "Rafael's Setup",
+              "collection": "rafaels-setup",
+              "facebook": "",
+              "insta": "https:\/\/www.instagram.com\/rafaelpease\/",
+              "twitter": "",
+              "popup_text": "",
+              "popup_video": "",
+              "popup_video_heading": "",
+              "popup_video_text": "",
+              "popup_image1": "shopify:\/\/shop_images\/RAFA_BLACK_AND_WHITE_ACTION_1.jpg",
+              "popup_text_heading1": "WHY CARDIFF",
+              "popup_text1": "I enjoy the durability & simplicity of the splitboards. There is nowhere these boards can't be taken, they thrive in all kinds of conditions which make the ride that much more trusting and enjoyable.",
+              "popup_image2": "shopify:\/\/shop_images\/CardiffSnowcraft-2022_0093_Goat-Carbon-162_Detail_KO.png",
+              "popup_text_heading2": "LINE UP FAVORITES",
+              "popup_text2": "For me the Goat split & solid are my favorite boards. Sturdy yet playful.",
+              "popup_image3": "shopify:\/\/shop_images\/Screen_Shot_2021-08-20_at_12.32.35_PM.png",
+              "popup_text_heading3": "WHEN RAFAEL ISN'T ON HIS BOARD YOU CAN FIND HIM",
+              "popup_text3": "What initially got me into snowboarding is nature, so being a steward to the places I enjoy so much is something I am heavily invested in. Protecting the rights of the wild places & those socially oppressed from going to them is what I like dedicating much of\nmy time too."
+            }
+          },
+          "4d860564-298d-4cb7-93a1-1c7d07d02822": {
+            "type": "ambassador",
+            "settings": {
+              "profile_picture": "shopify:\/\/shop_images\/alexk_toesidepow_2.jpg",
+              "profile_caption": "",
+              "amabsador_picture": "shopify:\/\/shop_images\/Alex_lifestyle_face_shot_1.jpg",
+              "title": "Alex Kollar",
+              "subtitle": "@alex.kollar_",
+              "text": "In Spring of 2021 Alex rode the 5 Washington State Volcanos with his best friend, entirely human powered, all via bike, from state border to border. He love's exploring the mountains with friends on his splitboard. He is also a videographer who documents these epic adventures.",
+              "collection_title": "Alex's Setup",
+              "collection": "alexs-collection",
+              "facebook": "",
+              "insta": "https:\/\/www.instagram.com\/alex.kollar_\/",
+              "twitter": "",
+              "popup_text": "",
+              "popup_video": "",
+              "popup_video_heading": "",
+              "popup_video_text": "",
+              "popup_image1": "shopify:\/\/shop_images\/Alex_heel_side_turn_action_2.jpg",
+              "popup_text_heading1": "WHY CARDIFF",
+              "popup_text1": "Cardiff makes some of the best splitboards in the world. This level of craft makes Cardiff an obvious option. I love the attention to detail, durability and feeling of all the Cardiff boards.",
+              "popup_image2": "shopify:\/\/shop_images\/CardiffSnowcraft-2022_0063_Powgoda-Enduro-158-Split_Detail_KO.png",
+              "popup_text_heading2": "LINE UP FAVORITE",
+              "popup_text2": "If I had to choose one Cardiff item it would be the Powgoda. This board is the best powder gadget I have ever ridden. I love powder, Powgoda and Cardiff! \n\nAlex has also been known to ride the Bonsai Carbon Split 158 and Bonsai Enduro Solid 158.",
+              "popup_image3": "shopify:\/\/shop_images\/Screen_Shot_2021-08-20_at_12.25.29_PM.png",
+              "popup_text_heading3": "WHEN ALEX ISN'T ON HIS BOARD YOU CAN FIND HIM",
+              "popup_text3": "I love mountain biking, kayaking, paragliding, photography, videography and farmers markets!"
+            }
+          },
+          "65941421-10ba-49b1-9b35-7838e3a92e89": {
+            "type": "ambassador",
+            "settings": {
+              "profile_picture": "shopify:\/\/shop_images\/matt_fournaris_media4.jpg",
+              "profile_caption": "",
+              "amabsador_picture": "shopify:\/\/shop_images\/MEGS_close_up_face_photo_1_1.jpg",
+              "title": "Megs Matheson",
+              "subtitle": "@megs239",
+              "text": "Growing up in Tri-Cities WA, Megs always dreamed of the mountains that were absent from her surroundings. She started snowboarding at age 14\nafter finally convincing her parents to take a 2 hour bus to the\nnearest slopes. A few tomahawks later, she was hooked - thanks Mom and Dad! These days you’ll find her in Jackson, WY splitboarding the Tetons\nand surrounding ranges. She's  passionate about sustainability and\ninclusion in action sports. Her goal for this upcoming season is to\nwork towards becoming a guide to responsibly share the sport she loves so much. Give her a howl if you see her on the slopes - you’ll never catch her without a smile and enough pocket bacon to share.",
+              "collection_title": "Meg's Setup",
+              "collection": "megs-setup",
+              "facebook": "",
+              "insta": "https:\/\/www.instagram.com\/megs239\/",
+              "twitter": "",
+              "popup_text": "",
+              "popup_video": "",
+              "popup_video_heading": "",
+              "popup_video_text": "",
+              "popup_image1": "shopify:\/\/shop_images\/Megs_Smile_and_Powgoda_lifestyle_upclose.jpg",
+              "popup_text_heading1": "WHY CARDIFF",
+              "popup_text1": "I was first introduced to the Cardiff Crew as a tester at shapers summit in Jackson, WY. After a few runs on the Crane I was hooked, but the enthusiasm of our crew and core values of this company is what made me fall in love with Cardiff.",
+              "popup_image2": "shopify:\/\/shop_images\/CardiffSnowcraft-2022_0085_Crane-Enduro-154_Detail_KO.png",
+              "popup_text_heading2": "LINE UP FAVORITE",
+              "popup_text2": "The Crane all day! The Crane holds\nthe best edge I have ever ridden in steep icy conditions and handles\non a dime in powder on the deep days. The terrain in Jackson demands a board that does it all and this board does it all ably. \nMegs is known to ride the Crane Enduro Solid 154 and the Crane Pro Carbon Split 154.",
+              "popup_image3": "shopify:\/\/shop_images\/Screen_Shot_2021-08-20_at_12.40.00_PM.png",
+              "popup_text_heading3": "DREAM RIDE",
+              "popup_text3": "Splitboarding in Kashmir is my dream. I’m drawn to the close access to the Himalayas as well as the cultural aspects of a\ntrip there."
+            }
+          },
+          "67d01467-9b14-4c8a-a0a7-77a4e0c72d06": {
+            "type": "ambassador",
+            "settings": {
+              "profile_picture": "shopify:\/\/shop_images\/Teton_Pass_39_1.jpg",
+              "profile_caption": "",
+              "amabsador_picture": "shopify:\/\/shop_images\/JMO_close_up_lifestyle_1_1.jpg",
+              "title": "Justin Morgan",
+              "subtitle": "@jmosends",
+              "text": "JMO grew up in Carlisle, Massachusetts and spent his childhood riding in Nashoba Valley, entering contests as a grom. He worked as an instructor at age 14 and built terrain parks until he graduated college. He was always making trips to Killington, Vermont where he found splitboarding at Pico Mountain. He moved to Utah in 2015 to build his backcountry skill set, from avalanche education to navigating exposed terrain. He pushes the limits of what's possible, searching for lines that have never been ridden. He has been featured multiple times in Ascent Magazine, and written articles for media outlets like TGR.",
+              "collection_title": "Justin's Setup",
+              "collection": "justins-setup",
+              "facebook": "",
+              "insta": "https:\/\/www.instagram.com\/jmosends\/",
+              "twitter": "",
+              "popup_text": "",
+              "popup_video": "",
+              "popup_video_heading": "",
+              "popup_video_text": "",
+              "popup_image1": "shopify:\/\/shop_images\/Front_Porch_JMO_PHOTO_25_2.jpg",
+              "popup_text_heading1": "WHY CARDIFF",
+              "popup_text1": "The innovation from Sam Bawden. For so long riding a splitboard that wasn’t reliable, rode poorly, and not designed for the uphill made progressing difficult. Riding Cardiffs I have a board I can rely on day after day in the backcountry. The materials they use means I finally have a durable, light splitboard that can take me further in the mountains. On the downhill pow to crud, I find them to be the most versatile board. Plus the float. I have never ridden a board that rides pow like these boards.",
+              "popup_image2": "shopify:\/\/shop_images\/CardiffSnowcraft-2022_0063_Powgoda-Enduro-158-Split_Detail_KO_14d9ef5e-7424-4993-a7a8-9ccbb9e114da.png",
+              "popup_text_heading2": "LINE UP FAVORITES",
+              "popup_text2": "Cardiff Powgoda. It's the most fun I have ever had on a snowboard. From pow to hard pack it just loves to dance around the mountain. It's just so easy to ride in deep snow and the shape is incredible even railing groomers. Somehow its medium flex but still remains stable when on edge at speed. I just love this snowboard so much.\n\nCardiff Carbon Goat. For big mountain riding there isn’t a better board. It's stable, maneuverable, and holds in edge in any condition which is so important when riding over exposure on steep lines.",
+              "popup_image3": "shopify:\/\/shop_images\/Screen_Shot_2021-08-20_at_12.53.25_PM.png",
+              "popup_text_heading3": "FAVORITE SPOT",
+              "popup_text3": "Cardiff Fork. It's simply the best terrain I have ever ridden with the best snow. From wide open bowls to steep chutes, it has it all."
+            }
+          },
+          "8b5ce6a5-f1d3-4dd1-8286-c454d7cbd697": {
+            "type": "ambassador",
+            "settings": {
+              "profile_picture": "shopify:\/\/shop_images\/Skinny_Jeans_Photo_MichaelAasheim_1.jpg",
+              "profile_caption": "",
+              "amabsador_picture": "shopify:\/\/shop_images\/CardiffSnowcraft_Portraits_MaxwellMorrill.jpg",
+              "title": "Maxwell Morrill",
+              "subtitle": "@thewasatchwolf",
+              "text": "In 1985 Maxwell found snowboarding on the small hills of Douglas Mountain above Sebago Lake in his home State of Maine. The East Coast pioneer started competing in GS races and instructing throughout Maine and New Hampshire. \n\nMaxwell became one of the original team riders, testers and promoters at Voile, he assisted in the development of the “early days” of splitboarding. He was drawn into the mountaineer world and quickly immersed himself into avalanche education.\n\nAmassing his 3 decades of splitboard experiences Maxwell now directs the education, events, and outreach at Cardiff Snowcraft.",
+              "collection_title": "Maxwell's Setup",
+              "collection": "maxwells-setup",
+              "facebook": "",
+              "insta": "https:\/\/www.instagram.com\/thewasatchwolf\/",
+              "twitter": "",
+              "popup_text": "",
+              "popup_video": "",
+              "popup_video_heading": "",
+              "popup_video_text": "",
+              "popup_image1": "shopify:\/\/shop_images\/MAXWELL_MORRILL_-_SWELL.jpg",
+              "popup_text_heading1": "WHY CARDIFF",
+              "popup_text1": "The pioneering spirit of Sam Bawden. How we connected over discussing the early shapes and tech of “the skiff” and “F1 Cabra”, now the Powgoda and Goat. Our builder backgrounds and views of the backcountry. The ride of the first 162 Pro Carbon Skiff on Cardiff Pass, after that fateful day, I was drawn in for the long haul.",
+              "popup_image2": "shopify:\/\/shop_images\/CardiffSnowcraft-2022_0069_Swell-Carbon-Split_Detail_KO.png",
+              "popup_text_heading2": "LINE UP FAVORITES",
+              "popup_text2": "SWELL 160 PRO CARBON (of course), Phantom slipper and bindings.  – I like the Swell because of the collaboration Sam and I have had on the design. He took the specs and made an amazing board from the initial discussion, ideas and the prototype we fashioned it from. It blends my surfing and steep backcountry styles very well. The Phantom kit gives me the “flow like” style I need in powder.",
+              "popup_image3": "shopify:\/\/shop_images\/Max_Swell_Dog_Lifestyle_Shappers_summit.jpg",
+              "popup_text_heading3": "WHEN MAX ISN'T ON HIS BOARD YOU CAN FIND HIM",
+              "popup_text3": "Surfing, alpine climbing, exploring, sea kayaking, guiding, doing photography, filming, and hanging with my dog Maverick."
+            }
+          },
+          "1ffa65df-98cd-4abc-a52d-a169868f3586": {
+            "type": "ambassador",
+            "settings": {
+              "profile_picture": "shopify:\/\/shop_images\/Rain_Felkl_2021_Alaska-_Action_Shot_1_ec719355-d7ec-4990-b820-abaedd5a6ac7.jpg",
+              "profile_caption": "",
+              "amabsador_picture": "shopify:\/\/shop_images\/Rain_Felkl_Portrait_AlaskaRange2021_1.jpg",
+              "title": "Rain Felkl",
+              "subtitle": "@rainfelkl",
+              "text": "Rain Felkl is an Alaska Native who now resides in the Wasatch Mountains of Salt Lake City, Utah. After making the move, she was quickly absorbed into the freedom and adventure of human-powered splitboarding. \n\nRain has had the opportunity to ride all over the western lower 48s in exceptional mountain ranges. In addition, Rain has spent time riding in Alaska’s mountain ranges. \n\nWhen she isn’t riding powder, Rain is a rock climber and cyclist, which has naturally led her eye towards more exploratory splitboard objectives. She is determined to further her human-powered explorations and we are stoked to be along on the journey.",
+              "collection_title": "Rain's Setup",
+              "collection": "rains-setup",
+              "facebook": "",
+              "insta": "https:\/\/www.instagram.com\/rainfelkl\/",
+              "twitter": "",
+              "popup_text": "",
+              "popup_video": "",
+              "popup_video_heading": "",
+              "popup_video_text": "",
+              "popup_image1": "shopify:\/\/shop_images\/Clay_James_-_action_shot.jpg",
+              "popup_text_heading1": "WHY CARDIFF",
+              "popup_text1": "For me Cardiff equates to efficiency, performance and reliability in the mountains. Cardiff's durable board builds allow me to know my equipment won't fail me on big mountain days, icy skin tracks, or firm descents, I trust my Cardiff board to hold an edge.",
+              "popup_image2": "shopify:\/\/shop_images\/CardiffSnowcraft-2022_0059_Powgoda-Enduro-152_Detail_KO.png",
+              "popup_text_heading2": "LINE UP FAVORITE",
+              "popup_text2": "The Powgoda! Your number one playful companion on a pow day, while the sidecut of this board allows for quick turns that are confidence inspiring in the steeps. Rain has also been known to ride the Goat Pro Carbon Split 150.",
+              "popup_image3": "shopify:\/\/shop_images\/Screen_Shot_2021-08-20_at_12.59.55_PM.png",
+              "popup_text_heading3": "DREAM RIDE",
+              "popup_text3": "Bike to board trips have really come into focus for me, it adds an exciting element to be fully human propelled. I’d like to complete a Eastern Sierra’s bike to board. Also on the list are yearly spring Alaska Range missions. For these, I’ll fly in with TAT, although approaching through the tundra at least once sounds inspiring!"
+            }
+          },
+          "4b1195c2-b9e5-4363-9006-ddeac8d7eee8": {
+            "type": "ambassador",
+            "settings": {
+              "profile_picture": "shopify:\/\/shop_images\/DSC_2613-Edit.Owen_Cassidy_Action_2.jpg",
+              "profile_caption": "",
+              "amabsador_picture": "shopify:\/\/shop_images\/Owen_Ropes_Lifetsyle_1.jpg",
+              "title": "Owen Cassidy",
+              "subtitle": "@trustinthealpine",
+              "text": "One of the bigger goals for Owen's splitboard mountaineering is to start approaching 20k summits with the intention of putting tracks down a few undescended objectives in the Karakoram Range. Pushing the technical aspect of pairing challenging and aesthetic ascents (not just the easiest option) to notable descents in the High Sierra and beyond.",
+              "collection_title": "Owen's Setup",
+              "collection": "owens-setup",
+              "facebook": "",
+              "insta": "https:\/\/www.instagram.com\/trustinthealpine\/",
+              "twitter": "",
+              "popup_text": "",
+              "popup_video": "",
+              "popup_video_heading": "",
+              "popup_video_text": "",
+              "popup_image1": "shopify:\/\/shop_images\/Screen_Shot_2021-08-20_at_1.10.39_PM.png",
+              "popup_text_heading1": "ACCOMPLISHMENTS TO BE PROUD OF",
+              "popup_text1": "First Decent - Washoe Revolution\/Gnarnia - Squaw Valley, CA\n\nEstablishing First Descents and rideable terrain in Baxter State Park on Katahdin, ME\n\nRecovering from a riding related Traumatic spinal Injury at age 15 to resume the sport",
+              "popup_image2": "shopify:\/\/shop_images\/CardiffSnowcraft-2022_0083_Crane-Enduro-158_Detail_KO.png",
+              "popup_text_heading2": "LINE UP FAVORITES",
+              "popup_text2": "Crane Solid Enduro 158\n\nBonsai Split Enduro 158",
+              "popup_image3": "shopify:\/\/shop_images\/Screen_Shot_2021-08-20_at_1.09.01_PM.png",
+              "popup_text_heading3": "WHEN OWEN ISN'T ON HIS BOARD YOU CAN FIND HIM",
+              "popup_text3": "Sea Kayaking, rock climbing, cycling, trail running"
+            }
+          },
+          "72149748-8f8a-4355-b622-e9c05f4f728e": {
+            "type": "ambassador",
+            "disabled": true,
+            "settings": {
+              "profile_caption": "",
+              "title": "Jeremy Jensen",
+              "subtitle": "@jeremyjensen_",
+              "text": "",
+              "collection_title": "Jeremy's Setup",
+              "collection": "",
+              "facebook": "",
+              "insta": "#",
+              "twitter": "",
+              "popup_text": "",
+              "popup_video": "",
+              "popup_video_heading": "",
+              "popup_video_text": "",
+              "popup_text_heading1": "",
+              "popup_text1": "",
+              "popup_text_heading2": "",
+              "popup_text2": "",
+              "popup_text_heading3": "",
+              "popup_text3": ""
+            }
+          },
+          "2b326be2-99af-496a-bfc2-b552c04dd04d": {
+            "type": "ambassador",
+            "disabled": true,
+            "settings": {
+              "profile_caption": "",
+              "title": "Trent Meisenheimer",
+              "subtitle": "@trent_meisenheimer",
+              "text": "",
+              "collection_title": "Trent's Setup",
+              "collection": "",
+              "facebook": "",
+              "insta": "#",
+              "twitter": "",
+              "popup_text": "",
+              "popup_video": "",
+              "popup_video_heading": "",
+              "popup_video_text": "",
+              "popup_text_heading1": "",
+              "popup_text1": "",
+              "popup_text_heading2": "",
+              "popup_text2": "",
+              "popup_text_heading3": "",
+              "popup_text3": ""
+            }
+          },
+          "3d5d4c04-9cb3-405e-acfd-6e6729078f58": {
+            "type": "ambassador",
+            "disabled": true,
+            "settings": {
+              "profile_caption": "",
+              "title": "Alex Gavic",
+              "subtitle": "",
+              "text": "",
+              "collection_title": "",
+              "collection": "",
+              "facebook": "",
+              "insta": "",
+              "twitter": "",
+              "popup_text": "",
+              "popup_video": "",
+              "popup_video_heading": "",
+              "popup_video_text": "",
+              "popup_text_heading1": "",
+              "popup_text1": "",
+              "popup_text_heading2": "",
+              "popup_text2": "",
+              "popup_text_heading3": "",
+              "popup_text3": ""
+            }
+          },
+          "c2313468-7bab-4458-8d0e-07fa2eb10e6a": {
+            "type": "ambassador",
+            "disabled": true,
+            "settings": {
+              "profile_caption": "",
+              "title": "Lila Yeoman",
+              "subtitle": "",
+              "text": "",
+              "collection_title": "",
+              "collection": "",
+              "facebook": "",
+              "insta": "",
+              "twitter": "",
+              "popup_text": "",
+              "popup_video": "",
+              "popup_video_heading": "",
+              "popup_video_text": "",
+              "popup_text_heading1": "",
+              "popup_text1": "",
+              "popup_text_heading2": "",
+              "popup_text2": "",
+              "popup_text_heading3": "",
+              "popup_text3": ""
+            }
+          }
+        },
+        "block_order": [
+          "56e4f7d7-021a-478c-8f6f-cc052c4f863f",
+          "8ae83854-5df9-48a6-a035-4705921f5bb1",
+          "eb46c16e-da78-401c-b442-60a0827a8b15",
+          "4d860564-298d-4cb7-93a1-1c7d07d02822",
+          "65941421-10ba-49b1-9b35-7838e3a92e89",
+          "67d01467-9b14-4c8a-a0a7-77a4e0c72d06",
+          "8b5ce6a5-f1d3-4dd1-8286-c454d7cbd697",
+          "1ffa65df-98cd-4abc-a52d-a169868f3586",
+          "4b1195c2-b9e5-4363-9006-ddeac8d7eee8",
+          "72149748-8f8a-4355-b622-e9c05f4f728e",
+          "2b326be2-99af-496a-bfc2-b552c04dd04d",
+          "3d5d4c04-9cb3-405e-acfd-6e6729078f58",
+          "c2313468-7bab-4458-8d0e-07fa2eb10e6a"
+        ],
+        "settings": {
+          "header_bg": "shopify:\/\/shop_images\/Megs_Action.jpg",
+          "hero-banner-heading": "The Cardiff Crew"
+        }
+      },
+      "boards-product": {
+        "type": "boards-product",
+        "blocks": {
+          "4326007e-15c0-44a4-b840-03aa990b0f7a": {
+            "type": "boards_product",
+            "settings": {
+              "product_img": "shopify:\/\/shop_images\/GOAT_2_6032535e-d08d-4d39-b1e9-f3bf5e47bfeb.png",
+              "water_marks_img": "shopify:\/\/shop_images\/bonsai-watermark.png",
+              "tag": "Freeride Refined",
+              "title": "The Goat",
+              "discription": "<h2>backcountry<\/h2>\n                      <p><strong>2021 Editors Choice Award<\/strong><\/p>\n                      <p>\"All three boards that Cardiff submitted to the test earned slots in the Gear Guide this year, but the Goat was a standout: testers found the split both capable of charging hard and popping lazy, playful spins on the same lap. We knew they were good... but now, everyone else does too.\" <\/p>\n\n   <strong>\"A GREAT COMPLIMENT TO ANY QUIVER - OR A ONE-BOARD WONDER, TOO.\"<strong><\/strong><\/strong>",
+              "label1_heading": "PURPOSE",
+              "label1_text": "SUREFOOTED FREERIDE",
+              "label2_heading": "SHAPE",
+              "label2_text": "SET BACK TWIN",
+              "label3_heading": "TERRAIN",
+              "label3_text": "BIG MOUNTAIN, ADVANCED",
+              "label4_heading": "SIZING",
+              "label4_text": "150, 154, 158, 162, 166",
+              "cta_btn": "SHOP",
+              "cta_link": "shopify:\/\/products\/the-goat"
+            }
+          },
+          "bdef631b-dc3d-498f-a02b-1be07d41c839": {
+            "type": "boards_product",
+            "settings": {
+              "product_img": "shopify:\/\/shop_images\/CRANE_3_copy.png",
+              "water_marks_img": "shopify:\/\/shop_images\/bonsai-watermark.png",
+              "tag": "Freeride Refined",
+              "title": "The Crane",
+              "discription": "<h2>shaper summit<\/h2>\n                      <p><strong>RATED RADICAL<\/strong><\/p>\n                      <p>An all-mountain freeride twin that tours, rides, and flies with effortless elegance. Shaper Summit Testers gave the Crane highest marks in playfulness, stability, and float.<\/p> \n\n                   <strong>\"ROCK SOLID - AS GOOD AS IT GETS\"<strong><\/strong><\/strong>",
+              "label1_heading": "PURPOSE",
+              "label1_text": "FREESTYLE FREERIDE",
+              "label2_heading": "SHAPE",
+              "label2_text": "TWIN",
+              "label3_heading": "TERRAIN",
+              "label3_text": "ALL TERRAIN, ALL MOUNTAIN",
+              "label4_heading": "SIZING",
+              "label4_text": "146, 150, 154, 158, 162",
+              "cta_btn": "SHOP",
+              "cta_link": "shopify:\/\/products\/the-crane"
+            }
+          },
+          "63414988-f8e3-4fd7-b8e3-ee6edb99b715": {
+            "type": "boards_product",
+            "settings": {
+              "product_img": "shopify:\/\/shop_images\/POW_1_copy.png",
+              "water_marks_img": "shopify:\/\/shop_images\/bonsai-watermark.png",
+              "tag": "Freeride Refined",
+              "title": "The Powgoda",
+              "discription": "<h2>shaper summit<\/h2>\n                      <p><strong>RATED RADICAL<\/strong><\/p>\n                      <p>A highly maneuverable, go-anywhere board that blurs the lines between freestyle, freeride, and powder. Shaper Summit Testers rated the Powgoda Radical due to its carving performance and fast, incredible edge hold.<\/p> \n\n                   <strong>\"WICKED POPPY AND PLAYFUL\"<strong> <\/strong><\/strong>",
+              "label1_heading": "PURPOSE",
+              "label1_text": "ALTERNATIVE FREERIDE",
+              "label2_heading": "SHAPE",
+              "label2_text": "FREEPOW",
+              "label3_heading": "TERRAIN",
+              "label3_text": "ALL MOUNTAIN POW, ALL ABILITY",
+              "label4_heading": "SIZING",
+              "label4_text": "152, 155, 158, 162",
+              "cta_btn": "SHOP",
+              "cta_link": "shopify:\/\/products\/the-powgoda"
+            }
+          },
+          "285f142b-79f2-44dc-a2f8-4a7fb2e70fd1": {
+            "type": "boards_product",
+            "settings": {
+              "product_img": "shopify:\/\/shop_images\/CardiffSnowcraft-2022_0160_Powgoda-Enduro-162_LowAngle_KO_copy.png",
+              "water_marks_img": "shopify:\/\/shop_images\/bonsai-watermark.png",
+              "tag": "Freeride Refined",
+              "title": "The Swell",
+              "discription": "<h2>surfer's choice<\/h2>\n                      <p><strong> <\/strong><\/p>\n                      <p>Our big-mountain gun that lives for the steep and deep, but still holds it’s own in variable and in-bounds conditions.<\/p>",
+              "label1_heading": "PURPOSE",
+              "label1_text": "CUTBACK FREERIDE",
+              "label2_heading": "SHAPE",
+              "label2_text": "SURF INSPIRED",
+              "label3_heading": "TERRAIN",
+              "label3_text": "BIG MOUNTAIN POW, INTERMEDIATE",
+              "label4_heading": "SIZING",
+              "label4_text": "156, 160, 164",
+              "cta_btn": "SHOP",
+              "cta_link": "shopify:\/\/products\/the-swell"
+            }
+          },
+          "c912aac6-b526-4d76-ad8b-1422be33acc0": {
+            "type": "boards_product",
+            "settings": {
+              "product_img": "shopify:\/\/shop_images\/Bonsai_4_copy.png",
+              "water_marks_img": "shopify:\/\/shop_images\/bonsai-watermark.png",
+              "tag": "Freeride Refined",
+              "title": "The Bonsai",
+              "discription": "<h2>Freeride Refined<\/h2>\n                      <p><strong><\/strong><\/p>\n                      <p>An artfully sculpted freeride board that’s streamlined for the purest expression of a turn.<\/p>",
+              "label1_heading": "PURPOSE",
+              "label1_text": "DIRECTIONAL FREERIDE",
+              "label2_heading": "SHAPE",
+              "label2_text": "DIRECTIONAL",
+              "label3_heading": "TERRAIN",
+              "label3_text": "ALL MOUNTAIN, ALL TERRAIN, ADVANCED",
+              "label4_heading": "SIZING",
+              "label4_text": "154, 158",
+              "cta_btn": "SHOP",
+              "cta_link": "shopify:\/\/products\/the-bonsai"
+            }
+          }
+        },
+        "block_order": [
+          "4326007e-15c0-44a4-b840-03aa990b0f7a",
+          "bdef631b-dc3d-498f-a02b-1be07d41c839",
+          "63414988-f8e3-4fd7-b8e3-ee6edb99b715",
+          "285f142b-79f2-44dc-a2f8-4a7fb2e70fd1",
+          "c912aac6-b526-4d76-ad8b-1422be33acc0"
+        ],
+        "settings": {}
+      },
+      "grid-collection-template": {
+        "type": "grid-collection-template",
+        "settings": {
+          "title": "Built Different by Design",
+          "text": "Our boards do what you want, when you want it. They skin well, have excellent grip when traversing, and can shared in pretty much all conditions. Look no further for your next adventure board.",
+          "image": "shopify:\/\/shop_images\/accessories-header.png"
+        }
+      },
+      "list-collections": {
+        "type": "list-collections",
+        "settings": {
+          "pro_image": "shopify:\/\/shop_images\/product-small-banner.jpg",
+          "pro_title": "Crew Recs",
+          "pro_text": "Rider: Neil Provo",
+          "pro_url": "shopify:\/\/collections\/all",
+          "title": "Different by Design",
+          "text": "At Cardiff Snowcraft, we distill decades of experience in snowboarding, design, engineering, and construction into purpose-built boards that tour and ride like no other out there. Unique to the industry, we offer each of our snowboards in both a splitboard and snowboard option, as well as two different builds: ENDURO and PRO CARBON. This customizable model allows you to not only find your dream ride, but to ride it the way you want. Think different, build different, ride different.",
+          "image": "shopify:\/\/shop_images\/80_Sean_s_Selects_-_Cardiff_Camp_2021.jpg",
+          "profile_picture": "shopify:\/\/shop_images\/bjorn-action_ceb3d69f-91cc-4eea-a70d-af53bec7f67a.jpg",
+          "amabsador_title": "Bjorn Leines",
+          "amabsador_subtitle": "Cardiff Crew",
+          "amabsador_text": "You'll find the Cardiff Crew Stand in High Places on and off the mountain. From the backcountry to the resort they help us think different, build different, so you can ride different.",
+          "amabsador_cta": "MEET THE TEAM",
+          "amabsador_cta_link": "shopify:\/\/pages\/ambassadors",
+          "amabsador_picture": "shopify:\/\/shop_images\/bjorn-portrait.jpg",
+          "amabsador_cta2": "MORE BJORN",
+          "amabsador_cta2_link": "shopify:\/\/pages\/ambassadors",
+          "stories": "shopify:\/\/shop_images\/stories.png"
+        }
+      },
+      "soft-product": {
+        "type": "soft-product",
+        "settings": {}
+      },
+      "sizechart": {
+        "type": "sizechart",
+        "blocks": {
+          "fa41cc02-e717-477f-a042-c022656d54d9": {
+            "type": "specs_chart",
+            "settings": {
+              "product_handles": "the-goat",
+              "content": "<table>\n  <tr>\n    <td>LENGTH <span>(cm)<\/span>\n<\/td>\n    <td>150<\/td>\n    <td>154<\/td>\n    <td>158<\/td>\n    <td>162<\/td>\n    <td>166<\/td>\n  <\/tr>\n  <tr>\n    <td>NOSEwidth <span>(mm)<\/span>\n<\/td>\n    <td>286.3<\/td>\n    <td>291.5<\/td>\n    <td>296.3<\/td>\n    <td>300.6<\/td>\n    <td>306<\/td>\n  <\/tr>\n  <tr>\n    <td>TAILwidth <span>(mm)<\/span>\n<\/td>\n    <td>276.4<\/td>\n    <td>280.9<\/td>\n    <td>285.6<\/td>\n    <td>289.9<\/td>\n    <td>295<\/td>\n  <\/tr>\n  <tr>\n    <td>WAISTwidth <span>(mm)<\/span>\n<\/td>\n    <td>254<\/td>\n    <td>258<\/td>\n    <td>262<\/td>\n    <td>265<\/td>\n    <td>270<\/td>\n  <\/tr>\n  <tr>\n    <td>TAPER <span>(mm)<\/span>\n<\/td>\n    <td>9.9<\/td>\n    <td>10.6<\/td>\n    <td>10.9<\/td>\n    <td>10.7<\/td>\n    <td>11<\/td>\n  <\/tr>\n  <tr>\n    <td>SETback <span>(mm)<\/span>\n<\/td>\n    <td>15<\/td>\n    <td>15<\/td>\n    <td>17<\/td>\n    <td>17<\/td>\n    <td>17<\/td>\n  <\/tr>\n  <tr>\n    <td>EFFECTIVEedge <span>(mm)<\/span>\n<\/td>\n    <td>1150<\/td>\n    <td>1170<\/td>\n    <td>1190<\/td>\n    <td>1220<\/td>\n    <td>1260<\/td>\n  <\/tr>\n  <tr>\n    <td>RADIcALsidecut <span>(m)<\/span>\n<\/td>\n    <td>10.6<\/td>\n    <td>10.8<\/td>\n    <td>10.5<\/td>\n    <td>11<\/td>\n    <td>11.5<\/td>\n  <\/tr>\n  <tr>\n    <td>PROflex<\/td>\n    <td>5<\/td>\n    <td>6<\/td>\n    <td>7<\/td>\n    <td>8<\/td>\n    <td>9<\/td>\n  <\/tr>\n  <tr>\n    <td>FLOATilla <span>(sqcm)<\/span>\n<\/td>\n    <td>3897<\/td>\n    <td>4061<\/td>\n    <td>4227<\/td>\n    <td>4386<\/td>\n    <td>4584<\/td>\n  <\/tr>\n  <tr>\n    <td>NOVERhang <span>(mm)<\/span>\n<\/td>\n    <td>264.4\/258.0<\/td>\n    <td>268.9\/262.4<\/td>\n    <td>273.0\/266.6<\/td>\n    <td>276.1\/269.8<\/td>\n    <td>280.7\/274.6<\/td>\n  <\/tr>\n  <tr>\n    <td>BOARDsizing <span>(ft)<\/span>\n<\/td>\n    <td>4'6\" - 5'6\"<\/td>\n    <td>5'6\" - 5'9\"<\/td>\n    <td>5'9\" - 6'0\"<\/td>\n    <td>5'9\" - 6'0\"<\/td>\n    <td>6'0\" - 6'3\"<\/td>\n  <\/tr>\n<\/table>"
+            }
+          },
+          "5d464464-ecfb-4783-818c-57461a48fbd4": {
+            "type": "specs_chart",
+            "settings": {
+              "product_handles": "the-crane",
+              "content": "<table>\n  <tr>\n    <td>LENGTH <span>(cm)<\/span>\n<\/td>\n    <td>146<\/td>\n    <td>150<\/td>\n    <td>154<\/td>\n    <td>158<\/td>\n    <td>162<\/td>\n  <\/tr>\n  <tr>\n    <td>NOSEwidth <span>(mm)<\/span>\n<\/td>\n    <td>286.8<\/td>\n    <td>290.2<\/td>\n    <td>294.9<\/td>\n    <td>299.7<\/td>\n    <td>300.3<\/td>\n  <\/tr>\n  <tr>\n    <td>TAILwidth <span>(mm)<\/span>\n<\/td>\n    <td>285.6<\/td>\n    <td>289<\/td>\n    <td>292.4<\/td>\n    <td>297.2<\/td>\n    <td>297.8<\/td>\n  <\/tr>\n  <tr>\n    <td>WAISTwidth <span>(mm)<\/span>\n<\/td>\n    <td>250<\/td>\n    <td>254<\/td>\n    <td>258<\/td>\n    <td>262<\/td>\n    <td>265<\/td>\n  <\/tr>\n  <tr>\n    <td>TAPER <span>(mm)<\/span>\n<\/td>\n    <td>1.2<\/td>\n    <td>1.2<\/td>\n    <td>2.5<\/td>\n    <td>2.5<\/td>\n    <td>25<\/td>\n  <\/tr>\n  <tr>\n    <td>SETback <span>(mm)<\/span>\n<\/td>\n    <td>15<\/td>\n    <td>15<\/td>\n    <td>20<\/td>\n    <td>20<\/td>\n    <td>20<\/td>\n  <\/tr>\n  <tr>\n    <td>EFFECTIVEedge <span>(mm)<\/span>\n<\/td>\n    <td>1110<\/td>\n    <td>1120<\/td>\n    <td>1140<\/td>\n    <td>1160<\/td>\n    <td>1180<\/td>\n  <\/tr>\n  <tr>\n    <td>RADIcALsidecut <span>(m)<\/span>\n<\/td>\n    <td>7<\/td>\n    <td>7.2<\/td>\n    <td>7.4<\/td>\n    <td>7.4<\/td>\n    <td>8.2<\/td>\n  <\/tr>\n  <tr>\n    <td>PROflex<\/td>\n    <td>5<\/td>\n    <td>5<\/td>\n    <td>6<\/td>\n    <td>7<\/td>\n    <td>7<\/td>\n  <\/tr>\n  <tr>\n    <td>FLOATilla <span>(sqcm)<\/span>\n<\/td>\n    <td>3811<\/td>\n    <td>3966<\/td>\n    <td>4129<\/td>\n    <td>4298<\/td>\n    <td>4433<\/td>\n  <\/tr>\n  <tr>\n    <td>NOVERhang <span>(mm)<\/span>\n<\/td>\n    <td>261.4\/261.4<\/td>\n    <td>265.8\/265.8<\/td>\n    <td>269.9\/269.9<\/td>\n    <td>273.9\/273.9<\/td>\n    <td>276.2\/276.2<\/td>\n  <\/tr>\n  <tr>\n    <td>BOARDsizing <span>(ft)<\/span>\n<\/td>\n    <td>4'6\" - 5'6\"<\/td>\n    <td>5'6\" - 5'9\"<\/td>\n    <td>5'9\" - 6'0\"<\/td>\n    <td>5'9\" - 6'0\"<\/td>\n    <td>6'0\" - 6'3\"<\/td>\n  <\/tr>\n<\/table>"
+            }
+          },
+          "20cfadbc-a451-42a2-a60f-ab461cc52aad": {
+            "type": "specs_chart",
+            "settings": {
+              "product_handles": "the-swell",
+              "content": "<table>\n  <tr>\n    <td>LENGTH <span>(cm)<\/span>\n<\/td>\n    <td>156<\/td>\n    <td>160<\/td>\n    <td>164<\/td>\n  <\/tr>\n  <tr>\n    <td>NOSEwidth <span>(mm)<\/span>\n<\/td>\n    <td>311.1<\/td>\n    <td>317.9<\/td>\n    <td>329.6<\/td>\n  <\/tr>\n  <tr>\n    <td>TAILwidth <span>(mm)<\/span>\n<\/td>\n    <td>281.3<\/td>\n    <td>287.9<\/td>\n    <td>299.45<\/td>\n  <\/tr>\n  <tr>\n    <td>WAISTwidth <span>(mm)<\/span>\n<\/td>\n    <td>260<\/td>\n    <td>265<\/td>\n    <td>275<\/td>\n  <\/tr>\n  <tr>\n    <td>TAPER <span>(mm)<\/span>\n<\/td>\n    <td>29.8<\/td>\n    <td>30<\/td>\n    <td>30.15<\/td>\n  <\/tr>\n  <tr>\n    <td>SETback <span>(mm)<\/span>\n<\/td>\n    <td>20<\/td>\n    <td>20<\/td>\n    <td>20<\/td>\n  <\/tr>\n  <tr>\n    <td>EFFECTIVEedge <span>(mm)<\/span>\n<\/td>\n    <td>1160<\/td>\n    <td>1200<\/td>\n    <td>1240<\/td>\n  <\/tr>\n  <tr>\n    <td>RADIcALsidecut <span>(m)<\/span>\n<\/td>\n    <td>7.7<\/td>\n    <td>7.9<\/td>\n    <td>8.1<\/td>\n  <\/tr>\n  <tr>\n    <td>PROflex<\/td>\n    <td>6<\/td>\n    <td>7<\/td>\n    <td>7<\/td>\n  <\/tr>\n  <tr>\n    <td>FLOATilla <span>(sqcm)<\/span>\n<\/td>\n    <td>4100<\/td>\n    <td>4274<\/td>\n    <td>4500<\/td>\n  <\/tr>\n  <tr>\n    <td>NOVERhang <span>(mm)<\/span>\n<\/td>\n    <td>286.8\/268<\/td>\n    <td>286.8\/268<\/td>\n    <td>286.8\/268<\/td>\n  <\/tr>\n  <tr>\n    <td>BOARDsizing <span>(ft)<\/span>\n<\/td>\n    <td>5'6\" - 5'9\"<\/td>\n    <td>5'9\" - 6'0\"<\/td>\n    <td>6'0\" - 6'3\"<\/td>\n  <\/tr>\n<\/table>"
+            }
+          },
+          "5e3a5efc-a32e-4c36-bb95-b5e8ceaabef1": {
+            "type": "specs_chart",
+            "settings": {
+              "product_handles": "the-bonsai",
+              "content": "<table>\n  <tr>\n    <td>LENGTH <span>(cm)<\/span>\n<\/td>\n    <td>154 solid<\/td>\n    <td>154 split<\/td>\n    <td>158 solid<\/td>\n    <td>158 split<\/td>\n  <\/tr>\n  <tr>\n    <td>NOSEwidth <span>(mm)<\/span>\n<\/td>\n    <td>304.5<\/td>\n    <td>304<\/td>\n    <td>311.5<\/td>\n    <td>310.8<\/td>\n  <\/tr>\n  <tr>\n    <td>TAILwidth <span>(mm)<\/span>\n<\/td>\n    <td>292.1<\/td>\n    <td>292.3<\/td>\n    <td>298.9<\/td>\n    <td>298.9<\/td>\n  <\/tr>\n  <tr>\n    <td>WAISTwidth <span>(mm)<\/span>\n<\/td>\n    <td>260<\/td>\n    <td>261<\/td>\n    <td>265.1<\/td>\n    <td>266<\/td>\n  <\/tr>\n  <tr>\n    <td>TAPER <span>(mm)<\/span>\n<\/td>\n    <td>12.4<\/td>\n    <td>11.7<\/td>\n    <td>12.6<\/td>\n    <td>11.9<\/td>\n  <\/tr>\n  <tr>\n    <td>SETback <span>(mm)<\/span>\n<\/td>\n    <td>30<\/td>\n    <td>30<\/td>\n    <td>30<\/td>\n    <td>30<\/td>\n  <\/tr>\n  <tr>\n    <td>EFFECTIVEedge <span>(mm)<\/span>\n<\/td>\n    <td>1220<\/td>\n    <td>1220<\/td>\n    <td>1260<\/td>\n    <td>1260<\/td>\n  <\/tr>\n  <tr>\n    <td>RADIcALsidecut <span>(m)<\/span>\n<\/td>\n    <td>8<\/td>\n    <td>8.5<\/td>\n    <td>8.2<\/td>\n    <td>8.7<\/td>\n  <\/tr>\n  <tr>\n    <td>PROflex<\/td>\n    <td>7<\/td>\n    <td>7<\/td>\n    <td>8<\/td>\n    <td>8<\/td>\n  <\/tr>\n  <tr>\n    <td>FLOATilla <span>(sqcm)<\/span>\n<\/td>\n    <td>4100<\/td>\n    <td>4110<\/td>\n    <td>4350<\/td>\n    <td>4352<\/td>\n  <\/tr>\n  <tr>\n    <td>NOVERhang <span>(mm)<\/span>\n<\/td>\n    <td>272.8\/267.2<\/td>\n    <td>273\/267.8<\/td>\n    <td>277.5\/272.1<\/td>\n    <td>277.7\/272.5<\/td>\n  <\/tr>\n  <tr>\n    <td>BOARDsizing <span>(ft)<\/span>\n<\/td>\n    <td>5'6\" - 5'9\"<\/td>\n    <td>5'6\" - 5'9\"<\/td>\n    <td>5'9\" - 6'2\"<\/td>\n    <td>5'9\" - 6'2\"<\/td>\n  <\/tr>\n<\/table>"
+            }
+          },
+          "fee3fdfc-0de4-43a5-8946-f49f9cb52f54": {
+            "type": "specs_chart",
+            "settings": {
+              "product_handles": "the-powgoda",
+              "content": "<table>\n  <tr>\n    <td>LENGTH <span>(cm)<\/span>\n<\/td>\n    <td>152 solid<\/td>\n    <td>152 split<\/td>\n    <td>158 solid<\/td>\n    <td>158 split<\/td>\n    <td>162 solid<\/td>\n    <td>162 split<\/td>\n  <\/tr>\n  <tr>\n    <td>NOSEwidth <span>(mm)<\/span>\n<\/td>\n    <td>293.2<\/td>\n    <td>300.9<\/td>\n    <td>306.9<\/td>\n    <td>314.5<\/td>\n    <td>315<\/td>\n    <td>324<\/td>\n  <\/tr>\n  <tr>\n    <td>TAILwidth <span>(mm)<\/span>\n<\/td>\n    <td>273.2<\/td>\n    <td>281.8<\/td>\n    <td>286<\/td>\n    <td>294.5<\/td>\n    <td>295<\/td>\n    <td>304<\/td>\n  <\/tr>\n  <tr>\n    <td>WAISTwidth <span>(mm)<\/span>\n<\/td>\n    <td>250<\/td>\n    <td>260<\/td>\n    <td>262<\/td>\n    <td>272<\/td>\n    <td>270<\/td>\n    <td>280<\/td>\n  <\/tr>\n  <tr>\n    <td>TAPER <span>(mm)<\/span>\n<\/td>\n    <td>20<\/td>\n    <td>19.1<\/td>\n    <td>20.9<\/td>\n    <td>20<\/td>\n    <td>20<\/td>\n    <td>20<\/td>\n  <\/tr>\n  <tr>\n    <td>SETback <span>(mm)<\/span>\n<\/td>\n    <td>5<\/td>\n    <td>5<\/td>\n    <td>5<\/td>\n    <td>7<\/td>\n    <td>7<\/td>\n    <td>7<\/td>\n  <\/tr>\n  <tr>\n    <td>EFFECTIVEedge <span>(mm)<\/span>\n<\/td>\n    <td>1080<\/td>\n    <td>1080<\/td>\n    <td>1130<\/td>\n    <td>1132<\/td>\n    <td>1160<\/td>\n    <td>1160<\/td>\n  <\/tr>\n  <tr>\n    <td>RADIcALsidecut <span>(m)<\/span>\n<\/td>\n    <td>7.6<\/td>\n    <td>8.1<\/td>\n    <td>7.9<\/td>\n    <td>8.4<\/td>\n    <td>8.5<\/td>\n    <td>8.5<\/td>\n  <\/tr>\n  <tr>\n    <td>PROflex<\/td>\n    <td>5<\/td>\n    <td>5<\/td>\n    <td>6<\/td>\n    <td>6<\/td>\n    <td>6<\/td>\n    <td>6<\/td>\n  <\/tr>\n  <tr>\n    <td>FLOATilla <span>(sqcm)<\/span>\n<\/td>\n    <td>3952<\/td>\n    <td>4082<\/td>\n    <td>4300<\/td>\n    <td>4436<\/td>\n    <td>4543<\/td>\n    <td>4725<\/td>\n  <\/tr>\n  <tr>\n    <td>NOVERhang <span>(mm)<\/span>\n<\/td>\n    <td>267.3\/254.7<\/td>\n    <td>276.2\/264.4<\/td>\n    <td>279.1\/266.7<\/td>\n    <td>288\/276.4<\/td>\n    <td>286.9\/274.7<\/td>\n    <td>295.9\/284.4<\/td>\n  <\/tr>\n  <tr>\n    <td>BOARDsizing <span>(ft)<\/span>\n<\/td>\n    <td>5'0 - 5'9\"<\/td>\n    <td>5'0\" - 6'0\"<\/td>\n    <td>5'0\" - 6'0\"<\/td>\n    <td>6'0\" - 6'3\"<\/td>\n    <td>6'0\" - 6'4\"<\/td>\n    <td>6'3\" - 6'6\"<\/td>\n  <\/tr>\n<\/table>"
+            }
+          }
+        },
+        "block_order": [
+          "fa41cc02-e717-477f-a042-c022656d54d9",
+          "5d464464-ecfb-4783-818c-57461a48fbd4",
+          "20cfadbc-a451-42a2-a60f-ab461cc52aad",
+          "5e3a5efc-a32e-4c36-bb95-b5e8ceaabef1",
+          "fee3fdfc-0de4-43a5-8946-f49f9cb52f54"
+        ],
+        "settings": {}
+      },
+      "hard-product": {
+        "type": "hard-product",
+        "settings": {}
+      },
+      "explore-more-products": {
+        "type": "explore-more-products",
+        "blocks": {
+          "da445d2e-d267-46e0-9d71-9b21db60606b": {
+            "type": "collection",
+            "settings": {
+              "product_tag": "explore-more",
+              "collection": "boards"
+            }
+          }
+        },
+        "block_order": [
+          "da445d2e-d267-46e0-9d71-9b21db60606b"
+        ],
+        "settings": {}
+      },
+      "product-compare": {
+        "type": "product-compare",
+        "blocks": {
+          "7cacfb23-0dd2-4b7e-9c5d-237df7dc0fb7": {
+            "type": "Collection",
+            "settings": {
+              "tag": "boards--compare",
+              "collection": "boards"
+            }
+          }
+        },
+        "block_order": [
+          "7cacfb23-0dd2-4b7e-9c5d-237df7dc0fb7"
+        ],
+        "settings": {
+          "title": "find your ride",
+          "btn_text": "SHOP",
+          "btn_link": "",
+          "compare_num": 2
+        }
+      },
+      "phantom": {
+        "type": "phantom",
+        "settings": {
+          "phantom_img": "shopify:\/\/shop_images\/phantom.jpg",
+          "phantom_title": "The Phantom Difference",
+          "phantom_text": "<strong>PHANTOM<\/strong> is a permanent, one-time application base treatment that provides increased glide across all conditions. A disruptive, truly innovative solution that ushers in a new era in snowsports.<br><br>\n                <strong>PHANTOM<\/strong>'s patent-pending polymer technology offer ultimate convenience combined with great glide performance. Cured <strong>PHANTOM<\/strong> is an inert substance, meaning your skis or snowboard can continue to gilde while not contaminating the watershed.",
+          "phantom_cta": "ADD TO GOAT",
+          "phantom_cta_link": "#"
+        }
+      },
+      "home-ambassadors": {
+        "type": "home-ambassadors",
+        "settings": {
+          "vertical_text": "",
+          "profile_picture": "shopify:\/\/shop_images\/Bjorn_Rampage_turn.JPG_Parker_Cross_photo_1.jpg",
+          "amabsador_title": "CARDIFF CREW",
+          "amabsador_subtitle": "21\/22 TEAM LINE UP",
+          "amabsador_text": "You'll find the Cardiff Crew Stand in High Places on and off the mountain. From the backcountry to the resort they help us think different, build different, so you can ride different.",
+          "amabsador_cta": "MEET THE TEAM",
+          "amabsador_cta_link": "shopify:\/\/pages\/ambassadors",
+          "amabsador_picture": "shopify:\/\/shop_images\/bjorn-portrait.jpg",
+          "amabsador_cta2": "MORE BJORN",
+          "amabsador_cta2_link": "shopify:\/\/pages\/ambassadors"
+        }
+      },
+      "welcome-cardiff": {
+        "type": "welcome-cardiff",
+        "settings": {
+          "welcome_pic": "shopify:\/\/shop_images\/welcome-cardiff.png",
+          "title": "Welcome To Cardiff",
+          "welcome_text": "CARDIFF SNOWCRAFT STARTED BECAUSE AN ARCHITECT-SNOWBOARDER IMAGINED BETTER SPLITBOARD EQUIPMENT FOR HIS HOME ZONE, THE DEEP CIRQUE OF CARDIFF FORK IN THE WASATCH MOUNTAINS OF UTAH. HIS PASSION LED TO SKETCHES, SKETCHES GREW INTO DIGITAL MODELS, DIGITAL MODELS BECAME TANGIBLE PROTOTYPES, PROTOTYPES LED TO INNOVATION. INNOVATION IS WHAT WE NOW RIDE. \n\nINDEPENDENT THINKING, CREATIVE PROBLEM-SOLVING AND UNPARALLELED PERFORMANCE IS FOUND IN EACH OF OUR SPLITBOARDS AND SNOWBOARDS. OUR DESTINATION IS THE SAME, WE ALL BELONG ON THE MOUNTAIN, WE INVITE YOU TO EXPERIENCE IT WITH CARDIFF.",
+          "cta_text": "Explore Our History",
+          "cta_link": "\/pages\/about"
+        }
+      },
+      "hp-hero": {
+        "type": "hp-hero",
+        "settings": {
+          "toggle": false,
+          "image": "shopify:\/\/shop_images\/cardiff-banner-img.png",
+          "heading": "Made to be Different",
+          "content_text": "Different By Design: Think Different, Build Different, Ride Different.",
+          "demo_text": "See the demos",
+          "demo_url": "#"
+        }
+      },
+      "hp-video": {
+        "type": "hp-video",
+        "settings": {
+          "toggle": false,
+          "video_banner": "https:\/\/www.youtube.com\/watch?v=9xwazD5SyVg",
+          "image_poster": "shopify:\/\/shop_images\/hero-left-image.jpg",
+          "title_poster": "Banner Video"
+        }
+      },
+      "hp-slider": {
+        "type": "hp-slider",
+        "blocks": {
+          "df7c74f7-01bf-46fd-860e-e955209e0bb1": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Jay_Dash_Photography_IMG_2501.jpg",
+              "heading": "Stand in High Places.",
+              "heading_color": "#ffffff",
+              "content_text": "21\/22 BRINGS THE SAME AWARD WINNING TECH, ENGINEERING, AND CONSTRUCTION WITH UPDATED GRAPHICS AND A WIDER VARIETY OF SIZES FOR A RIDE LIKE NO OTHER OUT THERE.",
+              "tagline": "THINK DIFFERENT. BUILD DIFFERENT. RIDE DIFFERENT.",
+              "demo_text": "See what's new",
+              "demo_url": "shopify:\/\/collections\/boards"
+            }
+          },
+          "7e1cbbe0-89fb-4dc5-86d6-e01a3f496226": {
+            "type": "video",
+            "settings": {
+              "video_banner": "https:\/\/youtu.be\/oT1h3VkOylA",
+              "image_poster": "shopify:\/\/shop_images\/video-bg-img.jpg",
+              "title_poster": "RIDE DIFFERENT"
+            }
+          }
+        },
+        "block_order": [
+          "df7c74f7-01bf-46fd-860e-e955209e0bb1",
+          "7e1cbbe0-89fb-4dc5-86d6-e01a3f496226"
+        ],
+        "settings": {}
+      },
+      "pdp-acclaim": {
+        "type": "pdp-acclaim",
+        "blocks": {
+          "826124b1-5fec-4e36-921e-e26030cdf8b4": {
+            "type": "block",
+            "settings": {
+              "tag": "",
+              "title1": "HALFcamber™",
+              "text1": "The CARDIFF HALFcamber™ places camber where it is absolutely necessary and gradual rocker everywhere else. The result is maximum glide, maneuverability, and edge control.",
+              "title2": "PERFECTpivot™",
+              "text2": "Every Cardiff snowboard is uniquely designed to match the shape to the camber - resulting in a new standard of performance.",
+              "title3": "FLOATilla™",
+              "text3": "Big float, small board: by placing more surface area under foot and a gradual nose rocker the patent-pending HALFcamber™ allows us to create shorter boards with more float.",
+              "title4": "",
+              "text4": ""
+            }
+          }
+        },
+        "block_order": [
+          "826124b1-5fec-4e36-921e-e26030cdf8b4"
+        ],
+        "settings": {
+          "title": "tech"
+        }
+      },
+      "product-video": {
+        "type": "product-video",
+        "blocks": {
+          "237d64e1-14b6-41c0-b3de-43e219cfbfda": {
+            "type": "video",
+            "settings": {
+              "tag": "board-video",
+              "video_pdp": "https:\/\/youtu.be\/XNKYUIAYBfw",
+              "image": "shopify:\/\/shop_images\/video-bg-img.jpg",
+              "title": "Build Rugged"
+            }
+          }
+        },
+        "block_order": [
+          "237d64e1-14b6-41c0-b3de-43e219cfbfda"
+        ],
+        "settings": {}
+      },
+      "different-by-design": {
+        "type": "different-by-design",
+        "settings": {
+          "title": "Different by Design",
+          "image": "shopify:\/\/shop_images\/Split-Carbon-Final_0a1c5609-04a7-467b-923a-e29a551b70fd.png",
+          "cta_text": "Shop Collection",
+          "cta_link": "shopify:\/\/collections\/boards"
+        }
+      },
+      "about-collection": {
+        "type": "about-collection",
+        "settings": {
+          "title": "21\/22 Collection",
+          "content": "<p>THE SAME AWARD WINNING TECH, ENGINEERING, AND CONSTRUCTION WITH UPDATED GRAPHICS AND A WIDER VARIETY OF SIZES FOR A RIDE LIKE NO OTHER OUT THERE.<\/p>",
+          "image": "shopify:\/\/shop_images\/Split-Carbon-Final_2603c3bf-cf72-402a-bbc5-b319ee402f7d.png",
+          "cta_text": "SHOP",
+          "cta_link": "shopify:\/\/collections\/boards"
+        }
+      },
+      "boards-story": {
+        "type": "boards-story",
+        "blocks": {
+          "1ea5cd98-eff1-4561-91c5-f19595ba6063": {
+            "type": "sotry",
+            "settings": {
+              "tag": "board-goat",
+              "text": "<p>Five years of testing and refinement, ten different iterations, and an untold number of days, mountain ranges, and descents. The Goat—a big-mountain charger that pro rider Bjorn Leines called the best board he's ever ridden—is the original Cardiff board design and is now better than ever. Developed and tested as a split, the Goat Enduro is a durable solid that can engage on icy sidehills, make surfy, high-speed turns, and take you down big, intimidating lines the world over. Original artwork by Kyson Dana, portraying the fearless mountain denizen who inspired this board.<\/p>",
+              "image": "shopify:\/\/shop_images\/Goat-3.jpg"
+            }
+          },
+          "987670d2-1697-42a3-8c4f-8768faee5014": {
+            "type": "sotry",
+            "settings": {
+              "tag": "board-crane",
+              "text": "<p>From high-speed arcs on the hardpack to soaring airs and elegant lines down the steep and deep, the Crane Enduro is Cardiff’s freestyle-oriented freeride board that flies free on the full gamut of terrain. Cardiff’s HALFcamber™ design (with camber underfoot on 65% of the deck), along with a perfectly matched pivot point near the center of the board, offers more traditional all-mountain twin performance that's equally composed on edge or in the air. Kyson Dana created the Crane's original artwork, which channels the elegant and fine-tuned craft found within.<\/p>",
+              "image": "shopify:\/\/shop_images\/Crane-1_6599c7d3-cde9-43a8-a282-88b756ffc816.jpg"
+            }
+          },
+          "bcb7abd3-62a8-43ab-a3e1-d2df7204bd8b": {
+            "type": "sotry",
+            "settings": {
+              "tag": "board-powgoda",
+              "text": "<p>The first board to reach for when storm totals crest into double digits, the Cardiff Powgoda is a playful, pow-centric design that will remind you why you started snowboarding. Designed for the deep but fully capable in a wide variety of conditions, the Powgoda floats, carves, slashes, and butters with ease. Cardiff’s HALFcamber™ design and a perfectly matched pivot point under the front foot, inspires confidence in deep snow, helps you stay afloat and serves up premium maneuverability. Sam Bawden created the Powgoda's original artwork, inspired by the complex joinery and sophisticated design of Japan's Hōryū-ji pagoda.<\/p>",
+              "image": "shopify:\/\/shop_images\/Powgoda-1-2.jpg"
+            }
+          },
+          "f9ac571c-9a43-44e7-bfd0-be24e58f08b4": {
+            "type": "sotry",
+            "settings": {
+              "tag": "board-swell",
+              "text": "<p>Cardiff’s big-mountain snow surfer designed for steep lines and all-time conditions, the Swell Enduro is the board for those out searching for the ultimate ride. The Swell's unique, ocean-inspired shape combines a wide, ultra-floaty tip, the gradual rocker of our HALFcamber™ design, 30mm of taper, and Cardiff’s Wingpin tail—which makes for quick and nimble maneuverability in tight terrain—to create a board that rides the wave without the need to paddle out. For the Swell's original artwork, Sam Bawden expressed the board's dual inspirations of fine-tuned woodcraft and ocean-inspired performance.<\/p>",
+              "image": "shopify:\/\/shop_images\/Swell-1.jpg"
+            }
+          },
+          "ee323fe3-389a-4428-a9ca-8aeda9771cec": {
+            "type": "sotry",
+            "settings": {
+              "tag": "board-bonsai",
+              "text": "<p>A pure expression of freeride performance, the Cardiff Bonsai was designed around the desire for a simple and streamlined board that could handle it all—it has raced in boarder cross events, carves spring corn, and offers incredible performance in deep conditions. The Bonsai features Cardiff’s FLOATilla construction, which combines a big, wide nose with the gradual rocker of HALFcamber™ to create a shorter board with increased float. Original artwork by Sam Bawden features the gnarled and resilient bristlecone pines found along the high ridgelines of Cardiff’s home Wasatch Range—trees that experience and endure an incredible range of winter conditions.<\/p>",
+              "image": "shopify:\/\/shop_images\/IMG_6992.png"
+            }
+          },
+          "51c29ce0-4d8c-4979-81df-cff90fbdf2fe": {
+            "type": "sotry",
+            "settings": {
+              "tag": "hard-product-story",
+              "text": "<p>New this year we are introducing hard goods from the leading Global brands in outdoor gear. We’ve chosen equipment that makes uphill touring extremely efficient while the response to downhill is unparalleled. You’ll find gear that is lightweight for long days in the backcountry with options that are more stout for hard charging riders at the resort.<\/p>",
+              "image": "shopify:\/\/shop_images\/82_Sean_s_Selects_-_Cardiff_Camp_2021.jpg"
+            }
+          },
+          "01b162fb-c35f-4452-b2c1-b9172d7deec8": {
+            "type": "sotry",
+            "settings": {
+              "tag": "",
+              "text": ""
+            }
+          }
+        },
+        "block_order": [
+          "1ea5cd98-eff1-4561-91c5-f19595ba6063",
+          "987670d2-1697-42a3-8c4f-8768faee5014",
+          "bcb7abd3-62a8-43ab-a3e1-d2df7204bd8b",
+          "f9ac571c-9a43-44e7-bfd0-be24e58f08b4",
+          "ee323fe3-389a-4428-a9ca-8aeda9771cec",
+          "51c29ce0-4d8c-4979-81df-cff90fbdf2fe",
+          "01b162fb-c35f-4452-b2c1-b9172d7deec8"
+        ],
+        "settings": {
+          "title": "Story"
+        }
+      },
+      "page_tech-hero": {
+        "type": "page_tech-hero",
+        "settings": {}
+      },
+      "page_tech-bg": {
+        "type": "page_tech-bg",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Goat_-_Horizontal_0f05639d-22d7-4685-b882-553b98b5e408.png"
+        }
+      },
+      "page_tech-camber-definitions": {
+        "type": "page_tech-camber-definitions",
+        "settings": {}
+      },
+      "page_tech-materials": {
+        "type": "page_tech-materials",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Crane_-_Vertical_-_Full_Board.png"
+        }
+      },
+      "page_tech-board-spectrum": {
+        "type": "page_tech-board-spectrum",
+        "settings": {
+          "section_background": "shopify:\/\/shop_images\/spectrum-bg.jpg",
+          "board_image": "shopify:\/\/shop_images\/spectrum-tops.png",
+          "board_image_overlay": "shopify:\/\/shop_images\/spectrum-diagrams.png",
+          "icons_image": "shopify:\/\/shop_images\/spectrum-titles.png"
+        }
+      },
+      "page_tech-shaper-reviews": {
+        "type": "page_tech-shaper-reviews",
+        "settings": {}
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "settings": {
+          "pro_image": "shopify:\/\/shop_images\/product-small-banner.jpg",
+          "pro_title": "Crew Recs",
+          "pro_text": "Rider: Neil Provo",
+          "pro_url": "shopify:\/\/collections\/all",
+          "title": "Different By Design",
+          "text": "At Cardiff Snowcraft we distill decades of experience in snowboarding, design, engineering, and construction into the equipment we want to ride. The result is unparalleled. Unlike any other snowboard manufacturer we offer all snowboards in a splitboard option in either our ENDURO or PRO CARBON build. We've done this so not only can you find your dream ride but also your dream build.",
+          "image": "shopify:\/\/shop_images\/80_Sean_s_Selects_-_Cardiff_Camp_2021.jpg",
+          "profile_picture": "shopify:\/\/shop_images\/17_Bjorn_Line_Selets-_Cardiff_Camp_2021_Sean_Kerrick_Sullivan_1_cc3a4e06-5e2a-45df-be62-5002f062976a.jpg",
+          "amabsador_title": "Bjorn Leines",
+          "amabsador_subtitle": "Cardiff Crew",
+          "amabsador_text": "You'll find the Cardiff Crew Stand in High Places on and off the mountain. From the backcountry to the resort they help us think different, build different, so you can ride different.",
+          "amabsador_cta": "MEET THE TEAM",
+          "amabsador_cta_link": "shopify:\/\/pages\/ambassadors",
+          "amabsador_picture": "shopify:\/\/shop_images\/bjorn-portrait.jpg",
+          "amabsador_cta2": "MORE BJORN",
+          "amabsador_cta2_link": "shopify:\/\/pages\/ambassadors",
+          "stories": "shopify:\/\/shop_images\/stories.png"
+        }
+      },
+      "instagram": {
+        "type": "instagram",
+        "settings": {}
+      }
+    },
+    "content_for_index": [
+      "collection-list",
+      "featured-collection",
+      "featured-product"
+    ]
+  },
+  "presets": {
+    "Default": {
+      "sections": {
+        "collection-list": {
+          "type": "collection-list",
+          "blocks": {
+            "collection-list-0": {
+              "type": "collection",
+              "settings": {}
+            },
+            "collection-list-1": {
+              "type": "collection",
+              "settings": {}
+            },
+            "collection-list-2": {
+              "type": "collection",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "collection-list-0",
+            "collection-list-1",
+            "collection-list-2"
+          ],
+          "settings": {}
+        },
+        "featured-collection": {
+          "type": "featured-collection",
+          "settings": {
+            "collection": "frontpage"
+          }
+        },
+        "featured-product": {
+          "type": "featured-product",
+          "settings": {}
+        }
+      },
+      "content_for_index": [
+        "collection-list",
+        "featured-collection",
+        "featured-product"
+      ]
+    }
+  }
+}

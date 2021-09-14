@@ -1,0 +1,45 @@
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+{%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
+
+{% include 'pdp-boards' %}
+
+
+{% schema %}
+  {
+    "name": "Product",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Logo Slide"
+        },
+        {
+            "type": "image_picker",
+            "id": "slide_left_arrow_img",
+            "label": "Left arrow image"
+        },
+        {
+            "type": "image_picker",
+            "id": "slide_right_arrow_img",
+            "label": "Right arrow image"
+        }
+    ],
+    "blocks": [
+      {
+        "type": "awards_slide",
+        "name": "Awards Slide",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          },
+            {
+                "type": "image_picker",
+                "id": "slide_image",
+                "label": "Image"
+            }
+        ]
+      }
+    ]
+  }
+{% endschema %}

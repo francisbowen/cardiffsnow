@@ -1,0 +1,92 @@
+{% assign video_show = false %}
+{% for block in section.blocks %}
+{% if product.tags contains block.settings.tag %}
+{% assign video_show = true %}
+{% endif %}
+{% endfor %}
+{% if video_show == true %}
+<div id="shopify-section-video" class="shopify-section pdp-video-section">
+    <section class="video">
+        <div class="container">
+            <div class="video-wrapper">
+                
+              {% for block in section.blocks %}
+              {% if product.tags contains block.settings.tag %}
+                {% if block.settings.video_pdp.type == 'youtube' %}
+                <iframe id="video" src="//www.youtube.com/embed/{{ block.settings.video_pdp.id }}?&mute=1&rel=0&playlist={{ block.settings.video_pdp.id }}&loop=1&showinfo=0" frameborder="0" allowfullscreen=""></iframe>
+                {% else %}        
+                <iframe id="video" src="https://player.vimeo.com/video/{{ block.settings.video_pdp.id }}?&muted=1&loop=1&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>      
+                {% endif %}
+        
+                <div class="video-placeholder-img" style="background-image: url('{{block.settings.image | img_url: 'master'}}');">
+                    <div class="video-content">
+                        <div class="play-icon" id="play-video">
+                          <img src="https://cdn.shopify.com/s/files/1/0044/2145/1850/files/play_2.png?v=1623326896" alt="image" />
+                        </div>
+                        <h3 data-aos="fade-up">{{block.settings.title}}</h3>
+                    </div>
+                </div>
+
+                {% endif %}
+                {% endfor %}
+
+            </div>
+        </div> 
+    </section>
+
+    <style>
+        .pdp-video-section .video-wrapper{
+          padding-bottom: 52.25%;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function() {
+        $('#play-video').on('click', function(ev) {
+        
+            $("#video")[0].src += "&autoplay=1";
+            ev.preventDefault();
+            $('#video').show();
+    
+            $('.video-placeholder-img').hide();    
+        });
+        });
+    </script>
+  
+  </div>
+  {% endif %}
+
+  {% schema %}
+  {
+    "name": "Video",
+    "blocks": [
+      {
+        "type": "video",
+        "name": "Video",
+        "settings": [
+          {
+            "type": "text",
+            "id": "tag",
+            "label": "Tag"
+          },
+          {
+            "type": "video_url",
+            "id": "video_pdp",
+            "label": "Video",
+            "accept": ["youtube", "vimeo"]
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
